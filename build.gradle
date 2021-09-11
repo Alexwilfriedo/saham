@@ -1,0 +1,80 @@
+buildscript {
+  ext {
+    springBootVersion = '1.5.8.RELEASE'
+  }
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+//deploy on externe tomcat
+apply plugin: 'war'
+//apply plugin: 'application'
+war {
+  baseName = 'ROOT'
+  version = '1.0.0'
+}
+
+group = 'com.digital'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+//mainClassName ="com.digital.SahamvieApplication"
+
+
+repositories {
+  mavenCentral()
+  jcenter()
+}
+
+
+dependencies {
+
+  compile 'joda-time:joda-time:2.4'
+  compile('net.sourceforge.nekohtml:nekohtml:1.9.21')
+  compile("org.hibernate:hibernate-validator")
+  compile group: 'com.maxmind.geoip2', name: 'geoip2', version: '2.9.0'
+
+  compile "io.springfox:springfox-swagger2:2.6.1"
+  compile 'io.springfox:springfox-swagger-ui:2.6.1'
+
+  compile('org.springframework.boot:spring-boot-starter-actuator')
+  compile('org.springframework.boot:spring-boot-actuator-docs')
+  compile('org.springframework.boot:spring-boot-starter-data-jpa')
+  compile('org.springframework.boot:spring-boot-starter-mail')
+  compile('org.springframework.boot:spring-boot-starter-security')
+  compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+  compile('org.springframework.boot:spring-boot-starter-web')
+  // deploy on externe tomcat
+  providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+  compile("org.springframework.boot:spring-boot-starter-cache")
+  runtime('org.postgresql:postgresql')
+  compile("org.springframework.mobile:spring-mobile-device")
+  compile 'mysql:mysql-connector-java'
+  // https://mvnrepository.com/artifact/org.apache.poi/poi
+  compile group: 'org.apache.poi', name: 'poi', version: '3.9'
+
+  // https://mvnrepository.com/artifact/com.opencsv/opencsv
+  compile group: 'com.opencsv', name: 'opencsv', version: '4.1'
+  // https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
+  compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.9'
+  compile "com.infobip:infobip-api-java-client:2.1.0"
+  //tchat
+  compile("org.springframework.boot:spring-boot-starter-websocket")
+/*  compile("org.webjars:webjars-locator-core")
+  compile("org.webjars:sockjs-client:1.0.2")
+  compile("org.webjars:stomp-websocket:2.3.3")
+  */
+  // https://mvnrepository.com/artifact/com.opencsv/opencsv
+  compile group: 'com.opencsv', name: 'opencsv', version: '4.2'
+
+
+// https://mvnrepository.com/artifact/org.jsoup/jsoup
+  compile group: 'org.jsoup', name: 'jsoup', version: '1.11.2'
+  testCompile('org.springframework.boot:spring-boot-starter-test')
+}

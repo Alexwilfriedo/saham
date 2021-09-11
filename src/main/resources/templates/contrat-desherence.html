@@ -1,0 +1,197 @@
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESPACE CLIENT SAHAM Assurance Vie</title>
+<link rel="shortcut icon" href="img/favico.png">
+<link rel="stylesheet" href="scss/style.css">
+<link rel="stylesheet" href="scss/fontawesome/css/font-awesome.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.1.5/css/iziToast.min.css" rel="stylesheet">
+    // tel input plugin
+    <link rel="stylesheet" href="css/intlTelInput.css">
+</head>
+
+<body>
+<!--
+<div class="diverror"></div>
+-->
+<div class="se-pre-con"></div>
+<div class="content">
+<!-- menu Mobile -->
+    <div th:replace="fragments/fragment-menu-mobile :: menu-mobile"></div>
+<!-- fin menu mobile -->
+<!-- header -->
+    <div th:replace="fragments/fragment-header-2 :: header-2"></div>
+    <!-- fin header -->
+
+<!-- menu up -->
+    <div th:replace="fragments/fragment-menu-up :: menu-up"></div>
+    <div class="xMenuUp"></div>
+<!-- fin menu up -->
+
+<!--  body -->
+<div class="BodyTop">
+ 
+ <div class="w90">
+    <div class="Divpage">
+    <div class="divWeb">
+    	<div class="DivpageLeft" style="background:url(img/image_contrat_en_desherence.jpg) center no-repeat;  ">
+        <div class="DivBlack">
+        	<p class="BlackTitle">
+            	Retrouvez votre <br>Contrat
+            </p>
+            <p class="BlackDesc">
+            	Échus ou en déshérence
+            </p>
+        </div>
+        </div>
+        </div>
+        <div class="divMob">
+        <div class="DivpageLeft" style="margin-bottom:30px">
+        <div class="w85">
+        <div class="DivBlack">
+        	<p class="BlackTitle">
+                Retrouvez votre <br>Contrat
+            </p>
+            <p class="BlackDesc">
+                Échus ou en déshérence
+            </p>
+        </div>
+        </div>
+        </div> 
+        </div>
+        <div class="DivpageRight">
+        
+        	<div class="w85">
+            	<div class="DivpageRightblock" >
+                  <div class="Divcount" >                	 
+                    <form th:action="@{/search/desherence/contrat}" th:method="POST"  id="contactForm">
+                        <p>
+                            <input type="text"  name="lastname" id="lastname"  th:placeholder="#{form.name}" th:value="${lastname}" required/>
+                        </p>
+                        <br>
+                        <p>
+                            <input type="text" name="firstname" id="firstname"  th:placeholder="#{form.prenom}" th:value="${firstname}" required />
+                        </p>
+                        <br>
+                        <p>
+                            <input type="text" name=date_naissance" id="date_naissance" th:placeholder="#{form.date_naissance}" th:value="${date_naissance}" required pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4}"/>
+                        </p>
+                        <br>
+                        <p>
+                            <input type="text" name="police" id="police" th:placeholder="#{form.num.police}" th:value="${police}" required />
+                        </p>
+                        <br>
+                        <p>
+                            <input type="tel"  name="phone" id="phone" th:placeholder="#{form.phone}" th:value="${phone}" required />
+                        </p>
+                        <br>
+                        <input type="submit" value="Valider" th:value="#{form.submit.validate}" />
+                    </form>
+                  </div>
+                </div>
+            </div>
+    
+    	</div>
+    </div>
+    <!-- footer -->
+<div class="bottom2">
+SAHAM Assurance Vie 2017 - TOUS DROITS RESERVES
+</div>
+<div th:replace="fragments/fragment-footer:: footer-bottomMob"></div>
+<!--
+<div class="bottomMob">
+<div style="width:100%; display:block; float:left">
+<div class="bottomMobLeft">
+<a href="login.html">Se connecter</a>
+</div>
+<div class="bottomMobRight" >
+<a href="creer_compte.html">Créer un compte</a>
+</div>
+</div>
+</div>
+-->
+<!-- fin footer -->
+ </div>
+</div>
+<!-- fin body -->
+ 
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/precon.js"></script>
+ <script src="js/popup.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.1.5/js/iziToast.min.js"></script>
+<script src="js/main.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/intlTelInput.js"></script>
+<!--<script>
+    $("#phone").intlTelInput();
+</script>-->
+
+<script>
+    $(document).ready(function() {
+        $('#contactForm')
+            .find('[name="phone"]')
+            .intlTelInput({
+                utilsScript: '/js/utils.js',
+                autoPlaceholder: true,
+                preferredCountries: ['ci']
+            });
+
+        $('#contactForm')
+            .formValidation({
+                framework: 'bootstrap',
+                icon: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    phoneNumber: {
+                        validators: {
+                            callback: {
+                                message: 'Numero non valide',
+                                callback: function(value, validator, $field) {
+                                   /* var titre = $('.selected-flag').attr();
+                                    console.log("tritre :"+titre);*/
+                                    return value === '' || $field.intlTelInput('isValidNumber');
+                                }
+                            }
+                        }
+                    }
+                }
+            })
+            // Revalidate the number when changing the country
+            .on('click', '.country-list', function() {
+                $('#contactForm').formValidation('revalidateField', 'phone');
+            });
+    });
+</script>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+
+    var message = [[${message}]];
+    //alert(message);
+    var title = [[${title}]];
+    var info = [[${info}]];
+
+    var success = [[${success}]];
+
+    if (message && title) {
+        if (success === true) {
+            if(info ===true){
+                showInfo(title,message);
+            }else {
+                showSuccess(title,message);
+            }
+        } else if (success === false) {
+            showError(title,message);
+        }
+    }
+
+    /*]]>*/
+</script>
+</body>
+</html>
+<!--Designed by DIGIT-A.L. -->

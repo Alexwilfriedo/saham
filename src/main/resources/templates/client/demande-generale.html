@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+<div class="element-wrapper">
+    <h4 class="element-header">
+        <b>Information générale</b>
+    </h4>
+    <div style="margin-top:17px;display:block; float:left; width:100%" class="element-box">
+        <div style="width:90%; display:block; margin:0 auto">
+            <form class="FormSit3" th:action="@{/demande/generale}" id="formDemandeInfoGle" th:method="POST">
+                <!--<input th:value="${personne?.id}" name="id" type="hidden"  id="id_personne_infoGle" />-->
+                <input th:value="${ctrat?.police}" name="ctrat" type="hidden" id="id_contrat_infoGle" />
+                <input type="hidden" name="bool_entreprise" th:value="${isEnterprise}" id="bool_entreprise"/>
+                <div class="infoline">
+                    <div th:if="${isEnterprise == false}" style="width:35%; display:block; padding-top:15px; float:left; margin-right:20px" >
+                        <input value="false" name="isEntreprise" type="hidden"  id="isEntreprise_infoGle"/>
+                        <select name="police" onchange="myFunction(this.getAttribute('id'));" id="ctrt_infoGle">
+                            <option disabled selected>Contrat</option>
+                            <!--<option th:each="contrat : ${contrats}" th:value="${contrat?.id}" th:text="${contrat?.police}">Contrat</option>-->
+                        </select>
+                    </div>
+                    <div th:if="${isEnterprise}" style="width:35%; display:block; padding-top:15px; float:left; margin-right:20px" >
+                        <input value="true" name="isEntreprise" type="hidden"  id="isEntreprise_infoGle_entreprise"/>
+                        <select name="police" onchange="myFunction(this.getAttribute('id'));" id="ctrt_infoGle_entreprise">
+                            <option disabled selected>Contrat</option>
+                            <!--<option th:each="contrat : ${contrats}" th:value="${contrat?.id}" th:text="${contrat?.police}">Contrat</option>-->
+                        </select>
+                    </div>
+
+                </div>
+                <div class="infoline2">
+                    <div class="infolineLeft">
+                        Nom<br><input th:value="${personne?.firstname}" disabled  id="firstname"/>
+                    </div>
+                    <div class="infolineRight">
+                        Nouveau nom<br><input name="nom" />
+                    </div>
+                </div>
+                <div class="infoline2">
+                    <div class="infolineLeft">
+                        Prénom(s)<br><input th:value="${personne?.lastname}" disabled id="lastname"/>
+                    </div>
+                    <div class="infolineRight">
+                        Nouveau(x) prénom(s)<br><input name="prenom" />
+                    </div>
+                </div>
+                <div class="infoline2">
+                    <div class="infolineLeft">
+                        Profession<br><input th:value="${personne?.fonction}" disabled id="fonction"/>
+                    </div>
+                    <div class="infolineRight">
+                        Nouvelle profession<br><input  name="profesion"/>
+                    </div>
+                </div>
+                <div class="infoline2">
+                    <div class="infolineLeft">
+                        Adresse postale<br><input th:value="${personne?.address}" disabled id="adress"/>
+                    </div>
+                    <div class="infolineRight">
+                        Nouvelle adresse postale<br><input name="adress" />
+                    </div>
+                </div>
+                <div class="infoline2">
+                    <div class="infolineLeft">
+                        Téléphone<br><input th:value="${personne?.phone}" disabled  id="phone"/>
+                    </div>
+                    <div class="infolineRight">
+                        Nouveau téléphone<br><input  name="phone"/>
+                    </div>
+                </div>
+                <div class="infoline2">
+                    <div class="infolineRight">
+                        <input type="submit" value="Soumettre" />
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function myFunction(id) {
+        var x = $('#'+id).val();
+        var yes_no = $('#bool_entreprise').val();
+
+        $.ajax({
+            type: "GET",
+            url: "/api/v1/sahamvie/getDetail/askeur",
+            data: 'isEntreprise=' + yes_no +'&'+'id='+ x ,
+            success : function(response) {
+                console.log(response);
+                $("#id_personne").val(response.data.contrat.assure.id)
+                $("#firstname").val(response.data.contrat.assure.firstname)
+                $("#lastname").val(response.data.contrat.assure.lastname)
+                $("#fonction").val(response.data.contrat.assure.fonction)
+                $("#adress").val(response.data.contrat.assure.address)
+                $("#phone").val(response.data.contrat.assure.phone)
+                $("#id_contrat_infoGle").val(x)
+            }
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+<div class="element-wrapper">
+    <h4 class="element-header">
+        <b>Information contrat</b>
+    </h4>
+    <div style="margin-top:17px;display:block; float:left; width:100%" class="element-box">
+        <div style="width:90%; display:block; margin:0 auto">
+            <form class="FormSit3" th:action="@{/demande/info}" th:method="POST" enctype="multipart/form-data" >
+                <input th:value="${ctrat?.police}" name="ctrat" type="hidden" id="id_contrat_dmdCtrat" />
+                <input type="hidden" name="bool_entreprise_dmdCtrat" th:value="${isEnterprise}" id="bool_entreprise_dmdCtrat"/>
+                <div class="infoline">
+                    <div style="width:35%; display:block; padding-top:15px; float:left; margin-right:20px" th:if="${isEnterprise == false}">
+                        <select name="police" onchange="myFunction(this.getAttribute('id'));" id="ctrt_dmdCtrat">
+                            <option disabled selected>Contrat</option>
+                            <!--<option th:each="contrat : ${contrats}" th:value="${contrat?.id}" th:text="${contrat?.police}">Contrat</option>-->
+                        </select>
+                    </div>
+                    <div style="width:35%; display:block; padding-top:15px; float:left; margin-right:20px" th:if="${isEnterprise}">
+                        <input value="true" name="isEntreprise" type="hidden"  id="isEntreprise"/>
+
+                        <select name="police" onchange="myFunction(this.getAttribute('id'));" id="ctrt_dmdCtrat_entreprise">
+                            <option disabled selected>Contrat</option>
+                            <!--<option th:each="contrat : ${contrats}" th:value="${contrat?.id}" th:text="${contrat?.assure}">Contrat</option>-->
+                        </select>
+                    </div>
+
+                </div>
+                <div class="infoline" style="margin-top:40px">
+                    <div style="width:32%; display:block;  float:left; margin-right:10px">
+                        Cotisation actuelle<br><input id="prime" th:value="${ctrat?.prime} ? ${#numbers.formatInteger(ctrat?.prime,3,'WHITESPACE')}+' FCFA':'0 FCFA'"disabled />
+                    </div>
+                    <div style="width:32%; display:block; float:left; margin-right:10px">
+                        Nouvelle cotisation<br><input  name="newPrime"/>
+                    </div>
+                    <div style="width:32%; display:block; float:left; ">
+                        Date d’effet<br><input name="newDateEffet" th:placeholder="#{form.date}"  pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4}"/>
+                    </div>
+                </div>
+                <div class="infoline2">
+                    <div class="infolineLeft">
+                        Périodicité actuelle  <br><input th:value="${ctrat?.periodicite?.periodicite}" disabled  id="periodicite"/>
+                    </div>
+                    <div class="infolineRight">
+                        Nouvelle Périodicité <br>
+                        <select name="newPeriodicite">
+                            <option disabled selected>Choisissez...</option>
+                            <option value="Mensuelle">Mensuelle</option>
+                            <option value="Trimestrielle">Trimestrielle</option>
+                            <option value="Semestrielle">Semestrielle</option>
+                            <option value="Annuelle">Annuelle</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="infoline2">
+                    <div class="infolineLeft">
+                        RIB<br><input  name="newRib"/>
+                    </div>
+                    <div class="infolineRight">
+                        Nouvelle banque <br>
+                        <input type="file" style="font-size:14px" name="newFileRib"/>
+                    </div>
+                </div>
+                <div class="infoline2">
+                    <div class="infolineLeft">
+                        Suspension provisoire <br><input value="Mois 6"  name="newSusProv"/>
+                    </div>
+                    <div class="infolineRight">
+                        Date d’effet <br><input  name="newDateSusProv" th:placeholder="#{form.date}" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4}"/>
+                    </div>
+                </div>
+                <div class="infoline2">
+                    <div class="infolineLeft" style="width:18%; padding-top:15px">
+                        Changement de bénéficiaire
+                    </div>
+                    <div class="infolineRight"  style="width:80%">
+                        <input name="newBenef" />
+                    </div>
+                </div>
+                <div class="infoline2">
+                    <div class="infolineRight">
+                        <input type="submit" value="Soumettre" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    function myFunction(id) {
+        var x = $('#'+id).val();
+        var yes_no = $('#bool_entreprise_dmdCtrat').val();
+        $.ajax({
+            type: "GET",
+            url: "/api/v1/sahamvie/getDetail/askeur",
+            data: 'isEntreprise=' + yes_no +'&'+'id='+ x ,
+            success : function(response) {
+                console.log(response);
+                //$("#id_personne").val(response.data.personne.id)
+                $("#id_contrat_dmdCtrat").val(x)
+                $("#prime").val(response.data.contrat.prime)
+                $("#periodicite").val(response.data.contrat.periodicite.periodicite)
+            }
+        });
+    }
+</script>
+</body>
+</html>

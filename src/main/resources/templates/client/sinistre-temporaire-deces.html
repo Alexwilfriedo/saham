@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+<div class="element-wrapper">
+    <h4 class="element-header">
+        <b>Déclaration de sinistre : TEMPORAIRE DECES</b>
+    </h4>
+
+    <div style="margin-top:17px;display:block; float:left; width:100%" class="element-box">
+        <div class="w90">
+            <div class="titreSimuLeft">
+                Année 2014
+            </div>
+            <div class="titreSimuRight">
+                <!--<a href="" title="Exporter en PDF"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>-->
+            </div>
+        </div>
+        <div style="width:100%; display:block; float:left; margin-top:50px;">
+            <div style="width:90%; display:block; margin:0 auto">
+                <form class="FormSit3" th:action="@{/demande/sinistreTempDeces}" th:method="POST" th:object="${sintreTempDeces}">
+                    <div class="titreSimu4">
+                        <table border="0"  cellspacing="0" cellpadding="0" width="100%">
+                            <tr>
+                                <td valign="top">
+                                    <p>
+                                        <select name="police">
+                                            <option disabled selected>N° Police&nbsp;: </option>
+                                            <option th:each="contrat : ${contrats}" th:value="${contrat?.police}" th:text="${contrat?.assure?.lastname}">Contrat</option>
+                                        </select>
+                                    </p>
+                                </td>
+                                <td align="right"><p align="right"><strong>N°SIN </strong>:</p></td>
+                            </tr>
+                        </table>
+                        <br>
+                    </div>
+                    <p>&nbsp;</p>
+                    <div class="steps-w">
+                        <div class="step-triggers">
+                            <a class="step-trigger active" href="#stepContent1">Déclarant</a><a class="step-trigger" href="#stepContent2">Identification de l'assuré</a><a class="step-trigger" href="#stepContent3">Description du sinistre</a><a class="step-trigger" href="#stepContent4">Pièces exigibles</a>
+                        </div>
+                        <div class="step-contents">
+                            <div class="step-content active" id="stepContent1">
+                                <table class="Tablecenter2" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td class="center2titre" colspan="2" valign="top"><p><strong>Déclarant</strong></p></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td width="131" valign="top"><p>Nom et Prénoms</p></td>
+                                        <td  valign="top"><input type="text" th:field="*{fullNameDecl}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="131" valign="top"><p>Téléphone</p></td>
+                                        <td valign="top"><input type="text" th:field="*{phone}" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="131" valign="top"><p>Adresse postale</p></td>
+                                        <td valign="top"><input type="text" th:field="*{adresse}" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="71" valign="top"><p>Email</p></td>
+                                        <td valign="top"><input type="email"  th:field="*{mail}"/></td>
+                                    </tr>
+                                </table>
+                                <div class="form-buttons-w text-right">
+                                    <a class="btn btn-primary step-trigger-btn" href="#stepContent2"> Suivant</a>
+                                </div>
+                            </div>
+                            <div class="step-content" id="stepContent2">
+                                <table  class="Tablecenter2" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td class="center2titre" width="604" colspan="4" valign="top"><p><b>Identification de l'Assuré</b></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="85" valign="top"><p>Nom et Prénoms</p></td>
+                                        <td  colspan="3" valign="top"><input type="text" th:field="*{fullNameAss}"/></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td width="85" valign="top"><p>Né le</p></td>
+                                        <td width="81" valign="top"><input type="date"  th:field="*{dateNaissance}"/></td>
+                                        <td width="79" valign="top"><p align="right">à</p></td>
+                                        <td width="199" valign="top"><input type="text" th:field="*{lieuNaissance}" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="85" valign="top"><p>Profession</p></td>
+                                        <td width="81" valign="top"><input type="text" th:field="*{profession}"/></td>
+                                        <td width="79" valign="top"><p align="right">Employeur</p></td>
+                                        <td width="199" valign="top"><input type="text" th:field="*{employeur}" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="85" valign="top"><p>Lieu de résidence habituelle</p></td>
+                                        <td width="359" colspan="3" valign="top"><input type="text" th:field="*{lieuResid}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="85" colspan="2"  valign="top"><p>L&rsquo;assuré avait-il un médecin traitant ?</p></td>
+                                        <td  colspan="2" valign="top">
+                                            <table width="200" border="0">
+                                                <tbody>
+                                                <tr>
+                                                    <td><input type="checkbox" th:field="*{yesAssure}"/></td>
+                                                    <td>Oui</td>
+                                                    <td><input type="checkbox" th:field="*{noAssure}"/></td>
+                                                    <td>Non</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="604" colspan="4" valign="top"><p style="font-size:14px"><b>Indiquer Nom, tel, email, centre sanitaire du Médecin :</b></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="85" align="right"><p>Dr/Pr</p></td>
+                                        <td width="359" colspan="3" valign="top"><input type="text"  th:field="*{de_pr}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top"><p>Tél:</p> <input type="text" th:field="*{phoneMedecin}"/></td>
+
+                                        <td  valign="top"><p>Email:</p><input type="text" th:field="*{mailMedecin}"/></td>
+
+                                        <td colspan="2"  valign="top"><p>Centre:</p><input type="text" th:field="*{centre}"/></td>
+
+
+                                    </tr>
+                                </table>
+                                <div class="form-buttons-w text-right">
+                                    <a class="btn btn-primary step-trigger-btn" href="#stepContent3"> Suivant</a>
+                                </div>
+                            </div>
+                            <div class="step-content" id="stepContent3">
+
+                                <table  class="Tablecenter2"  border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td colspan="4" class="center2titre"    valign="top"><p><b>Description du sinistre</b></p></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td colspan="4">
+                                            <table width="100%" border="0">
+                                                <tbody>
+                                                <tr>
+                                                    <td><input type="checkbox" th:field="*{ifDeces}"/></td>
+                                                    <td>DECES</td>
+                                                    <td><input type="checkbox" th:field="*{invalide}"/></td>
+                                                    <td>INVALIDITE TOTALE ET PERMANANENTE (ITP)</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td width="71" valign="top"><p>Date du décès</p></td>
+                                        <td colspan="2" valign="top"><input type="date" th:field="*{dateDeces}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="71" valign="top"><p>Lieu du décès</p></td>
+                                        <td  colspan="2" valign="top"><input type="text" th:field="*{lieuDeces}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="71" valign="top"><p>Cause du décès</p></td>
+                                        <td  colspan="2" valign="top"><input type="text" th:field="*{causeDeces}"/></td>
+                                    </tr>
+                                </table>
+                                <div class="form-buttons-w text-right">
+                                    <a class="btn btn-primary step-trigger-btn" href="#stepContent4"> Suivant</a>
+                                </div>
+                            </div>
+                            <div class="step-content" id="stepContent4">
+
+                                <table class="Tablecenter2" border="1" cellspacing="0" cellpadding="0">
+                                    <tr >
+                                        <td class="center2titre"  width="311" valign="top"><p align="center"><strong>Pièces exigibles</strong></p></td>
+                                        <td width="95" valign="top"><p align="center">Pièces transmises<br>(Date de transmission)</p></td>
+                                        <td width="104" valign="top"><p align="center">Visa <br>Déclarant</p></td>
+                                        <td width="94" valign="top"><p align="center">Visa gestionnaire Sinistre</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="311" valign="top"><p>l' origial de la police à defaut une déclaration de perte</p></td>
+                                        <td width="95" valign="top"><p><input type="checkbox" th:field="*{original}"/></p></td>
+                                        <td width="104" valign="top"><p>&nbsp;</p></td>
+                                        <td width="94" valign="top"><p>&nbsp;</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="311" valign="top"><p>L'extrait d' acte de naissance de l' assuré ou une fiche d'état civil</p></td>
+
+                                        <td width="95" valign="top"><p><input type="checkbox" th:field="*{extraitNaissance}"/></p></td>
+                                        <td width="104" valign="top"><p>&nbsp;</p></td>
+                                        <td width="94" valign="top"><p>&nbsp;</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="311" valign="top"><p>La copie d' une pièce officielle d'identité de l' assuré</p></td>
+                                        <td width="95" valign="top"><p><input type="checkbox" th:field="*{identite}"/></p></td>
+                                        <td width="104" valign="top"><p>&nbsp;</p></td>
+                                        <td width="94" valign="top"><p>&nbsp;</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="311" valign="top"><p>L'extrait d' acte de décès assuré</p></td>
+                                        <td width="95" valign="top"><p><input type="checkbox" th:field="*{acteDeces}"/></p></td>
+                                        <td width="104" valign="top"><p>&nbsp;</p></td>
+                                        <td width="94" valign="top"><p>&nbsp;</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="311" valign="top"><p>Le certificat médical de genre de mort précisant la cause du décès</p></td>
+                                        <td width="95" valign="top"><p><input type="checkbox" th:field="*{certificat}"/></p></td>
+                                        <td width="104" valign="top"><p>&nbsp;</p></td>
+                                        <td width="94" valign="top"><p>&nbsp;</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="311" valign="top"><p>Les actes de naissance des bénéficaires</p></td>
+                                        <td width="95" valign="top"><p><input type="checkbox" th:field="*{acteNaisBenef}"/></p></td>
+                                        <td width="104" valign="top"><p>&nbsp;</p></td>
+                                        <td width="94" valign="top"><p>&nbsp;</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="311" valign="top"><p>L'original de l'acte de notoriété <br>
+                                            (Uniquement si bénéficiaires ne sont pas nommément désignés dans le    bulletin d&rsquo;adhésion)</p></td>
+                                        <td width="95" valign="top"><p><input type="checkbox" th:field="*{acteNotoriete}"/></p></td>
+                                        <td width="104" valign="top"><p>&nbsp;</p></td>
+                                        <td width="94" valign="top"><p>&nbsp;</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="311" valign="top"><p>Certificat de non appel (Acte de notoriété)</p></td>
+                                        <td width="95" valign="top"><p><input type="checkbox" th:field="*{certifApel}"/></p></td>
+                                        <td width="104" valign="top"><p>&nbsp;</p></td>
+                                        <td width="94" valign="top"><p>&nbsp;</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="311" valign="top"><p>L'original de l&rsquo;acte d&rsquo;administration légale<br>
+                                            (Uniquement pour bénéficiaires mineurs)</p></td>
+                                        <td width="95" valign="top"><p><input type="checkbox" th:field="*{acteAdmin}"/></p></td>
+                                        <td width="104" valign="top"><p>&nbsp;</p></td>
+                                        <td width="94" valign="top"><p>&nbsp;</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="311" valign="top"><p>La copie de l'acte de mariage <br>
+                                            (si conjoint désigné comme bénéficiaire pas nommément cité)</p></td>
+                                        <td width="95" valign="top"><p><input type="checkbox" th:field="*{acteMariage}"/></p></td>
+                                        <td width="104" valign="top"><p>&nbsp;</p></td>
+                                        <td width="94" valign="top"><p>&nbsp;</p></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td width="311" valign="top"><p>Toute pièce justificative de l' état d' invalidité de l' assuré (en cas d' ITP)</p></td>
+                                        <td width="95" valign="top"><p><input type="checkbox" th:field="*{pieceJusti}"/></p></td>
+                                        <td width="104" valign="top"><p>&nbsp;</p></td>
+                                        <td width="94" valign="top"><p>&nbsp;</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center2titre" colspan="4" width="311" valign="top"><p><b>Autres pièces/Documents</b></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="311" valign="top"><p>&nbsp;</p></td>
+                                        <td width="95" valign="top"><p><input type="checkbox" th:field="*{autrePiece}"/></p></td>
+                                        <td width="104" valign="top"><p>&nbsp;</p></td>
+                                        <td width="94" valign="top"><p>&nbsp;</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="311" valign="top"><p>&nbsp;</p></td>
+                                        <td width="95" valign="top"><p><input type="checkbox" th:field="*{autre}"/></p></td>
+                                        <td width="104" valign="top"><p>&nbsp;</p></td>
+                                        <td width="94" valign="top"><p>&nbsp;</p></td>
+                                    </tr>
+
+                                </table>
+                                <div class="form-buttons-w text-right">
+                                    <button class="btn btn-primary" type="submit">Valider</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../bower_components/moment/moment.js"></script>
+<script src="../bower_components/chart.js/dist/Chart.min.js"></script>
+<script src="../bower_components/select2/dist/js/select2.full.min.js"></script>
+<script src="../bower_components/ckeditor/ckeditor.js"></script>
+<script src="../bower_components/bootstrap-validator/dist/validator.min.js"></script>
+<script src="../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="../bower_components/dropzone/dist/dropzone.js"></script>
+<script src="../bower_components/editable-table/mindmup-editabletable.js"></script>
+<script src="../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+<script src="../bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+<script src="../bower_components/tether/dist/js/tether.min.js"></script>
+<script src="../bower_components/bootstrap/js/dist/util.js"></script>
+<script src="../bower_components/bootstrap/js/dist/alert.js"></script>
+<script src="../bower_components/bootstrap/js/dist/button.js"></script>
+<script src="../bower_components/bootstrap/js/dist/carousel.js"></script>
+<script src="../bower_components/bootstrap/js/dist/collapse.js"></script>
+<script src="../bower_components/bootstrap/js/dist/dropdown.js"></script>
+<script src="../bower_components/bootstrap/js/dist/modal.js"></script>
+<script src="../bower_components/bootstrap/js/dist/tab.js"></script>
+<script src="../bower_components/bootstrap/js/dist/tooltip.js"></script>
+<script src="../bower_components/bootstrap/js/dist/popover.js"></script>
+<!--
+    <script src="../js/dataTables.bootstrap4.min.js"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.1.5/js/iziToast.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/popup.js"></script>
+</body>
+</html>

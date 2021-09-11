@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+  <div class="element-wrapper">
+    <h4 class="element-header">
+       <b th:text="'Prestations ['+${contrat?.police} +'-'+ ${contrat?.produit?.nomProduit}+']'">Prestations [75364892]</b>
+    </h4>
+    <div style="margin-top:17px;" class="element-box">
+
+      <div class="table-responsive">
+        <table id="dataTable1" width="100%" class="table table-striped table-lightfont">
+          <thead>
+          <tr>
+            <th>Mouvement </th>
+            <th>Echéance</th>
+            <th>Montant      </th>
+            <th class="text-center">Affecté </th>
+            <th class="text-center">STATUT</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <tr th:each="qtce: ${quitancePresta}">
+            <td class="nowrap" th:text="${qtce?.objet?.nomObjet}">Prime</td>
+            <td class="nowrap" th:text="${qtce.echeance} ? ${#dates.format(qtce.echeance, 'dd/MM/yyyy')}">01/01/2017</td>
+            <td class="nowrap" th:text="${qtce.montantEmis} ? ${#numbers.formatInteger(qtce.montantEmis,3,'WHITESPACE')}:'0'+' FCFA'">15.000 FCFA</td>
+            <td class="nowrap" th:text="${qtce.montantPaye} ? ${#numbers.formatInteger(qtce.montantPaye,3,'WHITESPACE')}:'0'+' FCFA'">15.000 FCFA</td>
+            <td class="text-center">
+              <div th:if="${qtce?.statutQuitance?.statutQuit=='payé'}" class="status-pill green" data-title="payé" data-toggle="tooltip" data-original-title="" title=""></div>
+              <div th:if="${qtce?.statutQuitance?.statutQuit=='impayé'}" class="status-pill red" data-title="impayé" data-toggle="tooltip" data-original-title="" title=""></div>
+            </td>
+          </tr>
+
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+<script>
+    if ($('#dataTable1').length) {
+        $('#dataTable1').DataTable({
+            buttons: ['copy', 'excel', 'pdf'] ,
+            "pagingType": "numbers",
+            "language": {
+                "lengthMenu": "Afficher _MENU_ enregistrements par page",
+                "zeroRecords": "Aucun résultat",
+                "info": "Affichage de _PAGE_ sur _PAGES_",
+                "infoEmpty": "Aucune donnée disponible",
+                "emptyTable":     "Aucune données dans la table",
+                "infoFiltered": "(filtrer dans _MAX_ enregistrements)",
+                "search":         "recherche",
+                "paginate": {
+                    "first":      "Premier",
+                    "last":       "Dernier",
+                    "next":       "Suivant",
+                    "previous":   "précédent"
+                }
+            }
+        });
+
+    }
+</script>
+</body>
+</html>

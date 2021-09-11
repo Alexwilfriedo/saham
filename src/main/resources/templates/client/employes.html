@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SAHAM Assurance Vie | Contrat</title>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="template language" name="keywords">
+    <meta content="Tamerlan Soziev" name="author">
+    <meta content="Admin dashboard html template" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="../s/favicon.png" rel="shortcut icon">
+    <link href="../apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
+    <link href="../bower_components/select2/dist/css/select2.min.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="../bower_components/dropzone/dist/dropzone.css" rel="stylesheet">
+    <link href="../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="../bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+    <link href="../bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/awesome/css/font-awesome.min.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.1.5/css/iziToast.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="menudrop">
+    <div class="menudropdiv">
+        <p><a href="">Profil</a></p>
+        <!--<p><a href="">Paramètres</a></p>    -->
+        <p><a th:href="@{/disconnect}">Deconnexion</a></p>
+    </div>
+</div>
+<div class="all-wrapper menu-top">
+    <div class="layout-w">
+        <!--------------------
+        START - Mobile Menu
+        -------------------->
+        <div class="menu-mobile menu-activated-on-click color-scheme-dark">
+            <div class="mm-logo-buttons-w">
+
+            </div>
+            <div class="menu-and-user">
+
+                <!--------------------
+                START - Mobile Menu List
+                -------------------->
+                <!--------------------
+                END - Mobile Menu List
+                -------------------->
+
+            </div>
+        </div>
+        <!--------------------
+        END - Mobile Menu
+        --------------------><!--------------------
+        START - Menu top image
+        -------------------->
+        <div th:replace="fragments/fragment-menu-top-image-w :: menu-top-image-w"></div>
+        <div class="content-w">
+            <!--
+
+                    <div class="content-w">
+                      <!--------------------
+                      START - Breadcrumbs
+                      -------------------->
+
+            <!--------------------
+            END - Breadcrumbs
+            -------------------->
+            <div class="content-i">
+                <div class="content-box">
+                    <p align="right"><a href=""><button onClick="" class="mr-2 mb-2 btn btn-primary" type="button"> Ajouter un nouvel adhérent</button></a></p>
+
+                    <div class="row">
+                        <div class="col-sm-4 col-xl-4">
+                            <div class="element-wrapper">
+                                <h6 class="element-header liste-adherant">
+                                    Liste des adhérents
+                                </h6>
+                                <div class="element-wrapper">
+                                    <div class="element-box" style="margin-top:17px;">
+                                        <!--
+                                                                <div class="table-responsive">
+                                                                  <table id="dataTablec" width="100%" class="table table-striped table-lightfont">
+                                                                    <thead>
+                                                                    <tr>
+                                                                      <th>NOMS</th>
+                                                                      <th>MATRICULE</th>
+                                                                      <th>Actions</th>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <tr th:each="perso: ${pagePersonnes.content}">
+                                                                      <td class="nowrap" th:text="${perso?.lastname}">Coulibaly Bassiata</td>
+
+                                                                      <td class="nowrap" th:text="${perso?.matricule}">14051976M</td>
+                                                                      <td class="row-actions">
+                                                                        <a th:href="'javascript:getCotisation('+${perso?.id}+')'" data-title="Relevé de cotisations" data-toggle="tooltip"
+                                                                           data-original-title="Relevé de cotisations" title="Relevé de cotisations"><i class="os-icon os-icon-pencil-2"></i></a>
+                                                                        <a th:href="'javascript:getEtat('+${perso?.id}+')'" data-title="Situation de compte" data-toggle="tooltip"
+                                                                           data-original-title="Situation de compte" title="Situation de compte"><i class="os-icon os-icon-link-3"></i></a>
+                                                                      </td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                  </table>
+                                                                </div>
+                                        -->
+                                        <div class="controls-above-table">
+                                            <div class="row">
+                                                <div class="col-sm-4"></div>
+                                                <div class="col-sm-8">
+                                                    <form class="form-inline justify-content-sm-end" th:action="@{employes}" th:method="get">
+                                                        <input class="form-control form-control-sm rounded bright" name="motCle" th:value="${motCle}" placeholder="Search" type="text">
+                                                        <button class="mr-2 mb-2 btn btn-primary btn-rounded" type="submit"> Chercher</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table width="100%" class="table table-striped table-lightfont">
+                                                <thead>
+                                                <tr>
+                                                    <th>NOMS</th>
+                                                    <th>MATRICULE</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr th:each="perso: ${pagePersonnes.content}">
+                                                    <td class="nowrap" th:text="${perso?.lastname}">Coulibaly Bassiata</td>
+
+                                                    <td class="nowrap" th:text="${perso?.matricule}">14051976M</td>
+                                                    <td class="row-actions">
+                                                        <input type="hidden" th:id="${perso?.id}" th:value="${perso?.lastname}"/>
+                                                        <a th:href="'javascript:getCotisation('+${perso?.id}+')'" data-title="Relevé de cotisations" data-toggle="tooltip"
+                                                           data-original-title="Relevé de cotisations" title="Relevé de cotisations"><i class="os-icon os-icon-pencil-2"></i></a>
+                                                        <a th:href="'javascript:getEtat('+${perso?.id}+')'" data-title="Situation de compte" data-toggle="tooltip"
+                                                           data-original-title="Situation de compte" title="Situation de compte"><i class="os-icon os-icon-link-3"></i></a>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="controls-below-table">
+                                            <div class="table-records-info">
+                                            </div>
+                                            <div class="table-records-pages" >
+                                                <ul>
+                                                    <!-- <li>
+                                                       <a href="#">Previous</a>
+                                                     </li>-->
+                                                    <li th:each="p:${pages}" th:class="${p==pageCourante} ? active:''"> <a th:text="${p}" th:href="@{employes(page=${p},motCle=${motCle})}"> </a></li>
+                                                    <!--<li>
+                                                      <a href="#">Next</a>
+                                                    </li>-->
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-8 col-xl-8" id="contenu">
+                            <div class="element-wrapper" th:if="${isEnterprise}">
+
+                                <div style="margin-top:57px; padding-bottom:120px; padding-top:120px; text-align:center; color:#ccc" class="element-box">
+                                    <p><img src="../img/idea.svg" width="90" /></p>
+                                    <p>Veuillez selectionner un employé  dans la colonnes de gauche, pour plus de details</p>
+                                </div>
+                            </div>
+
+                            <div class="element-wrapper" th:if="${isEnterprise == false}">
+                                <p> <h4 class="element-header">
+                                <b th:text="'Relevé de cotisations ['+${contrat?.police} +'-'+ ${contrat?.produit?.nomProduit}+']'">Relevé de cotisations [75364892]</b>
+
+                            </h4></p><br>
+                                <table width="100%" border="0" style="font-size:16px">
+                                    <tbody>
+                                    <tr>
+                                        <td><i class="fa fa-line-chart" aria-hidden="true"></i> Cumul des primes payées : <b th:text="${cumul_paye} ? ${#numbers.formatInteger(cumul_paye,3,'WHITESPACE')}+' FCFA':'0 FCFA'">500.000 FCFA</b></td>
+                                        <td><i class="fa fa-pie-chart" aria-hidden="true"></i> Cumul des primes impayées : <b th:text="${cumul_impaye} ? ${#numbers.formatInteger(cumul_impaye,3,'WHITESPACE')}+' FCFA': '0 FCFA'">300.000 FCFA</b></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div style="margin-top:17px;" class="element-box">
+                                    <div class="table-responsive">
+                                        <table id="dataTable1" width="100%" class="table table-striped table-lightfont">
+                                            <thead>
+                                            <tr>
+                                                <th class="text-center">Mouvement </th>
+                                                <th class="text-center">Produit</th>
+                                                <th class="text-center">Echéance </th>
+                                                <th class="text-center">Montant </th>
+                                                <th class="text-center">Payé </th>
+                                                <th class="text-center">STATUT</th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+                                            <tr th:each="qtce: ${quitanceReleve}">
+                                                <td class="text-center" th:text="${qtce?.objet?.nomObjet}">Prime</td>
+                                                <td class="text-center" th:text="${qtce?.contrat?.produit?.nomProduit}">Produit</td>
+                                                <td class="text-center" th:text="${qtce.echeance} ? ${#dates.format(qtce.echeance, 'dd/MM/yyyy')}">01/01/2017</td>
+                                                <td class="text-center" th:text="${qtce.montantEmis} ? ${#numbers.formatInteger(qtce.montantEmis,3,'WHITESPACE')}+' FCFA':'0 FCFA'">50.000 FCFA</td>
+                                                <td class="text-center" th:text="${qtce.montantPaye} ? ${#numbers.formatInteger(qtce.montantPaye,3,'WHITESPACE')}+' FCFA':'0 FCFA'">50.000 FCFA</td>
+                                                <td class="text-center">
+                                                    <div th:if="${qtce?.statutQuitance?.statutQuit=='payé'}" class="status-pill green" data-title="payé" data-toggle="tooltip" data-original-title="" title=""></div>
+                                                    <div th:if="${qtce?.statutQuitance?.statutQuit=='impayé'}" class="status-pill red" data-title="impayé" data-toggle="tooltip" data-original-title="" title=""></div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------------------
+                   START - Chat Popup Box
+                   -------------------->
+
+                    <!--------------------
+                    END - Chat Popup Box
+                    -------------------->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="display-type"></div>
+</div>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../bower_components/moment/moment.js"></script>
+<script src="../bower_components/chart.js/dist/Chart.min.js"></script>
+<script src="../bower_components/bootstrap-validator/dist/validator.min.js"></script>
+<script src="../bower_components/editable-table/mindmup-editabletable.js"></script>
+<script src="../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+<script src="../bower_components/bootstrap/js/dist/util.js"></script>
+<script src="../bower_components/bootstrap/js/dist/button.js"></script>
+<script src="../bower_components/bootstrap/js/dist/dropdown.js"></script>
+<script src="../bower_components/bootstrap/js/dist/modal.js"></script>
+<script src="../bower_components/bootstrap/js/dist/tooltip.js"></script>
+<script src="../bower_components/bootstrap/js/dist/popover.js"></script>
+<script src="../js/dataTables.bootstrap4.min.js"></script>
+<script src="../js/popup.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.1.5/js/iziToast.min.js"></script>
+
+<script src="../js/main.js"></script>
+<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+
+
+<script>
+    var doc;
+
+    function getEtat(id) {
+        $.ajax({
+            url : '/etat-employe',
+            type : 'POST',
+            data : 'id=' + id+ '&' + 'lastname='+$('#'+id).val(),
+            dataType : 'html',
+            beforeSend : function() {
+                content.html("<div class=\"element-wrapper\">\n" +
+                    "    <h4 class=\"element-header\">\n" +
+                    "        <b>Chargement des données</b>\n" +
+                    "    </h4>\n" +
+                    "    <div style=\"margin-top:17px;\" class=\"element-box\">\n" +
+                    "        <div class=\"FormSit2\">\n" +
+                    "            <div class=\"w95\">\n" +
+                    "                <div id=\"preloader\">\n" +
+                    "                    <div id=\"loader\"></div>\n" +
+                    "                </div>\n" +
+                    "            </div>\n" +
+                    "        </div>\n" +
+                    "    </div>\n" +
+                    "</div>")
+
+            },
+            success : function(data) { content.html(data)
+            },
+            complete : function() { },
+            error : function(jqXHR) {
+                content.html(jqXHR.responseText); }
+        }) }
+
+    function getCotisation(id) {
+        console.log($('#'+id).val())
+        $.ajax({
+            url : '/cotisation-employe',
+            type : 'POST',
+            data : 'id=' + id+ '&' + 'lastname='+$('#'+id).val(),
+            dataType : 'html',
+            beforeSend : function() {
+                content.html("<div class=\"element-wrapper\">\n" +
+                    "    <h4 class=\"element-header\">\n" +
+                    "        <b>Chargement des données</b>\n" +
+                    "    </h4>\n" +
+                    "    <div style=\"margin-top:17px;\" class=\"element-box\">\n" +
+                    "        <div class=\"FormSit2\">\n" +
+                    "            <div class=\"w95\">\n" +
+                    "                <div id=\"preloader\">\n" +
+                    "                    <div id=\"loader\"></div>\n" +
+                    "                </div>\n" +
+                    "            </div>\n" +
+                    "        </div>\n" +
+                    "    </div>\n" +
+                    "</div>")
+
+            },
+            success : function(data) { content.html(data)},
+            complete : function() { },
+            error : function(jqXHR) {
+                content.html(jqXHR.responseText); }
+        }) }
+
+    function generatePdf(){
+        //alert("logopdf");
+        $('.logoPdf').css('display','block');
+        doc.addHTML($('#monPdf')[0], 0, 0, {
+            'background': '#fff',
+        }, function () {
+            // doc.save('situation_' + $('#indicator').text() + '.pdf');
+            doc.save('situation_compte.pdf');
+        });
+        $('.logoPdf').css('display','none');
+
+    }
+    // données globales
+    $(document).ready(function() {
+        $( '#employe').addClass( "menutopActiv" );
+        doc = new jsPDF('p', 'pt', 'a4');
+        content = $("#contenu");
+        // on récupère les références des différents composants de la page
+    });
+</script>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+
+    var message = [[${message}]];
+    //alert(message);
+    var title = [[${title}]];
+    var info = [[${info}]];
+
+    var success = [[${success}]];
+
+    if (message && title) {
+        if (success === true) {
+            if(info ===true){
+                showInfo(title,message);
+            }else {
+                showSuccess(title,message);
+            }
+        } else if (success === false) {
+            showError(title,message);
+        }
+    }
+
+    /*]]>*/
+</script>
+<script>
+    if ($('#dataTablec').length) {
+        $('#dataTablec').DataTable({
+            buttons: ['copy', 'excel', 'pdf'] ,
+            "pagingType": "numbers",
+            "language": {
+                "lengthMenu": "Afficher _MENU_ ",
+                "zeroRecords": "Aucun résultat",
+                "info": "Affichage de _PAGE_ sur _PAGES_",
+                "infoEmpty": "Aucune donnée disponible",
+                "emptyTable":     "Aucune données dans la table",
+                "infoFiltered": "(filtrer dans _MAX_ enregistrements)",
+                "search":         "",
+                "searchPlaceholder": "Recherche",
+                "paginate": {
+                    "first":      "Premier",
+                    "last":       "Dernier",
+                    "next":       "Suivant",
+                    "previous":   "précédent"
+                }
+            }
+        });
+
+    }
+    if ($('#dataTable1').length) {
+        $('#dataTable1').DataTable({
+            buttons: ['copy', 'excel', 'pdf'],
+            "pagingType": "numbers",
+            "language": {
+                "lengthMenu": "Afficher _MENU_  par page",
+                "zeroRecords": "Aucun résultat",
+                "info": "Affichage de _PAGE_ sur _PAGES_",
+                "infoEmpty": "Aucune donnée disponible",
+                "emptyTable": "Aucune données dans la table",
+                "infoFiltered": "(filtrer dans _MAX_ enregistrements)",
+                "search": "recherche",
+                "paginate": {
+                    "first": "Premier",
+                    "last": "Dernier",
+                    "next": "Suivant",
+                    "previous": "précédent"
+                }
+            }
+        });
+
+    }
+
+</script>
+
+</body>
+</html>

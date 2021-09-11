@@ -1,0 +1,86 @@
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>Contrat en déshérence ou échus</title>
+</head>
+
+<body>
+<div style="margin: 0 auto; width: 60%; display: block;  padding:20px">
+  <p><img src="http://sahamassurancevie-ci.com/img/logo_saham_vie.svg" /></p>
+  <div style=" width: 100%; display: block; float:left; background: #f6f6f6; padding:20px">
+    <table width="100%" border="0">
+      <tbody>
+      <tr>
+        <td>
+          <div>
+            <span th:text="'Nom & Prénom :'+${contrat.nomSousc}"></span> <br>
+            <span th:text="'Date de Naissance :'+${#dates.format(contrat?.dtNaisSouscript, 'dd/MM/yyyy')}"></span> <br>
+            <span th:text="'Contrat :'+${contrat.chContrat}"></span> <br><br>
+          </div>
+        </td>
+        <td align="right">
+          <div th:text="${#calendars.format(#calendars.createNow(), 'dd MMM yyyy')}">
+            Abidjan le 02 Janvier 2017
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+
+    <table width="100%" border="0">
+      <tbody>
+      <tr>
+        <td></td>
+        <td style="width: 250px; text-align: center" align="right">
+          <div>
+            <b>A<br>l’attention du Directeur Général<br>de SAHAM Assurance Vie</b>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <table width="100%" border="0">
+      <tbody>
+      <tr>
+        <td><div>
+          <b>Objet : Contrat en déshérence ou Échus </b>
+        </div></td>
+        <td>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+<div style="width:100%; display:block; float:left; margin-top:30px; text-align:justify">
+  Monsieur,<br><br>
+
+  Je viens par la présente, demander des informations sur mon contrat dont les elements sur l'assuré sont ci-dessous<br>
+  <br>
+  <table class="tableRachat" width="100%"  border="0">
+    <thead>
+    <tr class="titrerachat">
+      <td style="width: 40%;"><b>Nom & Prénom assuré</b></td>
+      <td style="width: 35%"><b>Date de Naissance de l'assuré</b></td>
+      <td style="width: 20%"><b>Contact à joindre </b></td>
+    </tr>
+
+    </thead>
+    <tbody id="showrachat">
+    <tr >
+      <td style="width: 40%" th:text="${contrat.nomAssure}">Toure</td>
+      <td style="width: 35%" th:text="${contrat.dtNaisAssure}">1552252626</td>
+      <td style="width: 20%"th:text="${phone}">Daloa</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <br>
+  Dans l’attente d’une suite favorable,  je vous prie d’agréer, Monsieur le Directeur Général, mes salutations distinguées.
+  <br><br>
+</div>
+</div>
+</div>
+</body>
+</html>

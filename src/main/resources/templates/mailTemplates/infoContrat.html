@@ -1,0 +1,114 @@
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>Document sans nom</title>
+</head>
+
+<body>
+<div style="margin: 0 auto; width: 60%; display: block;  padding:20px">
+  <p><img src="http://sahamassurancevie-ci.com/img/logo_saham_vie.svg" /></p>
+  <div style=" width: 100%; display: block; float:left; background: #f6f6f6; padding:20px">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td  valign="top"><p> </b> <br>
+     </b><br>
+    </td>
+    <td  valign="top"><p align="center" th:text="'Abidjan, le '+${#dates.format(#dates.createNow(), 'dd MMM yyyy')}">Abidjan, le</p></td>
+  </tr>
+  <tr>
+    <td  valign="top"><p>&nbsp;</p></td>
+    <td  valign="top"><p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td  valign="top"><p>N° de contrat :<b th:text="${ctrat}"></b></p></td>
+    <td  valign="top"><p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td  valign="top"><p>&nbsp;</p></td>
+    <td  valign="top"><p align="center">A<br>
+      l&rsquo;attention du Directeur Général<br>
+      de SAHAM Assurance Vie</p></td>
+  </tr>
+  <tr>
+    <td  valign="top"><p>&nbsp;</p></td>
+    <td  valign="top"><p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td  valign="top"><p><strong>Objet&nbsp;: Demande générale</strong></p></td>
+    <td  valign="top"><p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td  valign="top"><p><strong>&nbsp;</strong></p></td>
+    <td  valign="top"><p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td  colspan="2" valign="top">
+      <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td  valign="top">
+            <p>Monsieur,  </p>
+            <p>
+              Je viens par la présente, demander une prestation de demande generale . <br>
+            </p>
+        </td>
+      </tr>
+    </table>
+      <table>
+        <thead>
+        <tr>
+          <th class="text-center"></th>
+          <th class="text-center">Ancien</th>
+          <th class="text-center">Nouveau </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>nom</td>
+          <td th:text="${personne?.firstname}"></td>
+          <td th:text="${prenom}"></td>
+        </tr>
+        <tr>
+          <td>prenom</td>
+          <td th:text="${personne?.lastname}"></td>
+          <td th:text="${nom}"></td>
+        </tr>
+        <tr>
+          <td>Profession</td>
+          <td th:text="${personne?.fonction}"></td>
+          <td th:text="${profesion}"></td>
+        </tr>
+        <tr>
+          <td>Adresse postale</td>
+          <td th:text="${personne?.address}"></td>
+          <td th:text="${adress}"></td>
+        </tr>
+        <tr>
+          <td>Téléphone</td>
+          <td th:text="${personne?.phone}"></td>
+          <td th:text="${phone}"></td>
+        </tr>
+        </tbody>
+
+      </table>
+
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td  valign="top"><p>Dans l&rsquo;attente d&rsquo;une suite favorable,  je vous prie d&rsquo;agréer, Monsieur le      Directeur Général, mes salutations distinguées.</p></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td  valign="top"><p><strong>&nbsp;</strong></p></td>
+    <td  valign="top"><p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td  valign="top"><p><strong>&nbsp;</strong></p></td>
+    <td  valign="top"><p align="right">Cordialement,</p></td>
+  </tr>
+</table>
+  </div>
+  </div>
+</body>
+</html>

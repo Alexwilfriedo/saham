@@ -1,0 +1,80 @@
+<div class="desktop-menu menu-top-image-w menu-activated-on-hover" style="background-image: url(../img/menu_bg.jpg)" xmlns:th="http://www.w3.org/1999/xhtml" th:fragment="menu-top-image-w">
+    <div class="top-part-w">
+        <h2 class="page-menu-header" th:text="'Bienvenue, ' +${perso?.lastname}">
+            Bienvenue, Michel KOFFI
+        </h2>
+        <div class="logo-w">
+            &nbsp;
+        </div>
+        <div class="user-and-search">
+            <div class="logged-user-w">
+                <div class="avatar-w">
+                    <a href="#" class="Btnmenudrop"><img alt="" src="../img/avatar1.jpg"></a>
+                    <a href="#" class="Btnmenudrop2"><img alt="" src="../img/avatar1.jpg"></a>
+                </div>
+
+            </div>
+            </div>
+            </div>
+    <div class="menu-top-image-i">
+        <div style="width:100%; display:block; float:left">
+            <div style="width:10%; display:block; float:left; padding:10px">
+                <img src="../img/logo_saham-vie.png" width="100%" />
+            </div>
+            <div style="width:85%; display:block; float:right">
+                <ul class="main-menu">
+                    <li class="has-sub-menu">
+                        <a th:href="@{/portailClient/darshboard}" id="darshboard">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-window-content"></div>
+                            </div>
+                            <span th:text="#{menu.darshboard}">Tableau de bord</span></a>
+
+                    </li>
+                    <li class="has-sub-menu">
+                        <a th:href="@{/portailClient/contrat}" id="contrat">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-pencil-12"></div>
+                            </div>
+                            <span th:text="#{menu.contrat}">Contrats</span></a>
+
+                    </li>
+                    <li class="has-sub-menu" th:if="${isEnterprise}">
+                        <a th:href="@{/portailClient/employes}" id="employe">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-user-male-circle"></div>
+                            </div>
+                            <span th:text="#{menu.employe}">Mes employés</span></a>
+
+                    </li>
+                    <li class="has-sub-menu">
+                        <a th:href="@{/portailClient/demandes}" id="demande">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-newspaper"></div>
+                            </div>
+                            <span th:text="#{menu.demande}">Mes demandes</span></a>
+                    </li>
+                    <li class="has-sub-menu">
+                        <a id="simulation" disabled="true" style="background: #fff;color: #334152;">
+                            <div class="icon-w">
+                                <div class="os-icon os-icon-hierarchy-structure-2" style="background: #fff;color: #334152;"></div>
+                            </div>
+                            <span th:text="#{menu.simulation}">Simulations</span>
+                        </a>
+
+                    </li>
+                    <!-- <li class="has-sub-menu">
+                         <a th:href="@{/portailClient/cotisation}" id="cotisation">
+                             <div class="icon-w">
+                                 <div class="os-icon os-icon-tasks-checked"></div>
+                             </div>
+                             <span th:text="#{menu.cotisation}">Cotisations</span></a>
+
+                     </li>-->
+                </ul>
+            </div>
+
+        </div>
+        <div></div>
+    </div>
+</div>

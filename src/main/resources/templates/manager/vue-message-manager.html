@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="chat-head">
+        <div class="user-info">
+            <span>A:</span><a href="#" th:text="${userMesg?.lastname} +'username destinataire :'+ ${userMesg?.username}">John Mayers</a>
+
+        </div>
+    </div>
+    <div class="chat-content-w">
+        <div class="chat-content">
+            <div class="chat-message">
+                <div class="chat-message-content-w">
+                    <div class="chat-message-content">
+                        Hi, my name is Mike, I will be happy to assist you
+                    </div>
+                </div>
+                <div class="chat-message-avatar">
+                    <img alt="" src="../img/favico.png">
+                </div>
+                <div class="chat-message-date">
+                    9:12am
+                </div>
+            </div>
+            <div class="chat-date-separator">
+                <span>Yesterday</span>
+            </div>
+            <div class="chat-message self">
+                <div class="chat-message-content-w">
+                    <div class="chat-message-content">
+                        That walls over which the drawers.
+                        Gone studies to titles have audiences
+                        of and concepts was motivator
+                    </div>
+                </div>
+                <div class="chat-message-date">
+                    1:23pm
+                </div>
+                <div class="chat-message-avatar">
+                    <img alt="" src="../img/avatar1.jpg">
+                </div>
+            </div>
+            <div class="chat-message">
+                <div class="chat-message-content-w">
+                    <div class="chat-message-content">
+                        Slept train nearby a its is design size agreeable.
+                        And check cons, but countries the was to such any
+                        founding company
+                    </div>
+                </div>
+                <div class="chat-message-avatar">
+                    <img alt="" src="../img/favico.png">
+                </div>
+                <div class="chat-message-date">
+                    3:45am
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chat-controls">
+        <div class="chat-input">
+            <input class="message-input" placeholder="Type your message here..." type="text">
+            <input type="hidden" id="sessionId" th:value="${sessionId}" >
+        </div>
+        <div class="chat-input-extra">
+            <div class="chat-extra-actions">
+            </div>
+            <div class="chat-btn">
+                <a class="btn btn-primary btn-sm" href="#">Repondre</a>
+            </div>
+        </div>
+    </div>
+<script>
+
+/*    var stompClient = null;
+    var lastMsg="vide";
+
+    function connect() {
+        var socket = new SockJS('/gs-guide-websocket');
+        stompClient = Stomp.over(socket);
+        stompClient.connect({}, function (frame) {
+            //setConnected(true);
+            console.log('Connected: ' + frame);
+            stompClient.subscribe('/topic/greetings', function (greeting) {
+                console.log("..........");
+                console.log(greeting);
+                console.log(".............");
+                showGreeting(JSON.parse(greeting.body));
+            });
+        });
+    }
+
+    $('.message-input').on('keypress', function (e) {
+        if (e.which == 13) {
+            stompClient.send("/app/hello", {}, JSON.stringify({'name': $(this).val(),'sessionId':$("#sessionId").val()}));
+            $(this).val('');
+            var $messages_w = $('.floated-chat-w .chat-messages');
+            $messages_w.scrollTop($messages_w.prop("scrollHeight"));
+            $messages_w.perfectScrollbar('update');
+            return false;
+        }
+    });
+    function showGreeting(message) {
+        lastMsg = message.sessionId;
+        var areEqual = $("#sessionId").val().toUpperCase() === message.sessionId.toUpperCase();
+        var areEqual2 = lastMsg.toUpperCase() === message.sessionId.toUpperCase();
+        if(areEqual){
+            console.log("identique");
+            $('.chat-content').append('<div class="chat-message self"><div class="chat-message-content-w"><div class="chat-message-content">' + message.content + '</div></div><div class="chat-message-date">1:23pm</div><div class="chat-message-avatar"><img alt="" src="../img/favico.png"></div></div>');
+        }else {
+            console.log("different");
+            if ($("#sessionId").val().toUpperCase() === message.destinateur.toUpperCase()){
+                $('.chat-content').append('<div class="chat-message"><div class="chat-message-content-w"><div class="chat-message-content">' + message.content + '</div></div><div class="chat-message-date">1:23pm</div><div class="chat-message-avatar"><img alt="" src="../img/favico.png"></div></div>');
+            }
+        }
+    }*/
+</script>
+</body>
+</html>

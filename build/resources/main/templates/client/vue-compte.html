@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+  <div class="element-wrapper">
+    <h4 class="element-header">
+      <b th:text="'Situation de compte ['+${contrat?.police} +'-'+ ${contrat?.produit?.nomProduit}+']'">Situation de compte [75364892]</b>
+    </h4>
+    <div style="margin-top:17px;" class="element-box">
+      <div class="FormSit" action="">
+        <table width="100%" border="0">
+          <tbody>
+          <tr>
+            <td >Valeur rachat<br>
+              <div th:if="${isParticulirOfCorporate == false}" class="divSit" th:text="${quitanceValeurRachat?.montantPaye} ? ${#numbers.formatInteger(quitanceValeurRachat?.montantPaye,3,'WHITESPACE')}+' FCFA':'0 FCFA'">0 FCFA</div>
+              <div th:if="${isParticulirOfCorporate}" class="divSit" th:text="${situationCompte?.capitalAu} ? ${#numbers.formatInteger(situationCompte?.capitalAu,3,'WHITESPACE')}+' FCFA':'0 FCFA'"></div>
+            </td>
+            <td>Date de calcul<br>
+              <div th:if="${isParticulirOfCorporate == false}" class="divSit" th:text="${quitanceValeurRachat?.dateValeur} ? ${#dates.format(quitanceValeurRachat?.dateValeur,'dd/MM/yyyy')}"></div>
+              <div th:if="${isParticulirOfCorporate}" class="divSit" th:text="${situationCompte?.dateSituation} ? ${#dates.format(situationCompte?.dateSituation,'dd/MM/yyyy')}"></div>
+            </td>
+            <td>
+              <a href="#valeurRachatModal" role="button"  data-toggle="modal">
+                <i class="fa fa-question-circle" aria-hidden="true"></i>
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>Provision Mathématique <br>
+              <div th:if="${isParticulirOfCorporate == false}" class="divSit" th:text="${quitancePm?.montantPaye} ? ${#numbers.formatInteger(quitancePm?.montantPaye,3,'WHITESPACE')}+' FCFA':'0 FCFA'"></div>
+              <div th:if="${isParticulirOfCorporate}" class="divSit" th:text="${situationCompte?.capitalAu} ? ${#numbers.formatInteger(situationCompte?.capitalAu,3,'WHITESPACE')}+' FCFA':'0 FCFA'"></div>
+            </td>
+            <td>Date de calcul<br>
+              <div th:if="${isParticulirOfCorporate == false}" class="divSit" th:text="${quitancePm?.dateValeur} ? ${#dates.format(quitancePm?.dateValeur,'dd/MM/yyyy')}"></div>
+              <div th:if="${isParticulirOfCorporate}" class="divSit" th:text="${situationCompte?.dateSituation} ? ${#dates.format(situationCompte?.dateSituation,'dd/MM/yyyy')}"></div>
+            </td>
+            <td>
+              <a href="#provisionMathematique" role="button"  data-toggle="modal">
+                <i class="fa fa-question-circle" aria-hidden="true"></i>
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>Valeur  de réduction  <br>
+              <div th:if="${isParticulirOfCorporate == false}" class="divSit" th:text="${quitanceValeurReduction?.montantPaye} ? ${#numbers.formatInteger(quitanceValeurReduction?.montantPaye,3,'WHITESPACE')}+' FCFA':'0 FCFA'">0 FCFA</div>
+              <div th:if="${isParticulirOfCorporate}" class="divSit">0 FCFA</div>
+              <!--<div th:if="${isParticulirOfCorporate}" class="divSit" th:text="${quitanceValeurReduction?.montantPaye} ? ${#numbers.formatInteger(quitanceValeurReduction?.montantPaye,3,'WHITESPACE')}+' FCFA':'0 FCFA'">0 FCFA</div>-->
+            </td>
+            <td>Date de calcul<br>
+              <div th:if="${isParticulirOfCorporate == false}" class="divSit" th:text="${quitanceValeurReduction?.dateValeur} ? ${#dates.format(quitanceValeurReduction?.dateValeur,'dd/MM/yyyy')}"></div>
+              <div th:if="${isParticulirOfCorporate}" class="divSit"></div>
+              <!--<div th:if="${isParticulirOfCorporate}" class="divSit" th:text="${quitanceValeurReduction?.dateValeur} ? ${#dates.format(quitanceValeurReduction?.dateValeur,'dd/MM/yyyy')}"></div></td>-->
+            </td>
+            <td>
+              <a href="#valeurReduction" role="button"  data-toggle="modal">
+                <i class="fa fa-question-circle" aria-hidden="true"></i>
+              </a>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>
+</body>
+</html>

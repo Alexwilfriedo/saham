@@ -1,0 +1,298 @@
+<div class="desktop-menu menu-side-compact-w menu-activated-on-hover color-scheme-dark" th:fragment="menu-side-compact-manager" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="logo-w">
+        <a class="logo" href="#"><img src="../img/favico.png"></a>
+    </div>
+    <div class="menu-and-user">
+        <div class="logged-user-w">
+            <div class="logged-user-i">
+                <div class="avatar-w">
+                    <img alt="" src="../img/avatar1.jpg">
+                </div>
+                <div class="logged-user-menu">
+                    <div class="logged-user-avatar-info">
+                        <div class="avatar-w">
+                            <img alt="" src="../img/avatar1.jpg">
+                        </div>
+                        <div class="logged-user-info-w">
+                            <div class="logged-user-name" th:text="${perso?.lastname}">
+                                Maria Gomez
+                            </div>
+                            <div class="logged-user-role">
+                                Administrator
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-icon">
+                        <i class="os-icon os-icon-wallet-loaded"></i>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="#"><i class="os-icon os-icon-user-male-circle2"></i><span th:text="'Messages('+${nbreMessage}+')'">Messages()</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="os-icon os-icon-coins-4"></i><span th:text="'Connectés('+${nbreConnected}+')'">Connectés()</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="os-icon os-icon-others-43"></i><span th:text="'Inscrits('+${nbreInscrit}+')'">Inscrits()</span></a>
+                        </li>
+                        <li>
+                            <a th:href="@{/disconnect}"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul class="main-menu">
+            <li class="has-sub-menu">
+                <a href="#">
+                    <div class="icon-w">
+                        <!--<i class="os-icon os-icon-window-content"></i>-->
+                    </div>
+                </a>
+<!--                <div class="sub-menu-w">
+                    <div class="sub-menu-title">
+                        Dashboard
+                    </div>
+                    <div class="sub-menu-icon">
+                        <i class="os-icon os-icon-window-content"></i>
+                    </div>
+                    <div class="sub-menu-i">
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#">Dashboard 3 <strong class="badge badge-danger">New</strong></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>-->
+            </li>
+            <li class="has-sub-menu">
+                <a href="#">
+                    <div class="icon-w">
+                        <!--<i class="os-icon os-icon-hierarchy-structure-2"></i>-->
+                    </div>
+                </a>
+<!--
+                <div class="sub-menu-w">
+                    <div class="sub-menu-title">
+                        Menu Styles
+                    </div>
+                    <div class="sub-menu-icon">
+                        <i class="os-icon os-icon-hierarchy-structure-2"></i>
+                    </div>
+                    <div class="sub-menu-i">
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#">Side Menu Light</a>
+                            </li>
+                            <li>
+                                <a href="#">Side Menu Dark</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-menu">
+                        <li>
+                            <a href="#">Compact Side Menu</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+-->
+            </li>
+            <li class="has-sub-menu">
+                <a href="#">
+                    <div class="icon-w">
+                        <!--<i class="os-icon os-icon-delivery-box-2"></i>-->
+                    </div>
+                </a>
+<!--
+                <div class="sub-menu-w">
+                    <div class="sub-menu-title">
+                        Applications
+                    </div>
+                    <div class="sub-menu-icon">
+                        <i class="os-icon os-icon-delivery-box-2"></i>
+                    </div>
+                    <div class="sub-menu-i">
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#">Email Application</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-menu">
+                        <li>
+                            <a href="#">Property Listing <strong class="badge badge-danger">New</strong></a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+-->
+            </li>
+            <li class="has-sub-menu">
+                <a href="#">
+                    <div class="icon-w">
+                        <!--<i class="os-icon os-icon-newspaper"></i>-->
+                    </div>
+                </a>
+<!--                <div class="sub-menu-w">
+                    <div class="sub-menu-title">
+                        Pages
+                    </div>
+                    <div class="sub-menu-icon">
+                        <i class="os-icon os-icon-newspaper"></i>
+                    </div>
+                    <div class="sub-menu-i">
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#">Invoice</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-menu">
+                        <li>
+                            <a href="#">Register</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>-->
+            </li>
+            <li class="has-sub-menu">
+                <a href="#">
+                    <div class="icon-w">
+                        <!--<i class="os-icon os-icon-pencil-12"></i>-->
+                    </div>
+                </a>
+<!--
+                <div class="sub-menu-w">
+                    <div class="sub-menu-title">
+                        UI Kit
+                    </div>
+                    <div class="sub-menu-icon">
+                        <i class="os-icon os-icon-pencil-12"></i>
+                    </div>
+                    <div class="sub-menu-i">
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#">Modals</a>
+                            </li>
+                            <li>
+                                <a href="#">Alerts</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-menu">
+                        <li>
+                            <a href="#">Tooltips</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+-->
+            </li>
+            <li class="has-sub-menu">
+                <a href="#">
+                    <div class="icon-w">
+                        <!--<i class="os-icon os-icon-user-male-circle"></i>-->
+                    </div>
+                </a>
+<!--                <div class="sub-menu-w">
+                    <div class="sub-menu-title">
+                        Users
+                    </div>
+                    <div class="sub-menu-icon">
+                        <i class="os-icon os-icon-user-male-circle"></i>
+                    </div>
+                    <div class="sub-menu-i">
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#">Big Profile</a>
+                            </li>
+                            <li>
+                                <a href="#">Compact Profile</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>-->
+            </li>
+            <li class="has-sub-menu">
+                <a href="#">
+                    <div class="icon-w">
+                        <!--<i class="os-icon os-icon-tasks-checked"></i>-->
+                    </div>
+                </a>
+<!--
+                <div class="sub-menu-w">
+                    <div class="sub-menu-title">
+                        Forms
+                    </div>
+                    <div class="sub-menu-icon">
+                        <i class="os-icon os-icon-tasks-checked"></i>
+                    </div>
+                    <div class="sub-menu-i">
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#">Regular Forms</a>
+                            </li>
+                            <li>
+                                <a href="#">Form Validation</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+-->
+            </li>
+            <li class="has-sub-menu">
+                <a href="#">
+                    <div class="icon-w">
+                        <!--<i class="os-icon os-icon-grid-squares"></i>-->
+                    </div>
+                </a>
+<!--                <div class="sub-menu-w">
+                    <div class="sub-menu-title">
+                        Tables
+                    </div>
+                    <div class="sub-menu-icon">
+                        <i class="os-icon os-icon-grid-squares"></i>
+                    </div>
+                    <div class="sub-menu-i">
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#">Regular Tables</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>-->
+            </li>
+            <li class="has-sub-menu">
+                <a href="#">
+                    <div class="icon-w">
+                        <!--<i class="os-icon os-icon-robot-1"></i>-->
+                    </div>
+                </a>
+<!--
+                <div class="sub-menu-w">
+                    <div class="sub-menu-title">
+                        Icons
+                    </div>
+                    <div class="sub-menu-icon">
+                        <i class="os-icon os-icon-robot-1"></i>
+                    </div>
+                    <div class="sub-menu-i">
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#">Simple Line Icons</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-menu">
+                          <li>
+                            <a href="#">Entypo</a>
+                          </li>
+                      </ul>
+                        <ul class="sub-menu">
+                        <li>
+                            <a href="#">Batch Icons</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+-->
+            </li>
+        </ul>
+    </div>
+</div>

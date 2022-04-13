@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+<div class="element-wrapper">
+    <h4 class="element-header">
+        <b>Avance sur police</b>
+    </h4>
+    <div style="margin-top:17px;display:block; float:left; width:100%" class="element-box">
+        <div style="width:90%; display:block; margin:0 auto">
+            <form class="FormSit3" th:action="@{/demande/avanceSurPolice}" th:method="POST" th:object="${user}" id="contactForm">
+                <div class="titreSimu4">
+                    <div class="infoline">
+                        <div style="width:50%; display:block;  float:left; margin-right:20px">
+                            <select id="police">
+                                <option disabled selected>Contrat</option>
+                                <option th:each="contrat : ${contrats}" th:value="${contrat?.police}" th:text="${contrat?.police}">Contrat</option>
+                            </select>
+                        </div>
+
+                        <div style="width:40%; display:block; float:right; ">
+
+                            <select id="villeD">
+                                <option disabled="" selected="">Lieu de demande</option>
+                                <option value="1">Abidjan</option>
+                                <option value="2">Bouaké</option>
+                                <option value="3">Daloa</option>
+                                <option value="4">Yamoussoukro</option>
+                                <option value="5">Divo</option>
+                                <option value="6">San-Pedro</option>
+                                <option value="7">Bassam</option>
+                                <option value="8">Soubré</option>
+                                <option value="9">Adzopé</option>
+                                <option value="10">Abengourou</option>
+                                <option value="11">Bondoukou</option>
+                                <option value="12">Aboisso</option>
+                                <option value="13">Meagui</option>
+                                <option value="14">Noé</option>
+                                <option value="15">Korhogo</option>
+                                <option value="16">Issia</option>
+                                <option value="17">Vavoua</option>
+                                <option value="18">Man</option>
+                                <option value="19">Ferke</option>
+                                <option value="20">Agnibilekro</option>
+                                <option value="21">Fresco</option>
+                                <option value="22">Adiaké</option>
+                                <option value="23">Bingerville</option>
+                                <option value="24">Agboville</option>
+                                <option value="25">Alepé</option>
+                                <option value="26">Bonoa</option>
+                                <option value="27">Autre</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <!--<div style="width:100%; display:block; float:left; margin-top:10px; text-align:justify">-->
+                    <!--<input type="text" class="valeurMontant" value=""  placeholder="Montant du rachat partiel" />-->
+                    <!--</div>-->
+
+                </div>
+                <div class="infoline" style="margin-top:40px">
+                    <div style="width:100%; display:block;  float:left;  ">
+                        <p th:text="'Nom et Prenom : '+${perso?.lastname}">Nom et prenom :</p>
+                        <p th:text="'Adresse : '+${perso?.address}">Adresse :</p>
+                        <p th:text="'Contact : '+${perso?.phone}">Contact :</p>
+                        <!--Contact : <br>
+                        Adresse postale : <br>-->
+                    </div>
+                    <div style="width:30%; display:block;  float:right; padding-top:10px; text-align:center  " th:text="${#calendars.format(#calendars.createNow(), 'dd MMM yyyy')}">
+                        Abidjan le 02 Janvier 2017
+                    </div>
+
+                </div>
+                <div class="infoline">
+                    <div style="width:30%; display:block; float:right; text-align:center">
+                        <b>A<br>l’attention du Directeur Général<br>de SAHAM Assurance Vie</b>
+                    </div>
+                </div>
+                <div class="infoline2">
+                    <div class="infolineLeft">
+                        <b>Objet : Avance sur police </b>
+                    </div>
+
+                </div>
+
+
+                <div style="width:100%; display:block; float:left; margin-top:30px; text-align:justify">
+                    Monsieur,<br><br>
+
+                    Je viens par la présente, demander une prestation d'Avance sur police  .<br>
+                    <br>
+                    Dans l’attente d’une suite favorable,  je vous prie d’agréer, Monsieur le Directeur Général, mes salutations distinguées.
+                    <br><br>
+                    Cordialement,                     </div>
+
+                <div style="width:30%; display:block; margin-top:70px; float:right;">
+                    <input type="submit" value="Valider" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

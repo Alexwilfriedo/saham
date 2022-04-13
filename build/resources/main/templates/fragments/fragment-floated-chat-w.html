@@ -1,0 +1,52 @@
+<div class="floated-chat-w" xmlns:th="http://www.w3.org/1999/xhtml" th:fragment="chat-w">
+    <div class="floated-chat-i">
+        <div class="chat-close">
+            <i class="os-icon os-icon-close"></i>
+        </div>
+        <div class="chat-head">
+            <div class="user-w with-status status-green">
+                <div class="user-avatar-w">
+                    <div class="user-avatar">
+                        <img alt="" src="../img/favico.png">
+                    </div>
+                </div>
+                <div class="user-name">
+                    <h6 class="user-title">
+                        Conseiller client
+                    </h6>
+                    <div class="user-role">
+                        en ligne
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chat-messages">
+            <div class="message">
+                <div class="message-content">
+                    Bonjour, pouvons-nous vous aider?
+                </div>
+            </div>
+            <div class="date-break">
+                Lun 10:20
+            </div>
+        </div>
+        <div class="chat-controls">
+            <input class="message-input" placeholder="Saisissez votre message ici..." type="text">
+            <input type="hidden" id="expediteurUsername" th:value="${expediteurUsername}">
+            <input type="hidden" id="idUsername" th:value="${idUsername}">
+            <input type="hidden" id="destinataireUsername" th:value="${destinataireUsername}">
+            <div class="chat-extra">
+                <!--<a href="#">
+                    <span class="extra-tooltip">Attach Document</span>
+                    <i class="os-icon os-icon-documents-07"></i>
+                </a>
+                <a href="#"><span class="extra-tooltip">Insert Photo</span>
+                    <i class="os-icon os-icon-others-29"></i>
+                </a>
+                <a href="#"><span class="extra-tooltip">Upload Video</span>
+                    <i class="os-icon os-icon-ui-51"></i>
+                </a>-->
+            </div>
+        </div>
+    </div>
+</div>

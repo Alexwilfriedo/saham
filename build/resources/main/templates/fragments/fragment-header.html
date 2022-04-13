@@ -1,0 +1,46 @@
+<div class="header" xmlns:th="http://www.w3.org/1999/xhtml" th:fragment="header">
+    <div class="divWeb">
+        <div class="container">
+
+
+            <div class="row">
+                <div class="column">
+                    <div class="MenuHeadLeft">
+                        <a href="#" class="bMenuUp"><i class="fa fa-bars" aria-hidden="true"></i> <span th:text="#{produits}">Nos produits</span></a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="LogoheadCenter">
+                        <img src="img/logo_saham_vie.svg" alt="Logo SAHAM ASSURANCE VIE" />
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="menuheadRight">
+                        <span class="LeftLink"><a th:href="@{/desherence}">Mon statut</a></span>
+                        <span class="LeftLink"><a th:href="@{/login}" th:text="#{connexion}">Se connecter</a></span>
+                        <span class="RightLink"><a th:href="@{/creer_compte}" th:text="#{compte}">Créer un compte</a></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="divMob">
+        <div class="DiheadMob">
+            <!--div class="DiheadMobLeft">
+            <img src="img/logo_saham_vie.svg" alt="Logo SAHAM ASSURANCE VIE" />
+            </div-->
+            <div class="DiheadMobRight">
+                <table width="100%" border="0">
+                    <tbody>
+                    <tr>
+                        <td align="left"><a th:href="@{/}" ><i class="fa fa-home" aria-hidden="true"></i></a></td>
+                        <td align="center"><img src="img/logo_saham_vie.svg" alt="Logo SAHAM ASSURANCE VIE" /></td>
+                        <td align="right"><a href="" class="bDivBlackMenuBlock"><i class="fa fa-bars" aria-hidden="true"></i></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

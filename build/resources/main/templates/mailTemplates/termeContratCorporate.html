@@ -1,0 +1,87 @@
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>Document sans nom</title>
+</head>
+
+<body>
+<div style="margin: 0 auto; width: 60%; display: block;  padding:20px">
+  <p><img src="http://sahamassurancevie-ci.com/img/logo_saham_vie.svg" /></p>
+  <div style=" width: 100%; display: block; float:left; background: #f6f6f6; padding:20px">
+    <table width="100%" border="0">
+      <tbody>
+      <tr>
+        <td>
+          <div>
+            Nom et Prénom(s) : <br>
+            contact :  <br>
+            Adresse postale : <br><br>
+          </div>
+        </td>
+        <td align="right">
+          <div th:text="${#calendars.format(#calendars.createNow(), 'dd MMM yyyy')}">
+            Abidjan le 02 Janvier 2017
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+
+    <table width="100%" border="0">
+      <tbody>
+      <tr>
+        <td></td>
+        <td style="width: 250px; text-align: center" align="right">
+          <div>
+            <b>A<br>l’attention du Directeur Général<br>de SAHAM Assurance Vie</b>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <table width="100%" border="0">
+      <tbody>
+      <tr>
+        <td><div>
+          <b>Objet : Rachat total </b>
+        </div></td>
+        <td>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+<div style="width:100%; display:block; float:left; margin-top:30px; text-align:justify">
+  Monsieur,<br><br>
+
+  Je viens par la présente, demander une prestation de Terme  pour les contrats ci-dessous.<br>
+  <br>
+  <table class="tableRachat" width="100%"  border="0">
+    <thead>
+    <tr class="titrerachat">
+      <td style="width: 40%;"><b>Nom</b></td>
+      <td style="width: 35%"><b>Contrat</b></td>
+      <td style="width: 20%"><b>Lieu de demande</b></td>
+    </tr>
+
+    </thead>
+    <tbody id="showrachat">
+    <tr th:each="asked: ${termes}">
+      <td style="width: 40%" th:text="${asked?.personne}">Toure</td>
+      <td style="width: 35%" th:text="${asked?.numContrat}">1552252626</td>
+      <td style="width: 20%"th:text="${asked?.ville}">Daloa</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <br>
+  Dans l’attente d’une suite favorable,  je vous prie d’agréer, Monsieur le Directeur Général, mes salutations distinguées.
+  <br><br>
+  Cordialement,
+</div>
+</div>
+</div>
+</body>
+</html>

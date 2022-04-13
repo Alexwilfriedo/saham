@@ -1,0 +1,74 @@
+<!doctype html >
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>Document sans nom</title>
+</head>
+
+<body>
+<div style="margin: 0 auto; width: 60%; display: block;  padding:20px">
+  <p><img src="http://sahamassurancevie-ci.com/img/logo_saham_vie.svg" /></p>
+  <div style=" width: 100%; display: block; float:left; background: #f6f6f6; padding:20px">
+     <table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td  valign="top"><p>Nom, prénom : <b th:text="${nom}"></b> <br>
+      Téléphone :<b th:text="${tel}"></b><br>
+      Email :<b th:text="${email}"></b></p>
+    </td>
+    <td  valign="top"><p align="center" th:text="'Abidjan, le '+${#dates.format(#dates.createNow(), 'dd MMM yyyy')}">Abidjan, le</p></td>
+  </tr>
+  <tr>
+    <td  valign="top"><p>&nbsp;</p></td>
+    <td  valign="top"><p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td  valign="top"><p>&nbsp;</p></td>
+    <td  valign="top"><p align="center">A<br>
+      l&rsquo;attention de la direction commerciale<br>
+      de SAHAM Assurance Vie</p></td>
+  </tr>
+  <tr>
+    <td  valign="top"><p>&nbsp;</p></td>
+    <td  valign="top"><p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td  valign="top"><p><strong>Objet&nbsp;: Demande d’information</strong></p></td>
+    <td  valign="top"><p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td  valign="top"><p><strong>&nbsp;</strong></p></td>
+    <td  valign="top"><p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td  colspan="2" valign="top"><table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td  valign="top">
+            <p>Mesdames,<br>
+              Messieurs, </p>
+            <p>
+              j' aimerais obtenir des informations supplémentaires concernant le produit <b th:text="${produit}">nom du produit</b> qui apparait sur
+              votre site Internet :
+
+            </p>
+        </td>
+      </tr>
+    </table>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td  valign="top"><p>Dans l&rsquo;attente d&rsquo;une suite favorable,  je vous prie d&rsquo;agréer, Mesdames,Messieurs ,mes salutations distinguées.</p></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td  valign="top"><p><strong>&nbsp;</strong></p></td>
+    <td  valign="top"><p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td  valign="top"><p><strong>&nbsp;</strong></p></td>
+    <td  valign="top"><p align="right">Cordialement,</p></td>
+  </tr>
+</table>
+  </div>
+</div>
+</body>
+</html>

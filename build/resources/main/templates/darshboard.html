@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.1.5/css/iziToast.min.css" rel="stylesheet">
+</head>
+<body>
+<!--
+<div class="diverror"></div>
+-->
+<h2>TABLEAU DE BORD</h2>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.1.5/js/iziToast.min.js"></script>
+<script src="js/main.js"></script>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+
+    var message = [[${message}]];
+    //alert(message);
+    var title = [[${title}]];
+    var info = [[${info}]];
+
+    var success = [[${success}]];
+
+    if (message && title) {
+        if (success === true) {
+            if(info ===true){
+                showInfo(title,message);
+            }else {
+                showSuccess(title,message);
+            }
+        } else if (success === false) {
+            showError(title,message);
+        }
+    }
+
+    /*]]>*/
+</script>
+</body>
+</html>

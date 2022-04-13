@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+<div class="element-wrapper" th:if="${isEnterprise == false}">
+    <h4 class="element-header">
+        <b>Rachat total</b>
+    </h4>
+    <div style="margin-top:17px;display:block; float:left; width:100%" class="element-box">
+        <div style="width:90%; display:block; margin:0 auto">
+            <form class="FormSit3" th:action="@{/demande/rachatTotal}" th:method="POST" th:object="${user}"
+                  id="contactForm">
+                <div class="titreSimu4">
+                    <div class="infoline">
+                        <div style="width:50%; display:block;  float:left; margin-right:20px">
+                            <select id="police">
+                                <option disabled selected>Contrat</option>
+                                <option th:each="contrat : ${contrats}" th:value="${contrat?.police}" th:text="${contrat?.police}">Contrat</option>
+                            </select>
+                        </div>
+
+                        <div style="width:40%; display:block; float:right; ">
+
+                            <select>
+                                <option disabled selected>Lieu de demande</option>
+                                <option disabled="" selected="">Lieu de demande</option>
+                                <option value="Abidjan">Abidjan</option>
+                                <option value="Bouaké">Bouaké</option>
+                                <option value="Daloa">Daloa</option>
+                                <option value="Yamoussoukro">Yamoussoukro</option>
+                                <option value="Divo">Divo</option>
+                                <option value="San-Pedro">San-Pedro</option>
+                                <option value="Bassam">Bassam</option>
+                                <option value="Soubré">Soubré</option>
+                                <option value="Adzopé">Adzopé</option>
+                                <option value="Abengourou">Abengourou</option>
+                                <option value="Bondoukou">Bondoukou</option>
+                                <option value="Aboisso">Aboisso</option>
+                                <option value="Meagui">Meagui</option>
+                                <option value="Noé">Noé</option>
+                                <option value="Korhogo">Korhogo</option>
+                                <option value="Issia">Issia</option>
+                                <option value="Vavoua">Vavoua</option>
+                                <option value="Man">Man</option>
+                                <option value="Ferke">Ferke</option>
+                                <option value="Agnibilekro">Agnibilekro</option>
+                                <option value="Fresco">Fresco</option>
+                                <option value="Adiaké">Adiaké</option>
+                                <option value="Bingerville">Bingerville</option>
+                                <option value="Agboville">Agboville</option>
+                                <option value="Alepé">Alepé</option>
+                                <option value="Bonoa">Bonoa</option>
+                                <option value="Autre">Autre</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--<div style="width:100%; display:block; float:left; margin-top:10px; text-align:justify">-->
+                    <!--<input type="text" class="valeurMontant" value=""  placeholder="Montant du rachat partiel" />-->
+                    <!--</div>-->
+
+                </div>
+                <div class="infoline" style="margin-top:40px">
+                    <div style="width:100%; display:block;  float:left;  ">
+                        <p th:text="'Nom et Prenom : '+${perso?.lastname}">Nom et prenom :</p>
+                        <p th:text="'Adresse : '+${perso?.address} ? ${perso?.address} : ' '">Adresse :</p>
+                        <p th:text="'Contact : '+${perso?.phone} ? ${perso?.phone} : ' '">Contact :</p>
+                        <!--Contact : <br>
+                        Adresse postale : <br>-->
+                    </div>
+                    <div style="width:30%; display:block;  float:right; padding-top:10px; text-align:center  "
+                         th:text="${#calendars.format(#calendars.createNow(), 'dd MMM yyyy')}">
+                        Abidjan le 02 Janvier 2017
+                    </div>
+
+                </div>
+                <div class="infoline">
+                    <div style="width:30%; display:block; float:right; text-align:center">
+                        <b>A<br>l’attention du Directeur Général<br>de SAHAM Assurance Vie</b>
+                    </div>
+                </div>
+                <div class="infoline2">
+                    <div class="infolineLeft">
+                        <b>Objet : Rachat total </b>
+                    </div>
+
+                </div>
+
+
+                <div style="width:100%; display:block; float:left; margin-top:30px; text-align:justify">
+                    Monsieur,<br><br>
+
+                    Je viens par la présente, demander une prestation de Rachat total .<br>
+                    <br>
+                    Dans l’attente d’une suite favorable, je vous prie d’agréer, Monsieur le Directeur Général, mes
+                    salutations distinguées.
+                    <br><br>
+                    Cordialement,
+                </div>
+
+                <div style="width:30%; display:block; margin-top:70px; float:right;">
+                    <input type="submit" value="Valider"/>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<div class="element-wrapper" th:if="${isEnterprise}">
+    <h4 class="element-header">
+        <b>Rachat total</b>
+    </h4>
+    <div style="margin-top:17px;display:block; float:left; width:100%" class="element-box">
+        <div class="titreSimuRight">
+            <a href="javascript:generatePdf()" title="Exporter en PDF"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+        </div>
+        <div style="width:90%; display:block; margin:0 auto">
+            <form th:action="@{/rachatTotal/corporate}" th:method="POST" id="forminfo" enctype="multipart/form-data">
+                <div class="FormSit3" id="monPdf">
+                    <div class="w90">
+                        <div class="titreSimu4" id="id-titreSimu4">
+                            <div style="width:100%; display:block; float:left">
+                                <div style="width:80%; display:block; float:left">
+                                    <div style="width:100%; display:block; float:left; margin-bottom:10px; text-align:justify">
+                                        <!--<input type="text" class="valeurMontant" id="nom" name="nom" value=""  placeholder="Nom" />-->
+                                    </div>
+                                    <div class="infoline">
+                                        <div style="width:50%; display:block;  float:left; margin-right:20px">
+                                            <select id="contratD" name="contrat">
+                                                <option disabled selected>Contrat</option>
+                                                <!--<option th:each="contrat : ${contrats}" th:value="${contrat?.id}" th:text="${contrat?.assure}">Contrat</option>-->
+                                            </select>
+                                        </div>
+
+                                        <div style="width:40%; display:block; float:right; ">
+                                            <select id="villeD" name="lieu">
+                                                <option disabled="" selected="">Lieu de demande</option>
+                                                <option value="Abidjan">Abidjan</option>
+                                                <option value="Bouaké">Bouaké</option>
+                                                <option value="Daloa">Daloa</option>
+                                                <option value="Yamoussoukro">Yamoussoukro</option>
+                                                <option value="Divo">Divo</option>
+                                                <option value="San-Pedro">San-Pedro</option>
+                                                <option value="Bassam">Bassam</option>
+                                                <option value="Soubré">Soubré</option>
+                                                <option value="Adzopé">Adzopé</option>
+                                                <option value="Abengourou">Abengourou</option>
+                                                <option value="Bondoukou">Bondoukou</option>
+                                                <option value="Aboisso">Aboisso</option>
+                                                <option value="Meagui">Meagui</option>
+                                                <option value="Noé">Noé</option>
+                                                <option value="Korhogo">Korhogo</option>
+                                                <option value="Issia">Issia</option>
+                                                <option value="Vavoua">Vavoua</option>
+                                                <option value="Man">Man</option>
+                                                <option value="Ferke">Ferke</option>
+                                                <option value="Agnibilekro">Agnibilekro</option>
+                                                <option value="Fresco">Fresco</option>
+                                                <option value="Adiaké">Adiaké</option>
+                                                <option value="Bingerville">Bingerville</option>
+                                                <option value="Agboville">Agboville</option>
+                                                <option value="Alepé">Alepé</option>
+                                                <option value="Bonoa">Bonoa</option>
+                                                <option value="Autre">Autre</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="validate"
+                                     style="width:15%; display:block; padding-top:30px; padding-left:10px; float:right">
+                                    <input type="button" id="sendrachat" name="sendrachat" value="Ajouter"/>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="logoPdf" style="display: none;padding-top:80px"><img src="../img/logo_saham-vie.png"/>
+                        </p>
+
+                        <div class="infoline" style="margin-top:40px">
+                            <div style="width:auto; display:block;  float:left;  ">
+                            </div>
+                            <div style="width:30%; display:block;  float:right; padding-top:10px; text-align:center"
+                                 th:text="${#calendars.format(#calendars.createNow(), 'dd MMM yyyy')}">
+                                Abidjan le 02 Janvier 2017
+                            </div>
+
+                        </div>
+                        <div class="infoline">
+                            <div style="width:30%; display:block; float:right; text-align:center">
+                                <b>A<br>l’attention du Directeur Général<br>de SAHAM Assurance Vie</b>
+                            </div>
+                        </div>
+                        <div class="infoline2">
+                            <div class="infolineLeft">
+                                <b>Objet : Rachat total </b>
+                            </div>
+
+                        </div>
+                        <div style="width:100%; display:block; float:left; margin-top:30px; text-align:justify">
+                            Monsieur,<br><br>
+
+                            Je viens par la présente, demander une prestation de Rachat total pour les contrats
+                            ci-dessous.<br>
+                            <br>
+                            <table class="tableRachat" width="80%" border="0">
+                                <thead>
+                                <tr class="titrerachat">
+                                    <td>Nom</td>
+                                    <td>Contrat</td>
+                                    <td>Lieu de demande</td>
+                                    <td class="supprimer"></td>
+                                </tr>
+
+                                </thead>
+                                <tbody id="showrachat">
+                                <tr th:each="asked: ${askeds}">
+                                    <td th:text="${asked?.personne}">Toure</td>
+                                    <td th:text="${asked?.numContrat}">1552252626</td>
+                                    <td th:text="${asked?.ville}">Daloa</td>
+                                    <td class="supprimer">
+                                        <a th:href="'javascript:deleteAsker('+${asked.idContrat}+')'">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            <br>
+                            Dans l’attente d’une suite favorable, je vous prie d’agréer, Monsieur le Directeur Général,
+                            mes salutations distinguées.
+                            <br><br>
+                            Cordialement,
+                        </div>
+
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td align="left">
+                                    <table width="80%" border="0" align="right">
+                                        <tbody class="addfiles">
+                                        <tr>
+                                            <td align="right">
+                                                <input type="file" id="contactsFile" name="pictures" multiple/>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td align="right"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+<!--                        <table class="table" id="fileTable">
+                            <thead>
+                            <tr class="titrerachat">
+                                <th>Nom du fichier</th>
+                                <th>type</th>
+                                <th>Taille</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>-->
+                        <div id="button-submit" style="width:30%; display:block; margin-top:70px; float:right;">
+                            <input type="submit" value="Valider"/>
+                        </div>
+                        <br/>
+                        <p class="logoPdf" style="display: none" align="right"
+                           th:text="'Téléchargé le '+${#dates.format(#dates.createNow(), 'dd MMM yyyy')}">Téléchargé
+                            le </p>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+<script>
+
+
+/*    function uploadSingleFile(file) {
+        console.log("========uploadSingleFile===========");
+        var formData = new FormData();
+        formData.append("file", file);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/api/v1/sahamvie/fileOfDemande");
+
+        xhr.onload = function () {
+            console.log(xhr.responseText);
+            var response = JSON.parse(xhr.responseText);
+            if (xhr.status == 200) {
+                console.log("Succes :");
+                console.log(response);
+                $("#fileTable tbody").empty();
+                for (var i = 0; i < response.files.length; i++) {
+/!*
+                    var markup = "<tr><td>" + response.files[i].originalFilename + "</td><td>" + response.files[i].fileType + "</td><td>" + response.files[i].size + "</td><td class='supprimer'><input type='text' value='"+response.files[i].originalFilename +"'/><a href='javascript:deleteFile("+response.files[i].originalFilename+");'><i class='fa fa-trash' aria-hidden='true'></a></td></tr>";
+*!/
+                    var markup = "<tr><td >" + response.files[i].originalFilename + "</td><td>" + response.files[i].fileType + "</td><td>" + response.files[i].size + "</td><td class='supprimer '><input type='hidden' value='"+response.files[i].originalFilename +"'/><i class='fa fa-trash originalFilename' aria-hidden='true'></td></tr>";
+                    $("#fileTable tbody").append(markup);
+                }
+            } else {
+                console.log("Erreur :");
+                console.log(response);
+            }
+        }
+
+        xhr.send(formData);
+    }*/
+
+   /* $( "td .originalFilename" ).click(function() {
+        alert($(this).text());
+    });*/
+
+    $(".originalFilename").on('click',function() {
+        evID = $(this).closest('tr').attr("val");
+        alert(evID);
+    });
+    function deleteFile() {
+      /*  alert();
+        console.log($(this));*/
+       /* console.log("========deleteFile===========");
+        var formData = new FormData();
+        formData.append("fileName", fileName);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/api/v1/sahamvie/DeletefileOfDemande");
+
+        xhr.onload = function () {
+            console.log(xhr.responseText);
+            var response = JSON.parse(xhr.responseText);
+            if (xhr.status == 200) {
+                console.log("Succes :");
+                console.log(response);
+               /!* $("#fileTable tbody").empty();
+                for (var i = 0; i < response.files.length; i++) {
+                    var markup = "<tr><td>" + response.files[i].originalFilename + "</td><td>" + response.files[i].fileType + "</td><td>" + response.files[i].size + "</td><td class='supprimer'><input type='text' value='"+response.files[i].originalFilename +"'/><a href='javascript:deleteFile("+response.files[i].originalFilename+");'><i class='fa fa-trash' aria-hidden='true'></a></td></tr>";
+                    $("#fileTable tbody").append(markup);
+                }*!/
+            } else {
+                console.log("Erreur :");
+                console.log(response);
+            }
+        }
+
+        xhr.send(formData);*/
+    }
+
+
+    /*    var form = document.getElementById('file-form');
+        var fileSelect = document.getElementById('file-select');
+        var uploadButton = document.getElementById('upload-button');*/
+
+    /*    form.onsubmit = function(event) {
+            event.preventDefault();
+            var files = fileSelect.files;
+            uploadButton.innerHTML = 'Uploading...';
+            var formData = new FormData();
+
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                formData.append('docs[]', file, file.name);
+            }
+            console.log("------form data-------")
+            console.log(formData);
+            console.log("------ end form data-------")
+         /!*   $.ajax({
+                type: "POST",
+                url: url,
+                data: formData,
+                dataType : 'html',
+                success : function(response) {
+                    // console.log(response);
+
+                }
+            });
+            return false;*!/
+
+            // The rest of the code will go here...
+       }*/
+
+    var fileInput = document.getElementById("contactsFile");
+    var fileList = [];
+    fileInput.addEventListener('change', function () {
+        // fileList = [];
+        var file = $("#contactsFile")[0].files[0];
+        console.log("------file-------");
+        console.log(file);
+        uploadSingleFile(file);
+        /*        var data = new FormData();
+                data.append("picture",file);
+                $.ajax({
+                    type: "POST",
+                    enctype: 'multipart/form-data',
+                    url: "/api/v1/sahamvie/fileOfDemande",
+                    data: data ,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    timeout: 600000,
+                    success: function (data) {
+                        console.log("SUCCESS : ", data);
+                    },
+                    error: function (e) {
+                        console.log("ERROR : ", e);
+                    }
+                });
+
+
+                for (var i= 0; i < fileInput.files.length; i++){
+                    fileList.push(fileInput.files[i]);
+
+                }
+                for (var i= 0; i < fileInput.files.length; i++){
+                    var markup = "<tr><td>" + fileInput.files[i].name + "</td><td>" + fileInput.files[i].type + "</td><td>" + fileInput.files[i].size + "</td><td><i class='fa fa-trash' aria-hidden='true'></i></td></tr>";
+                    $("#fileTable tbody").append(markup);
+                }
+                console.log(fileList);*/
+
+
+    });
+
+    function generatePdf() {
+        alert("logopdf");
+        $('.logoPdf').css('display', 'block');
+        $('#button-submit').css('display', 'none');
+        $('.supprimer').css('display', 'none');
+        $('#id-titreSimu4').css('display', 'none');
+        doc.addHTML($('#monPdf')[0], 0, 0, {
+            'background': '#fff',
+        }, function () {
+            // doc.save('situation_' + $('#indicator').text() + '.pdf');
+            doc.save('demande_de_rachat_.pdf');
+        });
+        $('.logoPdf').css('display', 'none');
+        $('#button-submit').css('display', 'block');
+        $('#id-titreSimu4').css('display', 'block');
+        $('.supprimer').css('display', 'block');
+
+    }
+
+    $("#sendrachat").click(function () {
+
+        var dataString = $("#forminfo").serialize();
+        console.log("dataString : " + dataString);
+
+        $.ajax({
+            type: "GET",
+            url: "/api/v1/sahamvie/ask/rachatTotal/corporate",
+            data: dataString,
+            success: function (response) {
+                // console.log(response);
+
+                $(".tableRachat tbody").empty();
+                for (var i = 0; i < response.data.length; i++) {
+                    var markup = "<tr><td>" + response.data[i].personne + "</td><td>" + response.data[i].numContrat + "</td><td>" + response.data[i].ville + "</td><td class='supprimer'><a href='javascript:deleteAsker("+response.data[i].idContrat+");'><i class='fa fa-trash' aria-hidden='true'></i></a></td></tr>";
+                    $(".tableRachat tbody").append(markup);
+                }
+                $('html, body').animate({scrollTop: $('#showrachat').offset().top}, 300);
+
+            }
+        });
+        return false;
+    });
+
+    function deleteAsker(ref) {
+        $.ajax({
+            url: '/api/v1/sahamvie/deleteAskeur',
+            type: 'GET',
+            data: 'ref=' + ref,
+            beforeSend: function () {
+            },
+            success: function (response) {
+                $(".tableRachat tbody").empty();
+                for (var i = 0; i < response.data.length; i++) {
+                    var markup = "<tr><td>" + response.data[i].personne + "</td><td>" + response.data[i].numContrat + "</td><td>" + response.data[i].ville + "</td><td class='supprimer'><a href='javascript:deleteAsker("+response.data[i].idContrat+");'><i class='fa fa-trash' aria-hidden='true'></i></a></td></tr>";
+                    $(".tableRachat tbody").append(markup);
+                }
+                $('html, body').animate({scrollTop: $('#showrachat').offset().top}, 300);
+            },
+            complete: function () {
+            },
+            error: function (jqXHR) {
+                content.html(jqXHR.responseText);
+            }
+        })
+    }
+
+
+</script>
+</body>
+</html>

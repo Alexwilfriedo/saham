@@ -102,21 +102,21 @@ public class SahamvieApplication extends SpringBootServletInitializer {
             //new QuitanceUpdateService().seed("src/main/resources/data/quitance_all.csv", quitanceRepository);
 
 
-            //new PersonneBootstrap().load(ResourceUtils.getFile("classpath:data/personne-oracle.csv").getPath(), personneRepository);
-            //new ContratBootstrap().load(ResourceUtils.getFile("classpath:data/contrat-oracle.csv").getPath(), contratRepository);
-            //new SituationCompteGlobaleBootstrap().load(ResourceUtils.getFile("classpath:data/situation-compte-global.csv").getPath(), situationCompteGlobaleRepository);
-            //new CompteResultatBootstrap().load(ResourceUtils.getFile("classpath:data/compte-resultat-xls.csv").getPath(), compteResultatRepository);
-            //new SituationCompteBootstrap().load(ResourceUtils.getFile("classpath:data/situation-compte.csv").getPath(), situationCompteRepository, contratRepository, statutContratRepository);
-            //new QuittanceMatriceBootstrap().load(ResourceUtils.getFile("classpath:data/quittance-matrice.csv").getPath(), quittanceMatriceRepository);
-            //new QuittanceBootstrap().erase(ResourceUtils.getFile("classpath:data/quittance.csv").getPath(), quitanceRepository);
-            //new QuittanceBootstrap().load(ResourceUtils.getFile("classpath:data/quittance-canal-04122020.csv").getPath(), quitanceRepository);
+            new PersonneBootstrap().load(ResourceUtils.getFile("classpath:data/ORANGE_CI/personne-xls.csv").getPath(), personneRepository);
+            new ContratBootstrap().load(ResourceUtils.getFile("classpath:data/ORANGE_CI/contrat-xls.csv").getPath(), contratRepository);
+            new SituationCompteGlobaleBootstrap().load(ResourceUtils.getFile("classpath:data/ORANGE_CI/situation-compte-global-xls.csv").getPath(), situationCompteGlobaleRepository);
+            new CompteResultatBootstrap().load(ResourceUtils.getFile("classpath:data/ORANGE_CI/compte-resultat-xls.csv").getPath(), compteResultatRepository);
+            new SituationCompteBootstrap().load(ResourceUtils.getFile("classpath:data/ORANGE_CI/situation-compte-xls.csv").getPath(), situationCompteRepository, contratRepository, statutContratRepository);
+            new QuittanceMatriceBootstrap().load(ResourceUtils.getFile("classpath:data/ORANGE_CI/quittance-matrice-xls.csv").getPath(), quittanceMatriceRepository);
+            new QuittanceBootstrap().erase(ResourceUtils.getFile("classpath:data/ORANGE_CI/quittance-xls.csv").getPath(), quitanceRepository);
+            new QuittanceBootstrap().load(ResourceUtils.getFile("classpath:data/ORANGE_CI/quittance-xls.csv").getPath(), quitanceRepository);
             //new QuittanceBootstrap().updateMontatEmis(ResourceUtils.getFile("classpath:data/quittance.csv").getPath(), quitanceRepository);
 
             /** Pour chargement local **/
             //new SituationCompteGlobaleBootstrap().local(ResourceUtils.getFile("classpath:data/situation_compte_globale.csv").getPath(), situationCompteGlobaleRepository);
             //new SituationCompteBootstrap().local(ResourceUtils.getFile("classpath:data/situation_compte.csv").getPath(),situationCompteRepository);
             //new QuittanceMatriceBootstrap().local(ResourceUtils.getFile("classpath:data/quittance_matrice.csv").getPath(),quittanceMatriceRepository);
-            //new CompteResultatBootstrap().local(ResourceUtils.getFile("classpath:data/compte_resultat.csv").getPath(),compteResultatRepository);
+            //new CompteResultatBootstrap().local(ResourceUtils.getFile("classpath:data/ORANGE_CI/compte-resultat-xls.csv").getPath(),compteResultatRepository);
             //new ContratBootstrap().local(ResourceUtils.getFile("classpath:data/contrat.csv").getPath(), contratRepository);
             //new PersonneBootstrap().local(ResourceUtils.getFile("classpath:data/personne.csv").getPath(),personneRepository);
             //new QuittanceBootstrap().local(ResourceUtils.getFile("classpath:data/quitance.csv").getPath(), quitanceRepository);

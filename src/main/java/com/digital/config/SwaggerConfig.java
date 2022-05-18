@@ -29,8 +29,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "Sahamvie REST API",
-                "Default Sahamvie REST API",
+                "Sanlamvie REST API",
+                "Default Sanlamvie REST API",
                 "1.0.0.0",
                 "Terms of service",
                 new Contact("Digit-al Corp", "www.digit-al.ci", "contact@digit-al.ci"),

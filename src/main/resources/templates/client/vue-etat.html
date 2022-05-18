@@ -52,7 +52,7 @@
                 <p>Nous vous prions de trouver ci-dessous les informations constitutant la situation de compte de votre
                     contrat :
                 </p>
-                <p><strong>Vos versements en</strong>   <strong th:if="${situationCompte}" th:text="${situationCompte?.dateSituation} ? ${#dates.year(situationCompte?.dateSituation)} : 'Indefinie'">2017</strong> <span style="margin-left:30px"><b th:text="${totalVersement} ? ${#numbers.formatInteger(totalVersement,3,'WHITESPACE')}+' FCFA':'0 FCFA'">11 735 016</b></span>
+                <p><strong>Vos versements en</strong>   <strong th:if="${situationCompte}" th:text="${situationCompte?.dateSituation} ? ${#dates.year(situationCompte?.dateSituation)} : 'Indefinie'">2017</strong> <span style="margin-left:30px"><b th:text="${totalVersement} ? ${#numbers.formatInteger(totalVersement,3,'POINT')}+' FCFA':'0 FCFA'">11 735 016</b></span>
                 </p>
                 <table border="1" cellspacing="0" cellpadding="0" align="center">
                     <tr>
@@ -69,25 +69,25 @@
                         <td rowspan="3" align="center">
                             <p align="center"><strong th:if="${situationCompte}" th:text="${situationCompte?.dateSituation} ? ${#dates.year(situationCompte?.dateSituation)}">2016</strong></p></td>
                         <td align="center"><p><strong
-                                th:text="${quittanceMatrice?.janvier} ? ${#numbers.formatInteger(quittanceMatrice?.janvier,3,'WHITESPACE')}">66
+                                th:text="${quittanceMatrice?.janvier} ? ${#numbers.formatInteger(quittanceMatrice?.janvier,3,'POINT')}">66
                             004</strong></p></td>
                         <td align="center"><p><strong
-                                th:text="${quittanceMatrice?.fevrier} ? ${#numbers.formatInteger(quittanceMatrice?.fevrier,3,'WHITESPACE')}">66
+                                th:text="${quittanceMatrice?.fevrier} ? ${#numbers.formatInteger(quittanceMatrice?.fevrier,3,'POINT')}">66
                             004</strong></p></td>
                         <td align="center"><p><strong
-                                th:text="${quittanceMatrice?.mars} ? ${#numbers.formatInteger(quittanceMatrice?.mars,3,'WHITESPACE')}">66
+                                th:text="${quittanceMatrice?.mars} ? ${#numbers.formatInteger(quittanceMatrice?.mars,3,'POINT')}">66
                             004</strong></p></td>
                         <td align="center"><p><strong
-                                th:text="${quittanceMatrice?.avril} ? ${#numbers.formatInteger(quittanceMatrice?.avril,3,'WHITESPACE')}">66
+                                th:text="${quittanceMatrice?.avril} ? ${#numbers.formatInteger(quittanceMatrice?.avril,3,'POINT')}">66
                             004</strong></p></td>
                         <td align="center"><p><strong
-                                th:text="${quittanceMatrice?.mai} ? ${#numbers.formatInteger(quittanceMatrice?.mai,3,'WHITESPACE')}">66
+                                th:text="${quittanceMatrice?.mai} ? ${#numbers.formatInteger(quittanceMatrice?.mai,3,'POINT')}">66
                             004</strong></p></td>
                         <td align="center"><p><strong
-                                th:text="${quittanceMatrice?.juin} ? ${#numbers.formatInteger(quittanceMatrice?.juin,3,'WHITESPACE')}">66
+                                th:text="${quittanceMatrice?.juin} ? ${#numbers.formatInteger(quittanceMatrice?.juin,3,'POINT')}">66
                             004</strong></p></td>
                         <td rowspan="3" align="center">
-                            <p align="center"><strong th:text="${totalVersement} ? ${#numbers.formatInteger(totalVersement,3,'WHITESPACE')}">795 882</strong><strong> </strong></p>
+                            <p align="center"><strong th:text="${totalVersement} ? ${#numbers.formatInteger(totalVersement,3,'POINT')}">795 882</strong><strong> </strong></p>
                         </td>
                     </tr>
                     <tr>
@@ -100,22 +100,22 @@
                     </tr>
                     <tr>
                         <td align="center"><p><strong
-                                th:text="${quittanceMatrice?.juillet} ? ${#numbers.formatInteger(quittanceMatrice?.juillet,3,'WHITESPACE')}">66
+                                th:text="${quittanceMatrice?.juillet} ? ${#numbers.formatInteger(quittanceMatrice?.juillet,3,'POINT')}">66
                             004</strong></p></td>
                         <td align="center"><p><strong
-                                th:text="${quittanceMatrice?.aout} ? ${#numbers.formatInteger(quittanceMatrice?.aout,3,'WHITESPACE')}">66
+                                th:text="${quittanceMatrice?.aout} ? ${#numbers.formatInteger(quittanceMatrice?.aout,3,'POINT')}">66
                             004</strong></p></td>
                         <td align="center"><p><strong
-                                th:text="${quittanceMatrice?.septembre} ? ${#numbers.formatInteger(quittanceMatrice?.septembre,3,'WHITESPACE')}">66
+                                th:text="${quittanceMatrice?.septembre} ? ${#numbers.formatInteger(quittanceMatrice?.septembre,3,'POINT')}">66
                             004</strong></p></td>
                         <td align="center"><p><strong
-                                th:text="${quittanceMatrice?.octobre} ? ${#numbers.formatInteger(quittanceMatrice?.octobre,3,'WHITESPACE')}">66
+                                th:text="${quittanceMatrice?.octobre} ? ${#numbers.formatInteger(quittanceMatrice?.octobre,3,'POINT')}">66
                             004</strong></p></td>
                         <td align="center"><p><strong
-                                th:text="${quittanceMatrice?.novembre} ? ${#numbers.formatInteger(quittanceMatrice?.novembre,3,'WHITESPACE')}">66
+                                th:text="${quittanceMatrice?.novembre} ? ${#numbers.formatInteger(quittanceMatrice?.novembre,3,'POINT')}">66
                             004</strong></p></td>
                         <td align="center"><p><strong
-                                th:text="${quittanceMatrice?.deceembre} ? ${#numbers.formatInteger(quittanceMatrice?.deceembre,3,'WHITESPACE')}">66
+                                th:text="${quittanceMatrice?.deceembre} ? ${#numbers.formatInteger(quittanceMatrice?.deceembre,3,'POINT')}">66
                             004</strong></p></td>
 
                     </tr>
@@ -125,29 +125,29 @@
                     <tr>
                         <td width="198" valign="top">Capital acquis au 1er janv <span th:text="${situationCompte?.dateSituation} ? ${#dates.year(situationCompte?.dateSituation)}">2018</span></td>
                         <td width="37" valign="top"><p align="center">:</p></td>
-                        <td width="339" valign="top"><p><span th:if="${situationCompte}" th:text="${situationCompte?.capitalAcquisJanv} ? ${#numbers.formatInteger(situationCompte?.capitalAcquisJanv,3,'WHITESPACE')}+' FCFA':'0 FCFA'">&nbsp;</span></p></td>
+                        <td width="339" valign="top"><p><span th:if="${situationCompte}" th:text="${situationCompte?.capitalAcquisJanv} ? ${#numbers.formatInteger(situationCompte?.capitalAcquisJanv,3,'POINT')}+' FCFA':'0 FCFA'">&nbsp;</span></p></td>
                     </tr>
                     <tr>
                         <td width="198" valign="top"><p>Primes nettes en <span th:if="${situationCompte}" th:text="${situationCompte?.dateSituation} ? ${#dates.year(situationCompte?.dateSituation)}">2016</span></p></td>
                         <td width="37" valign="top"><p align="center"><strong>:</strong></p></td>
-                        <td width="339" valign="top"><p><span th:text="${situationCompte?.primeNette} ? ${#numbers.formatInteger(situationCompte?.primeNette,3,'WHITESPACE')}+' FCFA':'0 FCFA'">764
+                        <td width="339" valign="top"><p><span th:text="${situationCompte?.primeNette} ? ${#numbers.formatInteger(situationCompte?.primeNette,3,'POINT')}+' FCFA':'0 FCFA'">764
                             049 </span></p></td>
                     </tr>
                     <tr>
                         <td width="198" valign="top"><p>Interêt perçu en <span th:if="${situationCompte}" th:text="${situationCompte?.dateSituation} ? ${#dates.year(situationCompte?.dateSituation)}">2016</span></p></td>
                         <td width="37" valign="top"><p align="center"><strong>:</strong></p></td>
-                        <td width="339" valign="top"><p><span th:text="${situationCompte?.interet} ? ${#numbers.formatInteger(situationCompte?.interet,3,'WHITESPACE')}+' FCFA':'0 FCFA'">539
+                        <td width="339" valign="top"><p><span th:text="${situationCompte?.interet} ? ${#numbers.formatInteger(situationCompte?.interet,3,'POINT')}+' FCFA':'0 FCFA'">539
                             746 </span></p></td>
                     </tr>
                     <!--<tr>
                         <td width="198" valign="top"><p>Cumul cotisations au <span th:text="${situationCompte?.dateSituation} ? ${#dates.format(situationCompte?.dateSituation, 'dd/MM/yyyy')}">2016</span></p></td>
                         <td width="37" valign="top"><p align="center"><strong>:</strong></p></td>
-                        <td width="339" valign="top"><p><span th:text="${situationCompte?.cumulPrimeAu31122016} ? ${#numbers.formatInteger(situationCompte?.cumulPrimeAu31122016,3,'WHITESPACE')}+' FCFA':'0 FCFA'">-</span></p></td>
+                        <td width="339" valign="top"><p><span th:text="${situationCompte?.cumulPrimeAu31122016} ? ${#numbers.formatInteger(situationCompte?.cumulPrimeAu31122016,3,'POINT')}+' FCFA':'0 FCFA'">-</span></p></td>
                     </tr>-->
                     <tr>
                         <td width="198" valign="top"><p>Capital au <span th:if="${situationCompte}" th:text="${situationCompte?.dateSituation} ? ${#dates.format(situationCompte?.dateSituation, 'dd/MM/yyyy')}">Capital au 31/12/2016</span></p></td>
                         <td width="37" valign="top"><p align="center"><strong>:</strong></p></td>
-                        <td width="339" valign="top"><p><span th:if="${situationCompte}" th:text="${situationCompte?.capitalAu} ? ${#numbers.formatInteger(situationCompte?.capitalAu,3,'WHITESPACE')}+' FCFA':'0 FCFA'">539 746</span></p></td>
+                        <td width="339" valign="top"><p><span th:if="${situationCompte}" th:text="${situationCompte?.capitalAu} ? ${#numbers.formatInteger(situationCompte?.capitalAu,3,'POINT')}+' FCFA':'0 FCFA'">539 746</span></p></td>
                     </tr>
                 </table>
                 <p>&nbsp;</p>

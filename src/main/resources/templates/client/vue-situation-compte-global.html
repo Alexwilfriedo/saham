@@ -47,12 +47,12 @@
                         <td align="center"><p><strong>Provisions Mathématiques au </strong><strong th:text="${sitgble?.dateSituation} ? ${#dates.format(sitgble?.dateSituation,'dd/MM/yyyy')}">31/10/2017</strong></p></td>
                     </tr>
                     <tr>
-                        <td valign="center" th:text="${sitgble?.capitalAcquisJanv} ? ${#numbers.formatInteger(sitgble?.capitalAcquisJanv,3,'WHITESPACE')}+' FCFA':'0 FCFA'">5 938 465 892 FCFA</td>
-                        <td valign="center" th:text="${sitgble?.cotisationAnnuelle} ? ${#numbers.formatInteger(sitgble?.cotisationAnnuelle,3,'WHITESPACE')}+' FCFA':'0 FCFA'">539 195 100 FCFA</td>
-                        <td valign="center" th:text="${sitgble?.primeNette} ? ${#numbers.formatInteger(sitgble?.primeNette,3,'WHITESPACE')}+' FCFA':'0 FCFA'">534 635 389 FCFA</td>
-                        <td valign="center" th:text="${sitgble?.interet} ? ${#numbers.formatInteger(sitgble?.interet,3,'WHITESPACE')}+' FCFA':'0 FCFA'">213 925 439 FCFA</td>
-                        <td valign="center" th:text="${sitgble?.prestation} ? ${#numbers.formatInteger(sitgble?.prestation,3,'WHITESPACE')}+' FCFA':'0 FCFA'">1 181 747 404 FCFA</td>
-                        <td valign="center" th:text="${sitgble?.capitalAu} ? ${#numbers.formatInteger(sitgble?.capitalAu,3,'WHITESPACE')}+' FCFA':'0 FCFA'">6 636 026 316 FCFA</td>
+                        <td valign="center" th:text="${sitgble?.capitalAcquisJanv} ? ${#numbers.formatInteger(sitgble?.capitalAcquisJanv,3,'POINT')}+' FCFA':'0 FCFA'">5 938 465 892 FCFA</td>
+                        <td valign="center" th:text="${sitgble?.cotisationAnnuelle} ? ${#numbers.formatInteger(sitgble?.cotisationAnnuelle,3,'POINT')}+' FCFA':'0 FCFA'">539 195 100 FCFA</td>
+                        <td valign="center" th:text="${sitgble?.primeNette} ? ${#numbers.formatInteger(sitgble?.primeNette,3,'POINT')}+' FCFA':'0 FCFA'">534 635 389 FCFA</td>
+                        <td valign="center" th:text="${sitgble?.interet} ? ${#numbers.formatInteger(sitgble?.interet,3,'POINT')}+' FCFA':'0 FCFA'">213 925 439 FCFA</td>
+                        <td valign="center" th:text="${sitgble?.prestation} ? ${#numbers.formatInteger(sitgble?.prestation,3,'POINT')}+' FCFA':'0 FCFA'">1 181 747 404 FCFA</td>
+                        <td valign="center" th:text="${sitgble?.capitalAu} ? ${#numbers.formatInteger(sitgble?.capitalAu,3,'POINT')}+' FCFA':'0 FCFA'">6 636 026 316 FCFA</td>
                     </tr>
                 </table>
             </div>

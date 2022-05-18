@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml">
   <head>
-    <title>SAHAM Assurance Vie | Contrat</title>
+    <title>SANLAM Assurance Vie | Contrat</title>
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="template language" name="keywords">
@@ -520,8 +520,8 @@
                           <td class="text-center" th:text="${qtce?.contrat?.produit?.nomProduit}">produit</td>
                           <td class="text-center" th:text="${qtce?.objet?.nomObjet}">oki</td>
                           <td class="text-center" th:text="${qtce.echeance} ? ${#dates.format(qtce.echeance, 'dd/MM/yyyy')}">31/03/2013</td>
-                        <td class="text-center" th:text="${qtce.montantEmis} ? ${#numbers.formatInteger(qtce.montantEmis,3,'WHITESPACE')}+' FCFA':'0 FCFA'">50.000 FCFA</td>
-                        <td class="text-center" th:text="${qtce.montantPaye} ? ${#numbers.formatInteger(qtce.montantPaye,3,'WHITESPACE')}+' FCFA':'0 FCFA'">50.000 FCFA</td>
+                        <td class="text-center" th:text="${qtce.montantEmis} ? ${#numbers.formatInteger(qtce.montantEmis,3,'POINT')}+' FCFA':'0 FCFA'">50.000 FCFA</td>
+                        <td class="text-center" th:text="${qtce.montantPaye} ? ${#numbers.formatInteger(qtce.montantPaye,3,'POINT')}+' FCFA':'0 FCFA'">50.000 FCFA</td>
                           <td class="text-right">
                               <div th:if="${qtce?.statutQuitance?.statutQuit=='payé'}" class="status-pill green" data-title="payé" data-toggle="tooltip" data-original-title="" title=""></div>
                               <div th:if="${qtce?.statutQuitance?.statutQuit=='impayé'}" class="status-pill red" data-title="impayé" data-toggle="tooltip" data-original-title="" title=""></div>

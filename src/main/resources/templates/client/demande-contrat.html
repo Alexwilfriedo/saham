@@ -29,7 +29,7 @@
                 </div>
                 <div class="infoline" style="margin-top:40px">
                     <div style="width:32%; display:block;  float:left; margin-right:10px">
-                        Cotisation actuelle<br><input id="prime" th:value="${ctrat?.prime} ? ${#numbers.formatInteger(ctrat?.prime,3,'WHITESPACE')}+' FCFA':'0 FCFA'"disabled />
+                        Cotisation actuelle<br><input id="prime" th:value="${ctrat?.prime} ? ${#numbers.formatInteger(ctrat?.prime,3,'POINT')}+' FCFA':'0 FCFA'"disabled />
                     </div>
                     <div style="width:32%; display:block; float:left; margin-right:10px">
                         Nouvelle cotisation<br><input  name="newPrime"/>

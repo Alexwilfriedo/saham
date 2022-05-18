@@ -1,0 +1,31 @@
+_id,_rev,code,id,nomobjet
+2,6-6763911d759ed5dc5b32d2f1dc80f576,2,2,Rachat partiel
+16,7-a906b680994c3ec70dfbbef8161050c0,231,16,Impayés de l'année en cours
+13,6-bc522fa5f948fb7fac2ff3413dad6772,220,13,Cotisation totale situation de compte annuel
+22,7-14eeb547773060b3f5ecedc9e5668d28,261,22,Prime de fidélité de l'année en cours
+1,6-9f5e190e9c70e29c67fae316aa5bad93,1,1,Prime
+10,6-e2e68f43d5bbfc113514cc3400d86bed,100,10,Date situation de compte annuelle
+11,6-4e2580a2fae84128e6c94333d94ce42a,101,11,Date signature DG situation de compte
+8,6-22b7fba6a98503117a373ba9f1de676b,211,8,Valeur de reduction situation de compte annuel
+20,7-f176670fe4dafc27fde882a6d624f5dc,251,20,Montant des rachats partiels de l'année en cours
+17,6-5a83c67d88bf186b4170a5e9a1e7d7f4,240,17,Nombre de cotisations totales situation de compte 
+21,7-2aecf72d08703c0a8aaad749357e26c4,260,21,Prime de fidélité
+23,6-219820fe0c705da4b092405cf33c6bc2,270,23,Valeur de rachat
+12,8-8fdb8f86c4f0a88e1d328e225005e44a,210,12,Valeur de réduction
+26,6-f338d4e306ed629a6adae893a7f64aa0,14,26,Capital
+14,7-9cecfd3638b1fec5a217e5157a2219f8,221,14,Montant cotisé sur l'année en cours
+15,7-d4c97655e47704c8a2bde166486dde8d,230,15,Total impayés
+25,6-c4884ae171b730c9821284bae48eca2e,10,25,Cout de Police
+27,6-d66a04aaaf62b5fcab95e012d76b807f,15,27,Capital Deces
+3,6-f34ddcd656223a6e4fdbf64e22f39baa,3,3,Provision mathematique
+24,7-ab17972703adf0afebc18f554b3a2a6d,271,24,Valeur de rachat de l'année en cours
+18,7-efff7a429bc3cbcb46db0a9d3e27500d,241,18,Nombre de cotisations de l'année
+19,6-6668272dbe40e28aed604f2e0fa2c089,250,19,Montant total des rachats partiels
+6,6-b519849fc3d54c49dd12ab98ef95e498,6,6,Versement libre
+7,6-68e4c9987eb61c59916bdf693b4e7384,7,7,Prime part employeur
+28,6-83dbeffeb4410b24936bedc3c202a75e,55,28,Rente Vie
+29,6-cca588f449c0538fdcee72114e9d09c0,57,29,Rente Deces
+4,6-510016ee124016787ab94183f5e0130f,4,4,avance
+30,6-7e75299318b799be4cc2353f5647b27c,52,30,Restant du
+5,6-827408beac7dbdcabaa13598210b3879,5,5,Rembousement avance
+9,6-0f6c16befa511a73c5374a9db090aabc,30,9,Provision mathematique du dernier arrete CAPITAL A

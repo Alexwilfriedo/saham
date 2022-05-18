@@ -11,8 +11,8 @@
           <tbody>
           <tr>
             <td >Valeur rachat<br>
-              <div th:if="${isParticulirOfCorporate == false}" class="divSit" th:text="${quitanceValeurRachat?.montantPaye} ? ${#numbers.formatInteger(quitanceValeurRachat?.montantPaye,3,'WHITESPACE')}+' FCFA':'0 FCFA'">0 FCFA</div>
-              <div th:if="${isParticulirOfCorporate}" class="divSit" th:text="${situationCompte?.capitalAu} ? ${#numbers.formatInteger(situationCompte?.capitalAu,3,'WHITESPACE')}+' FCFA':'0 FCFA'"></div>
+              <div th:if="${isParticulirOfCorporate == false}" class="divSit" th:text="${quitanceValeurRachat?.montantPaye} ? ${#numbers.formatInteger(quitanceValeurRachat?.montantPaye,3,'POINT')}+' FCFA':'0 FCFA'">0 FCFA</div>
+              <div th:if="${isParticulirOfCorporate}" class="divSit" th:text="${situationCompte?.capitalAu} ? ${#numbers.formatInteger(situationCompte?.capitalAu,3,'POINT')}+' FCFA':'0 FCFA'"></div>
             </td>
             <td>Date de calcul<br>
               <div th:if="${isParticulirOfCorporate == false}" class="divSit" th:text="${quitanceValeurRachat?.dateValeur} ? ${#dates.format(quitanceValeurRachat?.dateValeur,'dd/MM/yyyy')}"></div>
@@ -33,8 +33,8 @@
 
           <tr>
             <td>Provision Mathématique <br>
-              <div th:if="${isParticulirOfCorporate == false}" class="divSit" th:text="${quitancePm?.montantPaye} ? ${#numbers.formatInteger(quitancePm?.montantPaye,3,'WHITESPACE')}+' FCFA':'0 FCFA'"></div>
-              <div th:if="${isParticulirOfCorporate}" class="divSit" th:text="${situationCompte?.capitalAu} ? ${#numbers.formatInteger(situationCompte?.capitalAu,3,'WHITESPACE')}+' FCFA':'0 FCFA'"></div>
+              <div th:if="${isParticulirOfCorporate == false}" class="divSit" th:text="${quitancePm?.montantPaye} ? ${#numbers.formatInteger(quitancePm?.montantPaye,3,'POINT')}+' FCFA':'0 FCFA'"></div>
+              <div th:if="${isParticulirOfCorporate}" class="divSit" th:text="${situationCompte?.capitalAu} ? ${#numbers.formatInteger(situationCompte?.capitalAu,3,'POINT')}+' FCFA':'0 FCFA'"></div>
             </td>
             <td>Date de calcul<br>
               <div th:if="${isParticulirOfCorporate == false}" class="divSit" th:text="${quitancePm?.dateValeur} ? ${#dates.format(quitancePm?.dateValeur,'dd/MM/yyyy')}"></div>
@@ -55,9 +55,9 @@
 
           <tr>
             <td>Valeur  de réduction  <br>
-              <div th:if="${isParticulirOfCorporate == false}" class="divSit" th:text="${quitanceValeurReduction?.montantPaye} ? ${#numbers.formatInteger(quitanceValeurReduction?.montantPaye,3,'WHITESPACE')}+' FCFA':'0 FCFA'">0 FCFA</div>
+              <div th:if="${isParticulirOfCorporate == false}" class="divSit" th:text="${quitanceValeurReduction?.montantPaye} ? ${#numbers.formatInteger(quitanceValeurReduction?.montantPaye,3,'POINT')}+' FCFA':'0 FCFA'">0 FCFA</div>
               <div th:if="${isParticulirOfCorporate}" class="divSit">0 FCFA</div>
-              <!--<div th:if="${isParticulirOfCorporate}" class="divSit" th:text="${quitanceValeurReduction?.montantPaye} ? ${#numbers.formatInteger(quitanceValeurReduction?.montantPaye,3,'WHITESPACE')}+' FCFA':'0 FCFA'">0 FCFA</div>-->
+              <!--<div th:if="${isParticulirOfCorporate}" class="divSit" th:text="${quitanceValeurReduction?.montantPaye} ? ${#numbers.formatInteger(quitanceValeurReduction?.montantPaye,3,'POINT')}+' FCFA':'0 FCFA'">0 FCFA</div>-->
             </td>
             <td>Date de calcul<br>
               <div th:if="${isParticulirOfCorporate == false}" class="divSit" th:text="${quitanceValeurReduction?.dateValeur} ? ${#dates.format(quitanceValeurReduction?.dateValeur,'dd/MM/yyyy')}"></div>

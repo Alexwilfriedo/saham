@@ -49,7 +49,7 @@ public class ProduitController {
                         "\n" +
                         "                        <p><strong>Objectifs</strong></p>\n" +
                         "                        <p><br>\n" +
-                        "                            Ce contrat permet de se  constituer à travers des versements  périodiques et/ ou libres, une épargne qui servira à financer un projet ou  disposer d&rsquo;un capital ou de revenus complémentaires au moment du départ à la  retraite. Au terme, l&rsquo;assuré perçoit un capital revalorisé d&rsquo;année en année  grâce au taux d&rsquo;intérêts et à la participation aux bénéfices distribués par  Saham Assurance-vie.</p>\n" +
+                        "                            Ce contrat permet de se  constituer à travers des versements  périodiques et/ ou libres, une épargne qui servira à financer un projet ou  disposer d&rsquo;un capital ou de revenus complémentaires au moment du départ à la  retraite. Au terme, l&rsquo;assuré perçoit un capital revalorisé d&rsquo;année en année  grâce au taux d&rsquo;intérêts et à la participation aux bénéfices distribués par  Sanlam Assurance-vie.</p>\n" +
                         "                        <p><br>\n" +
                         "                            <strong>Fonctionnement</strong>\n" +
                         "                        </p>\n" +
@@ -57,7 +57,7 @@ public class ProduitController {
                         "                        <p>\n" +
                         "                            <br>\n" +
                         "                            A la souscription, l&rsquo;assuré choisit le montant à  épargner ainsi que la périodicité et le mode de paiement des primes adaptés à  ses projets.<br>\n" +
-                        "                            <strong>L&rsquo;épargne  est constituée </strong>par les cotisations nettes de frais,<strong> </strong>capitalisée<strong> </strong>au taux d&rsquo;intérêt technique annuel garanti de 3,5% et augmentées  des participations aux bénéfices techniques et financiers de SAHAM Assurance  vie.<br>\n" +
+                        "                            <strong>L&rsquo;épargne  est constituée </strong>par les cotisations nettes de frais,<strong> </strong>capitalisée<strong> </strong>au taux d&rsquo;intérêt technique annuel garanti de 3,5% et augmentées  des participations aux bénéfices techniques et financiers de SANLAM Assurance  vie.<br>\n" +
                         "                            En cas de coup dur, <strong>l&rsquo;épargne constituée reste accessible</strong> à  tout moment selon les conditions prévues au contrat.<br>\n" +
                         "                            <strong>Au terme du contrat ou au moment  du départ à la retraite, </strong>l&rsquo;assuré perçoit l&rsquo;épargne constituée sous forme de  capital ou de rentes. <br>\n" +
                         "                            <strong>En cas de décès avant le terme du  contrat, </strong>l&rsquo;épargne constituée au jour du décès est<strong> </strong>versée au(x) bénéficiaires désignés.<br><br>\n" +
@@ -65,7 +65,7 @@ public class ProduitController {
                         "                            <strong>Liberté&nbsp;:</strong> l&rsquo;assuré  choisit librement, le montant, la durée, et la périodicité de ses primes.<br><br>\n" +
                         "                            <strong>Disponibilité</strong>&nbsp;:  en cas de coup dur l&rsquo;épargne reste disponible sous certaines conditions.<br><br>\n" +
                         "                            <strong>Rentabilité</strong>&nbsp;:  l&rsquo;épargne constituée bénéficie des intérêts et participations aux bénéfices  distribués. <br><br>\n" +
-                        "                            <strong>Tranquillité</strong>&nbsp;:  la garantie et à la solidité du Groupe Saham donnent à l&rsquo;assuré la  certitude de récupérer son capital, qui servira de complément de revenus à la  retraite.<br><br>\n" +
+                        "                            <strong>Tranquillité</strong>&nbsp;:  la garantie et à la solidité du Groupe Sanlam donnent à l&rsquo;assuré la  certitude de récupérer son capital, qui servira de complément de revenus à la  retraite.<br><br>\n" +
                         "                            <strong>Transmission</strong>&nbsp;:  grâce au cadre juridique et fiscal de l&rsquo;assurance-vie, le contrat CARI permet  de léguer un capital exonéré de droits de succession à la personne de son choix.\n" +
                         "                        </p>\n" +
                         "                        <p>&nbsp;</p>\n" +
@@ -104,9 +104,9 @@ public class ProduitController {
                         "                                    <p><strong>&nbsp;</strong></p>\n" +
                         "                                    <p><strong>NATURE DES  GARANTIES </strong></p></td>\n" +
                         "                                <td  colspan=\"2\" valign=\"top\"><p><strong>Garantie en cas de vie: </strong> <br>\n" +
-                        "                                    En cas de vie de l&rsquo;Assuré au terme du contrat, SAHAM Assurance Vie    garantit le paiement de l&rsquo;épargne constituée <br>\n" +
+                        "                                    En cas de vie de l&rsquo;Assuré au terme du contrat, SANLAM Assurance Vie    garantit le paiement de l&rsquo;épargne constituée <br>\n" +
                         "                                    <strong>Garantie en cas de décès: </strong> <br>\n" +
-                        "                                    En cas de Décès de l&rsquo;Assuré avant le terme du contrat, SAHAM Assurance    Vie garantit le paiement de l&rsquo;épargne constituée à la date du décès </p></td>\n" +
+                        "                                    En cas de Décès de l&rsquo;Assuré avant le terme du contrat, SANLAM Assurance    Vie garantit le paiement de l&rsquo;épargne constituée à la date du décès </p></td>\n" +
                         "                            </tr>\n" +
                         "                            <tr>\n" +
                         "                                <td  valign=\"top\"><p><strong>&nbsp;</strong></p>\n" +
@@ -164,7 +164,7 @@ public class ProduitController {
                         "                        <strong>Objectifs</strong><br><br>\n" +
                         "                            Toutes les personnes  ayant des responsabilités familiales, et survenant aux besoins financiers  d&rsquo;autres personnes, (conjoint, enfants, parents etc), doivent prendre des  précautions pour assurer la pérennité de leur action dans le cas où il leur  arrive un malheur<br>\n" +
                         "                            <strong>Ce  contrat est conçu pour Protéger</strong>, contre des difficultés  financières liées au décès ou à l&rsquo;invalidité absolue et définitive de l&rsquo;assuré  avant le terme du contrat.<br>\n" +
-                        "                            Il garantit le paiement par SAHAM Assurance Vie d&rsquo;un capital aux bénéficiaires désignés, en cas de décès de l&rsquo;assuré. Le même capital est versé à  l&rsquo;assuré en cas d&rsquo;invalidité absolue et définitive selon les conditions prévues  par le contrat. <br><br>\n" +
+                        "                            Il garantit le paiement par SANLAM Assurance Vie d&rsquo;un capital aux bénéficiaires désignés, en cas de décès de l&rsquo;assuré. Le même capital est versé à  l&rsquo;assuré en cas d&rsquo;invalidité absolue et définitive selon les conditions prévues  par le contrat. <br><br>\n" +
                         "                      <div class=\"content-masque\">\n" +
                         "                            <strong>Fonctionnement</strong>\n" +
                         "                            <br><br>\n" +
@@ -249,11 +249,11 @@ public class ProduitController {
                 apiproduit.setImgUrl("http://sahamassurancevie.ci/img/produits/obseqplus.jpg");
                 apiproduit.setDocument(Jsoup.parse("<div class=\"DescProdBlock\">\n" +
                         "                       <br> <strong>Objectifs</strong><br><br>\n" +
-                        "                            De nos jours, l&rsquo;organisation  des funérailles en plus d&rsquo;être difficile émotionnellement entraîne une charge  financière énorme. Par OBSEQ&rsquo;PLUS, SAHAM Assurance Vie permet au souscripteur  d&rsquo;organiser et d&rsquo;anticiper ses funérailles, ce qui aura pour effet de soulager  financièrement ses proches.<br><br>\n" +
+                        "                            De nos jours, l&rsquo;organisation  des funérailles en plus d&rsquo;être difficile émotionnellement entraîne une charge  financière énorme. Par OBSEQ&rsquo;PLUS, SANLAM Assurance Vie permet au souscripteur  d&rsquo;organiser et d&rsquo;anticiper ses funérailles, ce qui aura pour effet de soulager  financièrement ses proches.<br><br>\n" +
                         "                            <strong>Fonctionnement</strong><br><br>\n" +
                         "                            L&rsquo;assuré choisit une formule parmi celles proposées et verse de manière  périodique une prime sur une durée de 10 ans.<br>\n" +
-                        "                            Lorsque le décès survient, SAHAM Assurance Vie prend en charge auprès  d&rsquo;une pompe funèbre les prestations prévues dans la formule choisie.<br>\n" +
-                        "                            En plus, SAHAM Assurance Vie verse en espèces un capital aux  bénéficiaires choisis pour l&rsquo;organisation des obsèques.<br><br>\n" +
+                        "                            Lorsque le décès survient, SANLAM Assurance Vie prend en charge auprès  d&rsquo;une pompe funèbre les prestations prévues dans la formule choisie.<br>\n" +
+                        "                            En plus, SANLAM Assurance Vie verse en espèces un capital aux  bénéficiaires choisis pour l&rsquo;organisation des obsèques.<br><br>\n" +
                         "                        <div class=\"content-masque\">\n" +
                         "                            <strong>Avantages</strong><br><br>\n" +
                         "                            Cette  offre, très souple, protège l&rsquo;assuré toute sa vie durant.<br>\n" +
@@ -457,14 +457,14 @@ public class ProduitController {
                         "                            Conçu en vue de  garantir les moyens financiers nécessaires à l&rsquo;éducation des enfants, la Rente  Education permet, par des versements périodiques, la constitution et le service  d&rsquo;une rente certaine:<br><br>\n" +
                         "                            <strong>Fonctionnement</strong><br><br>\n" +
                         "                            <strong>Le client choisit</strong> le  montant de la rente qu&rsquo;il souhaite percevoir annuellement. La prime<strong> </strong> est calculée en tenant compte de la rente  choisie, de l&rsquo;âge de l&rsquo;assuré ainsi que de la durée du contrat.<br>\n" +
-                        "                            <strong>Le capital</strong> constitutif de la  rente est revalorisé des participations aux bénéfices annuelles de SAHAM  Assurance Vie, et reste accessible en cas de changement d&rsquo;objectif, selon les  termes du contrat.<strong></strong><br>\n" +
+                        "                            <strong>Le capital</strong> constitutif de la  rente est revalorisé des participations aux bénéfices annuelles de SANLAM  Assurance Vie, et reste accessible en cas de changement d&rsquo;objectif, selon les  termes du contrat.<strong></strong><br>\n" +
                         "                            <strong>Au </strong>terme du contrat si l&rsquo;assuré est en vie, il  perçoit  la rente annuelle promise  pendant 6 (six) ans.\n" +
                         "                        </p>\n" +
                         "                        <div class=\"content-masque\">\n" +
                         "                        <p>\n" +
                         "                            <strong>En  cas de Décès de l&rsquo;Assuré</strong> avant le  terme de la période de paiement des primes, le(s ) bénéficiaire(s) désigné(s)  perçoit (vent) à chaque date anniversaire du contrat, la rente annuelle  certaine souscrite, sur une durée partant de la date du décès à la fin de la  période prévue pour le paiement des rentes en cas de vie. <br><br>\n" +
                         "                            <strong>Avantages</strong><br><br>\n" +
-                        "                            <strong>L&rsquo;assuré</strong> (e) prépare l&rsquo;avenir de ses enfants avec certitude  et tranquillité. En effet, qu&rsquo;il soit lui-même vivant ou non au terme qu&rsquo;il a  choisi pour le contrat, la rente certaine prévue est versée par SAHAM  Assurance-Vie. <br>\n" +
+                        "                            <strong>L&rsquo;assuré</strong> (e) prépare l&rsquo;avenir de ses enfants avec certitude  et tranquillité. En effet, qu&rsquo;il soit lui-même vivant ou non au terme qu&rsquo;il a  choisi pour le contrat, la rente certaine prévue est versée par SANLAM  Assurance-Vie. <br>\n" +
                         "                            La rente versée en cas de au terme du contrat  Educ&rsquo;plus peut également servir à financer un projet, ou faire face aux  besoins  ponctuels, comme lors du départ  à la retraite par exemple.<br>\n" +
                         "                            Si ses projets changent en cours de route, il garde  la possibilité  d&rsquo;accéder  à la part d&rsquo;épargne déterminée par la valeur  de rachat de son contrat.<br><br>\n" +
                         "                            <strong>Schématisation</strong>\n" +

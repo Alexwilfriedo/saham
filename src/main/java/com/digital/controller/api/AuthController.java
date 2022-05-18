@@ -170,8 +170,8 @@ public class AuthController {
                // user.setRoles(Collections.singleton(roleRepository.findByRole("USER")));
 
            String contenu = String.format("Votre identifiant est :%s",getRef(personneRepository.findByReference(contratRepository.findFirstByPolice(policy).getId_souscrpteur())));
-          //  SmsProvider.SendSmsViaInfoBip("Saham vie",contenu,String.format("225%s",user.getPhone()));
-            HttpSms httpSms = new HttpSms.Builder("Saham vie",String.format("225%s",user.getPhone()),contenu,"UTF-8").build();
+          //  SmsProvider.SendSmsViaInfoBip("Sanlam vie",contenu,String.format("225%s",user.getPhone()));
+            HttpSms httpSms = new HttpSms.Builder("Sanlam vie",String.format("225%s",user.getPhone()),contenu,"UTF-8").build();
             smsHelper.sendTo(httpSms);
             user.setUsername(getRef(personneRepository.findByReference(contratRepository.findFirstByPolice(policy).getId_souscrpteur())));
             user.setPassword(password);

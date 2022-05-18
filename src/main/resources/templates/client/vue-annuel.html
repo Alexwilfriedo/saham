@@ -44,7 +44,7 @@
                           </tr>
                           <tr>
                             <td valign="bottom"><p><strong>MONTANT COTISATION</strong></p></td>
-                            <td valign="bottom"><p><strong th:text="${contrat?.prime} ? ${#numbers.formatInteger(contrat?.prime,3,'WHITESPACE')}+' FCFA':'0 FCFA'">75 000 F CFA</strong></p></td>
+                            <td valign="bottom"><p><strong th:text="${contrat?.prime} ? ${#numbers.formatInteger(contrat?.prime,3,'POINT')}+' FCFA':'0 FCFA'">75 000 F CFA</strong></p></td>
                             <td valign="bottom"><p><strong th:text="${contrat?.souscripteur?.fonction}">COMPTABLE</strong></p></td>
                             <td valign="bottom"><p>&nbsp;</p></td>
                           </tr>
@@ -80,17 +80,17 @@
                         <tr>
                           <td rowspan="3" valign="top"><p align="center"><strong>&nbsp;</strong></p>
                             <p align="center"><strong th:text="${etat.annee}">2018</strong></p></td>
-                          <td valign="top" th:each="e,iterStat: ${etat.monthAndAmounts}" th:if="${iterStat.index}<6"><p align="center"><strong th:text="${e.amount} ? ${#numbers.formatInteger(e.amount,3,'WHITESPACE')} : '0'">Mois</strong></p></td>
+                          <td valign="top" th:each="e,iterStat: ${etat.monthAndAmounts}" th:if="${iterStat.index}<6"><p align="center"><strong th:text="${e.amount} ? ${#numbers.formatInteger(e.amount,3,'POINT')} : '0'">Mois</strong></p></td>
 
                           <td rowspan="3" valign="top"><p align="center"><strong>&nbsp;</strong></p>
-                            <p align="center"><strong th:text="${etat.totalcotise} ? ${#numbers.formatInteger(etat.totalcotise,3,'WHITESPACE')}+' FCFA':'0 FCFA'">900 000</strong></p>
+                            <p align="center"><strong th:text="${etat.totalcotise} ? ${#numbers.formatInteger(etat.totalcotise,3,'POINT')}+' FCFA':'0 FCFA'">900 000</strong></p>
                           </td>
                         </tr>
                         <tr>
                           <td valign="top" th:each="e,iterStat: ${etat.monthAndAmounts}" th:if="${iterStat.index}>=6"><p align="center"><strong th:text="${e.month}">Mois</strong></p></td>
                         </tr>
                         <tr>
-                          <td valign="top" th:each="e,iterStat: ${etat.monthAndAmounts}" th:if="${iterStat.index}>=6"><p align="center"><strong th:text="${e.amount} ? ${#numbers.formatInteger(e.amount,3,'WHITESPACE')} : '0'">Mois</strong></p></td>
+                          <td valign="top" th:each="e,iterStat: ${etat.monthAndAmounts}" th:if="${iterStat.index}>=6"><p align="center"><strong th:text="${e.amount} ? ${#numbers.formatInteger(e.amount,3,'POINT')} : '0'">Mois</strong></p></td>
                         </tr>
                       </table>
                       <p>&nbsp;</p>
@@ -100,13 +100,13 @@
                           <td width="156" valign="top"><p><strong>Vos rachats partiels en</strong></p></td>
                           <td width="106" valign="top"><p align="center"><strong th:text="${etat.rachatPartielYear} ? ${#dates.year(etat.rachatPartielYear)} : '2018'">2018</strong></p></td>
                           <td width="55" valign="top"><p align="center"><strong>:</strong></p></td>
-                          <td width="182" valign="top"><p><strong th:text="${etat.rachatPartiel} ? ${#numbers.formatInteger(etat.rachatPartiel,3,'WHITESPACE')} :'0'">0 </strong><strong>FCFA</strong></p></td>
+                          <td width="182" valign="top"><p><strong th:text="${etat.rachatPartiel} ? ${#numbers.formatInteger(etat.rachatPartiel,3,'POINT')} :'0'">0 </strong><strong>FCFA</strong></p></td>
                         </tr>
                         <tr th:if="${isParticulirOfCorporate == false}">
                           <td width="156" valign="top"><p><strong>Votre</strong> <strong>capital retraite au</strong></p></td>
                           <td width="106" valign="top"><p align="center"><strong th:text="${etat.capitalRetraiteYear} ? ${#dates.format(etat.capitalRetraiteYear, 'dd/MM/yyyy')}: '31/12/2018'">31/12/2018</strong></p></td>
                           <td width="55" valign="top"><p align="center"><strong>:</strong></p></td>
-                          <td width="182" valign="top"><p><strong th:text="${etat.capitalRetraite} ? ${#numbers.formatInteger(etat.capitalRetraite,3,'WHITESPACE')}+' FCFA':'0 FCFA'">8 936&nbsp;519 FCFA</strong></p></td>
+                          <td width="182" valign="top"><p><strong th:text="${etat.capitalRetraite} ? ${#numbers.formatInteger(etat.capitalRetraite,3,'POINT')}+' FCFA':'0 FCFA'">8 936&nbsp;519 FCFA</strong></p></td>
                         </tr>
                         <tr th:if="${isParticulirOfCorporate}">
                           <td width="156" valign="top"><p><strong>Votre</strong> <strong>capital retraite au</strong></p></td>

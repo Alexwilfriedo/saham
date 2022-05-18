@@ -10,10 +10,10 @@
     <table width="100%" border="0" style="font-size:16px">
       <tbody>
       <tr style="text-align: center">
-        <td th:if="${isEnterprise == false}"><i class="fa fa-line-chart" aria-hidden="true"></i> Cumul des primes payées :<br> <b th:text="${cumul_paye} ? ${#numbers.formatInteger(cumul_paye,3,'WHITESPACE')}+' FCFA':'0 FCFA'">500.000 FCFA</b></td>
-        <td th:if="${isEnterprise}"><i class="fa fa-line-chart" aria-hidden="true"></i> Cumul des primes payées en 2019 :<br> <b th:text="${cumul_paye} ? ${#numbers.formatInteger(cumul_paye,3,'WHITESPACE')}+' FCFA':'0 FCFA'">500.000 FCFA</b></td>
-        <td th:if="${isEnterprise}"><i class="fa fa-line-chart" aria-hidden="true"></i> Provision mathématique au <span th:text="${dateOfLastQuittance} ? ${#dates.format(dateOfLastQuittance, 'dd/MM/yyyy')}">inconnue</span> :<br><b th:text="${situationCompte?.capitalAcquisJanv} ? ${#numbers.formatInteger(situationCompte?.capitalAcquisJanv,3,'WHITESPACE')}+' FCFA':'0 FCFA'">500.000 FCFA</b></td>
-        <td th:if="${isEnterprise == false}" ><i class="fa fa-pie-chart" aria-hidden="true"></i> Cumul des primes impayées :<br> <b th:text="${cumul_impaye} ? ${#numbers.formatInteger(cumul_impaye,3,'WHITESPACE')}+' FCFA': '0 FCFA'">300.000 FCFA</b></td>
+        <td th:if="${isEnterprise == false}"><i class="fa fa-line-chart" aria-hidden="true"></i> Cumul des primes payées :<br> <b th:text="${cumul_paye} ? ${#numbers.formatInteger(cumul_paye,3,'POINT')}+' FCFA':'0 FCFA'">500.000 FCFA</b></td>
+        <td th:if="${isEnterprise}"><i class="fa fa-line-chart" aria-hidden="true"></i> Cumul des primes payées en 2019 :<br> <b th:text="${cumul_paye} ? ${#numbers.formatInteger(cumul_paye,3,'POINT')}+' FCFA':'0 FCFA'">500.000 FCFA</b></td>
+        <td th:if="${isEnterprise}"><i class="fa fa-line-chart" aria-hidden="true"></i> Provision mathématique au <span th:text="${dateOfLastQuittance} ? ${#dates.format(dateOfLastQuittance, 'dd/MM/yyyy')}">inconnue</span> :<br><b th:text="${situationCompte?.capitalAcquisJanv} ? ${#numbers.formatInteger(situationCompte?.capitalAcquisJanv,3,'POINT')}+' FCFA':'0 FCFA'">500.000 FCFA</b></td>
+        <td th:if="${isEnterprise == false}" ><i class="fa fa-pie-chart" aria-hidden="true"></i> Cumul des primes impayées :<br> <b th:text="${cumul_impaye} ? ${#numbers.formatInteger(cumul_impaye,3,'POINT')}+' FCFA': '0 FCFA'">300.000 FCFA</b></td>
       </tr>
       </tbody>
     </table>
@@ -34,8 +34,8 @@
           <tr th:each="qtce: ${quitanceReleve}">
             <td class="text-center" th:text="${qtce?.objet?.nomObjet}">Prime</td>
             <td class="text-center" th:text="${qtce.echeance} ? ${#dates.format(qtce.echeance, 'dd/MM/yyyy')}">01/01/2017</td>
-            <td class="text-center" th:text="${qtce.montantEmis} ? ${#numbers.formatInteger(qtce.montantEmis,3,'WHITESPACE')}+' FCFA':'0 FCFA'">50.000 FCFA</td>
-            <td class="text-center" th:text="${qtce.montantPaye} ? ${#numbers.formatInteger(qtce.montantPaye,3,'WHITESPACE')}+' FCFA':'0 FCFA'">50.000 FCFA</td>
+            <td class="text-center" th:text="${qtce.montantEmis} ? ${#numbers.formatInteger(qtce.montantEmis,3,'POINT')}+' FCFA':'0 FCFA'">50.000 FCFA</td>
+            <td class="text-center" th:text="${qtce.montantPaye} ? ${#numbers.formatInteger(qtce.montantPaye,3,'POINT')}+' FCFA':'0 FCFA'">50.000 FCFA</td>
             <td class="text-center">
               <div th:if="${qtce?.statutQuitance?.statutQuit=='payé'}" class="status-pill green" data-title="payé" data-toggle="tooltip" data-original-title="" title=""></div>
               <div th:if="${qtce?.statutQuitance?.statutQuit=='impayé'}" class="status-pill red" data-title="impayé" data-toggle="tooltip" data-original-title="" title=""></div>

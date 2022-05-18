@@ -214,12 +214,12 @@
                                          <td align="center"><p><strong>Provisions Mathématiques au </strong><strong th:text="${sitgble?.dateSituation} ? ${#dates.format(sitgble?.dateSituation,'dd/MM/yyyy')}">31/10/2017</strong></p></td>
                                        </tr>
                                        <tr>
-                                         <td valign="center" th:text="${sitgble?.capitalAcquisJanv} ? ${#numbers.formatInteger(sitgble?.capitalAcquisJanv,3,'WHITESPACE')}+' FCFA':'0 FCFA'">5 938 465 892 FCFA</td>
-                                         <td valign="center" th:text="${sitgble?.cotisationAnnuelle} ? ${#numbers.formatInteger(sitgble?.cotisationAnnuelle,3,'WHITESPACE')}+' FCFA':'0 FCFA'">539 195 100 FCFA</td>
-                                         <td valign="center" th:text="${sitgble?.primeNette} ? ${#numbers.formatInteger(sitgble?.primeNette,3,'WHITESPACE')}+' FCFA':'0 FCFA'">534 635 389 FCFA</td>
-                                         <td valign="center" th:text="${sitgble?.interet} ? ${#numbers.formatInteger(sitgble?.interet,3,'WHITESPACE')}+' FCFA':'0 FCFA'">213 925 439 FCFA</td>
-                                         <td valign="center" th:text="${sitgble?.prestation} ? ${#numbers.formatInteger(sitgble?.prestation,3,'WHITESPACE')}+' FCFA':'0 FCFA'">1 181 747 404 FCFA</td>
-                                         <td valign="center" th:text="${sitgble?.capitalAu} ? ${#numbers.formatInteger(sitgble?.capitalAu,3,'WHITESPACE')}+' FCFA':'0 FCFA'">6 636 026 316 FCFA</td>
+                                         <td valign="center" th:text="${sitgble?.capitalAcquisJanv} ? ${#numbers.formatInteger(sitgble?.capitalAcquisJanv,3,'POINT')}+' FCFA':'0 FCFA'">5 938 465 892 FCFA</td>
+                                         <td valign="center" th:text="${sitgble?.cotisationAnnuelle} ? ${#numbers.formatInteger(sitgble?.cotisationAnnuelle,3,'POINT')}+' FCFA':'0 FCFA'">539 195 100 FCFA</td>
+                                         <td valign="center" th:text="${sitgble?.primeNette} ? ${#numbers.formatInteger(sitgble?.primeNette,3,'POINT')}+' FCFA':'0 FCFA'">534 635 389 FCFA</td>
+                                         <td valign="center" th:text="${sitgble?.interet} ? ${#numbers.formatInteger(sitgble?.interet,3,'POINT')}+' FCFA':'0 FCFA'">213 925 439 FCFA</td>
+                                         <td valign="center" th:text="${sitgble?.prestation} ? ${#numbers.formatInteger(sitgble?.prestation,3,'POINT')}+' FCFA':'0 FCFA'">1 181 747 404 FCFA</td>
+                                         <td valign="center" th:text="${sitgble?.capitalAu} ? ${#numbers.formatInteger(sitgble?.capitalAu,3,'POINT')}+' FCFA':'0 FCFA'">6 636 026 316 FCFA</td>
                                        </tr>
                                      </table>
                                    </div>
@@ -238,8 +238,8 @@
                                <table width="100%" border="0" style="font-size:16px">
                                  <tbody>
                                  <tr>
-                                   <td><i class="fa fa-line-chart" aria-hidden="true"></i> Cumul des primes payées : <b th:text="${cumul_paye} ? ${#numbers.formatInteger(cumul_paye,3,'WHITESPACE')}+' FCFA':'0 FCFA'">500.000 FCFA</b></td>
-                                   <td><i class="fa fa-pie-chart" aria-hidden="true"></i> Cumul des primes impayées : <b th:text="${cumul_impaye} ? ${#numbers.formatInteger(cumul_impaye,3,'WHITESPACE')}+' FCFA': '0 FCFA'">300.000 FCFA</b></td>
+                                   <td><i class="fa fa-line-chart" aria-hidden="true"></i> Cumul des primes payées : <b th:text="${cumul_paye} ? ${#numbers.formatInteger(cumul_paye,3,'POINT')}+' FCFA':'0 FCFA'">500.000 FCFA</b></td>
+                                   <td><i class="fa fa-pie-chart" aria-hidden="true"></i> Cumul des primes impayées : <b th:text="${cumul_impaye} ? ${#numbers.formatInteger(cumul_impaye,3,'POINT')}+' FCFA': '0 FCFA'">300.000 FCFA</b></td>
                                  </tr>
                                  </tbody>
                                </table>
@@ -262,8 +262,8 @@
                                        <td class="text-center" th:text="${qtce?.objet?.nomObjet}">Prime</td>
                                        <td class="text-center" th:text="${qtce?.contrat?.produit?.nomProduit}">Produit</td>
                                        <td class="text-center" th:text="${qtce.echeance} ? ${#dates.format(qtce.echeance, 'dd/MM/yyyy')}">01/01/2017</td>
-                                       <td class="text-center" th:text="${qtce.montantEmis} ? ${#numbers.formatInteger(qtce.montantEmis,3,'WHITESPACE')}+' FCFA':'0 FCFA'">50.000 FCFA</td>
-                                       <td class="text-center" th:text="${qtce.montantPaye} ? ${#numbers.formatInteger(qtce.montantPaye,3,'WHITESPACE')}+' FCFA':'0 FCFA'">50.000 FCFA</td>
+                                       <td class="text-center" th:text="${qtce.montantEmis} ? ${#numbers.formatInteger(qtce.montantEmis,3,'POINT')}+' FCFA':'0 FCFA'">50.000 FCFA</td>
+                                       <td class="text-center" th:text="${qtce.montantPaye} ? ${#numbers.formatInteger(qtce.montantPaye,3,'POINT')}+' FCFA':'0 FCFA'">50.000 FCFA</td>
                                        <td class="text-center">
                                          <div th:if="${qtce?.statutQuitance?.statutQuit=='payé'}" class="status-pill green" data-title="payé" data-toggle="tooltip" data-original-title="" title=""></div>
                                          <div th:if="${qtce?.statutQuitance?.statutQuit=='impayé'}" class="status-pill red" data-title="impayé" data-toggle="tooltip" data-original-title="" title=""></div>

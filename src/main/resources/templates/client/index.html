@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title>SAHAM Assurance Vie | ESPACE CLIENT</title>
+    <title>SANLAM Assurance Vie | ESPACE CLIENT</title>
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="template language" name="keywords">
@@ -86,7 +86,7 @@
 
                                 <div style="margin-top:17px;" class="element-box">
                                     <h6 class="element-header product">
-                                        Les produits SAHAM Assurance Vie
+                                        Les produits SANLAM Assurance Vie
                                     </h6>
                                     <div class="table-responsive">
                                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -151,7 +151,7 @@
                                                             Cumul global <br/> des impayés
                                                         </div>
                                                         <div class="value"
-                                                             th:text="${cumul_impaye} ? ${#numbers.formatInteger(cumul_impaye,3,'WHITESPACE')}+' FCFA':'0 FCFA'">
+                                                             th:text="${cumul_impaye} ? ${#numbers.formatInteger(cumul_impaye,3,'POINT')}+' FCFA':'0 FCFA'">
                                                             251
                                                         </div>
                                                     </div>
@@ -160,7 +160,7 @@
                                                             Cumul des <br/> cotisations
                                                         </div>
                                                         <div class="value"
-                                                             th:text="${sitCpteGble?.cotisationAnnuelle} ? ${#numbers.formatInteger(sitCpteGble?.cotisationAnnuelle,3,'WHITESPACE')}+' FCFA':'0 FCFA'">
+                                                             th:text="${sitCpteGble?.cotisationAnnuelle} ? ${#numbers.formatInteger(sitCpteGble?.cotisationAnnuelle,3,'POINT')}+' FCFA':'0 FCFA'">
                                                             251
                                                         </div>
                                                     </div>
@@ -182,11 +182,11 @@
                                                     </div>
                                                     <div class="bar-label-right">
                                                         <span class="info"
-                                                              th:text="${cont?.cumulImpaye} ? ${#numbers.formatInteger(cont?.cumulImpaye,3,'WHITESPACE')}+' FCFA'">150.000 FCFA</span>
+                                                              th:text="${cont?.cumulImpaye} ? ${#numbers.formatInteger(cont?.cumulImpaye,3,'POINT')}+' FCFA'">150.000 FCFA</span>
                                                     </div>
                                                 </div>
                                                 <div class="bar-level-1" style="width: 100%">
-                                                    <div th:attr="data-title=${cont?.cumulPaye} ? ${#numbers.formatInteger(cont?.cumulPaye,3,'WHITESPACE')}+' FCFA'"
+                                                    <div th:attr="data-title=${cont?.cumulPaye} ? ${#numbers.formatInteger(cont?.cumulPaye,3,'POINT')}+' FCFA'"
                                                          data-toggle="tooltip" data-original-title="" title=""
                                                          class="bar-level-3"
                                                          th:style="'width:'+${cont?.percent}+'%'"></div>
@@ -260,11 +260,11 @@
                                                 31/03/2013
                                             </td>
                                             <td class="text-center"
-                                                th:text="${qtce.montantEmis} ? ${#numbers.formatInteger(qtce.montantEmis,3,'WHITESPACE')} : '0'+' FCFA'">
+                                                th:text="${qtce.montantEmis} ? ${#numbers.formatInteger(qtce.montantEmis,3,'POINT')} : '0'+' FCFA'">
                                                 50.000 FCFA
                                             </td>
                                             <td class="text-center"
-                                                th:text="${qtce.montantPaye} ? ${#numbers.formatInteger(qtce.montantPaye,3,'WHITESPACE')} : '0'+' FCFA'">
+                                                th:text="${qtce.montantPaye} ? ${#numbers.formatInteger(qtce.montantPaye,3,'POINT')} : '0'+' FCFA'">
                                                 50.000 FCFA
                                             </td>
                                             <td class="text-right">
@@ -299,7 +299,7 @@
 
                                             <td class="text-center" th:text="${product?.typeContrat}">oki</td>
                                             <td class="text-center" th:text="${perso?.matricule}">-</td>
-                                            <td class="text-center" th:text="${product?.capitalAu} ? ${#numbers.formatInteger(product?.capitalAu,3,'WHITESPACE')}+' FCFA':'0 FCFA'">6636026316</td>
+                                            <td class="text-center" th:text="${product?.capitalAu} ? ${#numbers.formatInteger(product?.capitalAu,3,'POINT')}+' FCFA':'0 FCFA'">6636026316</td>
                                         </tr>
                                         </tbody>
                                     </table>

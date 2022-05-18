@@ -76,7 +76,7 @@ public class HttpSms {
         }
 
         public Builder(String receiver, String content) {
-            this.sender = "Saham vie";
+            this.sender = "Sanlam vie";
             this.receiver = receiver;
             this.content = content;
         }

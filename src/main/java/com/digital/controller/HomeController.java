@@ -147,7 +147,7 @@ public class HomeController {
     public @ResponseBody Map<String, Object>getNumberAndsendCode(String numero,HttpServletRequest request) {
         System.out.println("numero :"+numero);
         String code  = Utility.getCodeReinit(6,"1234567890");
-        HttpSms httpSms = new HttpSms.Builder("Saham vie",String.format("225%s",numero),String.format("%s est le code de réinitialisation de votre mot de passe",code),"UTF-8").build();
+        HttpSms httpSms = new HttpSms.Builder("Sanlam vie",String.format("225%s",numero),String.format("%s est le code de réinitialisation de votre mot de passe",code),"UTF-8").build();
         smsHelper.sendTo(httpSms);
         Map<String, Object> response = new HashMap<>();
         request.getSession().setAttribute("code",code);

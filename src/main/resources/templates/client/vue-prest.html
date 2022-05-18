@@ -23,8 +23,8 @@
           <tr th:each="qtce: ${quitancePresta}">
             <td class="nowrap" th:text="${qtce?.objet?.nomObjet}">Prime</td>
             <td class="nowrap" th:text="${qtce.echeance} ? ${#dates.format(qtce.echeance, 'dd/MM/yyyy')}">01/01/2017</td>
-            <td class="nowrap" th:text="${qtce.montantEmis} ? ${#numbers.formatInteger(qtce.montantEmis,3,'WHITESPACE')}:'0'+' FCFA'">15.000 FCFA</td>
-            <td class="nowrap" th:text="${qtce.montantPaye} ? ${#numbers.formatInteger(qtce.montantPaye,3,'WHITESPACE')}:'0'+' FCFA'">15.000 FCFA</td>
+            <td class="nowrap" th:text="${qtce.montantEmis} ? ${#numbers.formatInteger(qtce.montantEmis,3,'POINT')}:'0'+' FCFA'">15.000 FCFA</td>
+            <td class="nowrap" th:text="${qtce.montantPaye} ? ${#numbers.formatInteger(qtce.montantPaye,3,'POINT')}:'0'+' FCFA'">15.000 FCFA</td>
             <td class="text-center">
               <div th:if="${qtce?.statutQuitance?.statutQuit=='payé'}" class="status-pill green" data-title="payé" data-toggle="tooltip" data-original-title="" title=""></div>
               <div th:if="${qtce?.statutQuitance?.statutQuit=='impayé'}" class="status-pill red" data-title="impayé" data-toggle="tooltip" data-original-title="" title=""></div>

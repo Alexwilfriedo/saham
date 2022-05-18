@@ -220,14 +220,14 @@ public class CompteController {
                                 userRepository.save(user1);
                                 String contenu = "Votre identifiant est :" + identifiant + " ";
                                 String numero = "";
-                                // SmsProvider.SendSmsViaInfoBip("Saham vie", contenu, String.format("225%s", user.getPhone()));
+                                // SmsProvider.SendSmsViaInfoBip("Sanlam vie", contenu, String.format("225%s", user.getPhone()));
                                 if (Utility.isLocal(user.getPhone()) != null){
                                     numero = Utility.isLocal(user.getPhone());
                                 }else {
                                     numero =  user.getPhone();
                                 }
 
-                                HttpSms httpSms = new HttpSms.Builder("Saham vie",numero,contenu,"UTF-8").build();
+                                HttpSms httpSms = new HttpSms.Builder("Sanlam vie",numero,contenu,"UTF-8").build();
                                 smsHelper.sendTo(httpSms);
 
                                 redirectAttributes.addFlashAttribute("success", true);
@@ -398,7 +398,7 @@ public class CompteController {
 
         redirectAttributes.addFlashAttribute("success", true);
         redirectAttributes.addFlashAttribute("title", "Success");
-        redirectAttributes.addFlashAttribute("message", "Votre contrat a été retrouvé, veuillez prendre contact avec saham au (+225) 20 25 97 10 ou 20 25 97 09");
+        redirectAttributes.addFlashAttribute("message", "Votre contrat a été retrouvé, veuillez prendre contact avec Sanlam au (+225) 27 20 25 97 10 ou 27 20 25 97 09");
 
         if (numero != null && !numero.isEmpty() && contratDesherenceRepository.findByChContrat(numero) !=null ){
              contrat = contratDesherenceRepository.findByChContrat(numero);
@@ -455,7 +455,7 @@ public class CompteController {
     }
 
     public void sendSuccesSms(String telephone,String message){
-        HttpSms httpSms = new HttpSms.Builder("Saham vie",String.format("225%s",telephone),message,"UTF-8").build();
+        HttpSms httpSms = new HttpSms.Builder("Sanlam vie",String.format("225%s",telephone),message,"UTF-8").build();
         smsHelper.sendTo(httpSms);
     }
     public void sendSuccesMail(String phone, Date dateNais,DesherenceContrat desherenceContrat){

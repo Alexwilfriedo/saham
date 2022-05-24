@@ -102,12 +102,12 @@ public class SahamvieApplication extends SpringBootServletInitializer {
             //new QuitanceUpdateService().seed(ResourceUtils.getFile("classpath:data/Donnees_23_07_2020/quitance_all.csv").getPath(), quitanceRepository);
 
 
-            //new PersonneBootstrap().load(ResourceUtils.getFile("classpath:data/ORANGE_CI/personne-xls.csv").getPath(), personneRepository);
-            //new ContratBootstrap().load(ResourceUtils.getFile("classpath:data/ORANGE_CI/contrat-xls.csv").getPath(), contratRepository);
-            //new SituationCompteGlobaleBootstrap().load(ResourceUtils.getFile("classpath:data/ORANGE_CI/situation-compte-global-xls.csv").getPath(), situationCompteGlobaleRepository);
-            //new CompteResultatBootstrap().load(ResourceUtils.getFile("classpath:data/ORANGE_CI/compte-resultat-xls.csv").getPath(), compteResultatRepository);
-            //new SituationCompteBootstrap().load(ResourceUtils.getFile("classpath:data/ORANGE_CI/situation-compte-xls.csv").getPath(), situationCompteRepository, contratRepository, statutContratRepository);
-            //new QuittanceMatriceBootstrap().load(ResourceUtils.getFile("classpath:data/ORANGE_CI/quittance-matrice-xls.csv").getPath(), quittanceMatriceRepository);
+            new PersonneBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_20_05_2022/personne-xls.csv").getPath(), personneRepository);
+            new ContratBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_20_05_2022/contrat-xls.csv").getPath(), contratRepository);
+            new SituationCompteGlobaleBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_20_05_2022/situation-compte-globale-xls.csv").getPath(), situationCompteGlobaleRepository);
+            new CompteResultatBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_20_05_2022/compte-resultat-xls.csv").getPath(), compteResultatRepository);
+            new SituationCompteBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_20_05_2022/situation-compte-xls.csv").getPath(), situationCompteRepository, contratRepository, statutContratRepository);
+            new QuittanceMatriceBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_20_05_2022/quittance-matrice-xls.csv").getPath(), quittanceMatriceRepository);
             //new QuittanceBootstrap().erase(ResourceUtils.getFile("classpath:data/ORANGE_CI/quittance-xls.csv").getPath(), quitanceRepository);
             //new QuittanceBootstrap().load(ResourceUtils.getFile("classpath:data/ORANGE_CI/quittance-xls.csv").getPath(), quitanceRepository);
             //new QuittanceBootstrap().updateMontatEmis(ResourceUtils.getFile("classpath:data/quittance.csv").getPath(), quitanceRepository);

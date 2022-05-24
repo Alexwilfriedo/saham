@@ -27,6 +27,7 @@ public class UserBootstrap {
         userList.add(new User("13000036", new BCryptPasswordEncoder().encode("G019R10718"), new Date()));
         userList.add(new User("13000037", new BCryptPasswordEncoder().encode("G013R10318"), new Date()));
         userList.add(new User("13000050", new BCryptPasswordEncoder().encode("GR00941107"), new Date()));
+        userList.add(new User("13000027", new BCryptPasswordEncoder().encode("ORANGECI"), new Date()));
 
         userList.forEach(user -> {
             if (userRepository.findFirstByUsername(user.getUsername()) == null) userRepository.save(user);

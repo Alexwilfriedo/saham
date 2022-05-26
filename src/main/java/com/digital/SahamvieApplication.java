@@ -97,10 +97,10 @@ public class SahamvieApplication extends SpringBootServletInitializer {
             //lourd
             //new ContratBootstrap().seed(ResourceUtils.getFile("classpath:data/Donnees_23_07_2020/contratall.csv").getPath(), contratRepository,personneRepository, produitRepository,statutContratRepository, periodiciteRepository);
             //new PersonneBootstrap().seed(ResourceUtils.getFile("classpath:data/Donnees_23_07_2020/personneall.csv").getPath(),personneRepository, profilsRepository);
+            new BeneficiaireBootstrap().seed(ResourceUtils.getFile("classpath:data/donnees_20_05_2022/infos_Souscripteurs.csv").getPath(), beneficiaireRepository, personneRepository, contratRepository, statutContratRepository);
             //new PersonneVueBootstrap().seed(ResourceUtils.getFile("classpath:data/Donnees_23_07_2020/compte-resultatall.csv").getPath(),personneRepository, profilsRepository);
             //new QuittanceBootstrap().seed(ResourceUtils.getFile("classpath:data/Donnees_23_07_2020/quittanceall.csv").getPath(), "src/main/resources/Donnees_saham_29_05_2020/test.csv", contratRepository, objetsRepository, statutQuitanceRepository, quitanceRepository);
             //new QuitanceUpdateService().seed(ResourceUtils.getFile("classpath:data/Donnees_23_07_2020/quitance_all.csv").getPath(), quitanceRepository);
-
 
             new PersonneBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_20_05_2022/personne-xls.csv").getPath(), personneRepository);
             new ContratBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_20_05_2022/contrat-xls.csv").getPath(), contratRepository);

@@ -67,6 +67,7 @@ public class ClientDefauftController {
     @Autowired private DemandeRepository demandeRepository;
     @Autowired private JavaMailSenderHandler javaMailSenderHandler;
     @Autowired private MailTemplateHandler mailTemplateHandler;
+    @Autowired private BeneficiaireRepository beneficiaireRepository;
 
     @Value("${dir.images}") private String imagesDirectoty;
 
@@ -641,9 +642,11 @@ public class ClientDefauftController {
 
         Contrat contrat = contratRepository.findAllContratOfEmploye(id).get(0);
         System.out.println("Police ==> "+contrat.getPolice());
+        Beneficiaire beneficiaire = beneficiaireRepository.findByContrat(contrat.getId()).orElse(null);
         QuittanceMatrice quittanceMatrice = quittanceMatriceRepository.findByCodeContrat(contrat.getPolice());
         SituationCompte situationCompte = situationCompteRepository.findByCodeContrat(contrat.getPolice());
         model.addAttribute("contrat", contrat);
+        model.addAttribute("beneficiaire", beneficiaire);
 
         if (situationCompte != null && situationCompte.getTauxRevaloEpargne() != null){
             model.addAttribute("situationCompte", situationCompte);

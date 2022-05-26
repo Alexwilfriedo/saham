@@ -1,10 +1,10 @@
 package com.digital.service.bootstrap;
 
+import com.digital.model.Beneficiaire;
 import com.digital.model.Contrat;
 import com.digital.model.Personne;
-import com.digital.repository.ContratRepository;
-import com.digital.repository.PersonneRepository;
-import com.digital.repository.ProfilsRepository;
+import com.digital.model.StatutContrat;
+import com.digital.repository.*;
 import com.digital.util.LoadCsvFile;
 
 import java.text.ParseException;
@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class PersonneBootstrap {
-    public  void seed(String pathname, PersonneRepository personneRepository, ProfilsRepository profilsRepository) {
+    public void seed(String pathname, PersonneRepository personneRepository, ProfilsRepository profilsRepository) {
         if (personneRepository.count()==0){
             List<String> data = LoadCsvFile.getData(pathname);
             System.out.println("Mise a jour de la table personne");
@@ -184,7 +184,7 @@ public class PersonneBootstrap {
         }
     }
 
-    public  void local(String pathname, PersonneRepository personneRepository) {
+    public void local(String pathname, PersonneRepository personneRepository) {
         if (personneRepository.count()==0){
             List<String> data = LoadCsvFile.getData(pathname);
             System.out.println("Mise a jour de la table personne");

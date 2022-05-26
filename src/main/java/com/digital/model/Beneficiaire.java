@@ -1,6 +1,5 @@
 package com.digital.model;
 
-import com.digital.model.common.BaseEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;

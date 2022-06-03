@@ -13,6 +13,7 @@
                 <input type="hidden" name="bool_entreprise" th:value="${isEnterprise}" id="bool_entreprise"/>
                 <div class="infoline">
                     <div th:if="${isEnterprise == false}" style="width:35%; display:block; padding-top:15px; float:left; margin-right:20px" >
+                        INDIVIDUEL
                         <input value="false" name="isEntreprise" type="hidden"  id="isEntreprise_infoGle"/>
                         <select name="police" onchange="myFunction(this.getAttribute('id'));" id="ctrt_infoGle">
                             <option disabled selected>Contrat</option>
@@ -20,6 +21,7 @@
                         </select>
                     </div>
                     <div th:if="${isEnterprise}" style="width:35%; display:block; padding-top:15px; float:left; margin-right:20px" >
+
                         <input value="true" name="isEntreprise" type="hidden"  id="isEntreprise_infoGle_entreprise"/>
                         <select name="police" onchange="myFunction(this.getAttribute('id'));" id="ctrt_infoGle_entreprise">
                             <option disabled selected>Contrat</option>

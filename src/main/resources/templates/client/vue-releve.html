@@ -11,7 +11,7 @@
       <tbody>
       <tr style="text-align: center">
         <td th:if="${isEnterprise == false}"><i class="fa fa-line-chart" aria-hidden="true"></i> Cumul des primes payées :<br> <b th:text="${cumul_paye} ? ${#numbers.formatInteger(cumul_paye,3,'POINT')}+' FCFA':'0 FCFA'">500.000 FCFA</b></td>
-        <td th:if="${isEnterprise}"><i class="fa fa-line-chart" aria-hidden="true"></i> Cumul des primes payées en 2019 :<br> <b th:text="${cumul_paye} ? ${#numbers.formatInteger(cumul_paye,3,'POINT')}+' FCFA':'0 FCFA'">500.000 FCFA</b></td>
+        <td th:if="${isEnterprise}"><i class="fa fa-line-chart" aria-hidden="true"></i> Cumul des primes payées en <span th:text="${dateOfLastQuittance} ? ${#dates.format(dateOfLastQuittance, 'yyyy')}">2019</span> :<br> <b th:text="${cumul_paye} ? ${#numbers.formatInteger(cumul_paye,3,'POINT')}+' FCFA':'0 FCFA'">500.000 FCFA</b></td>
         <td th:if="${isEnterprise}"><i class="fa fa-line-chart" aria-hidden="true"></i> Provision mathématique au <span th:text="${dateOfLastQuittance} ? ${#dates.format(dateOfLastQuittance, 'dd/MM/yyyy')}">inconnue</span> :<br><b th:text="${situationCompte?.capitalAcquisJanv} ? ${#numbers.formatInteger(situationCompte?.capitalAcquisJanv,3,'POINT')}+' FCFA':'0 FCFA'">500.000 FCFA</b></td>
         <td th:if="${isEnterprise == false}" ><i class="fa fa-pie-chart" aria-hidden="true"></i> Cumul des primes impayées :<br> <b th:text="${cumul_impaye} ? ${#numbers.formatInteger(cumul_impaye,3,'POINT')}+' FCFA': '0 FCFA'">300.000 FCFA</b></td>
       </tr>

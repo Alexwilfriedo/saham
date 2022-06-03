@@ -609,15 +609,19 @@ public class ClientDefauftController {
 
         List<Quitance> quitances = (List<Quitance>) quitanceRepository.getQuittancesOfEmploye(contrat.getId());
 
-        if (quitances != null && quitances.size()>0){ model.addAttribute("dateOfLastQuittance",quitances.get(0).getEcheance()); }
-        for (Quitance quitance : quitances) {
-            if (quitance != null && quitance.getStatutQuitance() != null && quitance.getStatutQuitance().getStatutQuit() != null && quitance.getStatutQuitance().getStatutQuit().equalsIgnoreCase(Constant.IMPAYE)) {
-                cumul_impaye += (quitance.getMontantEmis());
-            }
-            if (quitance != null && quitance.getStatutQuitance() != null && quitance.getStatutQuitance().getStatutQuit() != null && quitance.getStatutQuitance().getStatutQuit().equalsIgnoreCase(Constant.PAYE)) {
-                cumul_paye += quitance.getMontantPaye();
+        if (quitances != null && quitances.size()>0){
+            model.addAttribute("dateOfLastQuittance",quitances.get(0).getEcheance());
+
+            for (Quitance quitance : quitances) {
+                if (quitance != null && quitance.getStatutQuitance() != null && quitance.getStatutQuitance().getStatutQuit() != null && quitance.getStatutQuitance().getStatutQuit().equalsIgnoreCase(Constant.IMPAYE)) {
+                    cumul_impaye += (quitance.getMontantEmis());
+                }
+                if (quitance != null && quitance.getStatutQuitance() != null && quitance.getStatutQuitance().getStatutQuit() != null && quitance.getStatutQuitance().getStatutQuit().equalsIgnoreCase(Constant.PAYE)) {
+                    cumul_paye += quitance.getMontantPaye();
+                }
             }
         }
+
         model.addAttribute("contrat", contrat);
         model.addAttribute("quitanceReleve", quitances);
         model.addAttribute("lastname", lastname);
@@ -745,7 +749,7 @@ public class ClientDefauftController {
 
                     situationCompte = situationCompteRepository.findByCodeContrat(contrat.getPolice());
                     if (situationCompte !=null && situationCompte.getTauxRevaloEpargne() !=null){
-                        Float taux = Float.parseFloat(situationCompte.getTauxRevaloEpargne().replace(",","."));
+                        float taux = Float.parseFloat(situationCompte.getTauxRevaloEpargne().replace(",","."));
                         model.addAttribute("tauxR", String.format("%.2f", taux*100));
                     }
                     model.addAttribute("situationCompte", situationCompte);
@@ -777,9 +781,9 @@ public class ClientDefauftController {
         // num : numéro de page
         System.out.println("num " + num);
         Personne personne = session.getPersonne();
-        if (personne != null) {
-            model.addAttribute("perso", personne);
-        }
+
+        if (personne != null) model.addAttribute("perso", personne);
+
         switch (num) {
             case 1:
                 return "client/demande-generale";
@@ -920,11 +924,7 @@ public class ClientDefauftController {
             Future<String> content = mailTemplateHandler.build("mailTemplates/termeContratCorporate",context);
             javaMailSenderHandler.send(mail_prod,"demande de terme de contrat ",content.get().toString(),true);
             javaMailSenderHandler.send(mail_dev,"demande de terme de contrat ",content.get().toString(),true);
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (MessagingException | InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
         session.getAskeds().clear();
@@ -1115,11 +1115,7 @@ public class ClientDefauftController {
             Future<String> content = mailTemplateHandler.build("mailTemplates/rachatPartiel",context);
             javaMailSenderHandler.send(Constant.mail_dev,"demande de rachat partiel ",content.get().toString(),true);
             javaMailSenderHandler.send(Constant.mail_prod,"demande de rachat partiel ",content.get().toString(),true);
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (MessagingException | InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
         return "client/demande";
@@ -1149,11 +1145,7 @@ public class ClientDefauftController {
             Future<String> content = mailTemplateHandler.build("mailTemplates/rachatPartielAvecRemboursement",context);
             javaMailSenderHandler.send(Constant.mail_dev,"demande de rachat partiel + Remboursement ",content.get().toString(),true);
             javaMailSenderHandler.send(Constant.mail_prod,"demande de rachat partiel + Remboursement ",content.get().toString(),true);
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (MessagingException | InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
         return "client/demande";
@@ -1179,11 +1171,7 @@ public class ClientDefauftController {
             Future<String> content = mailTemplateHandler.build("mailTemplates/rachatTotal",context);
             javaMailSenderHandler.send(Constant.mail_dev,"demande de rachat partiel ",content.get().toString(),true);
             javaMailSenderHandler.send(Constant.mail_prod,"demande de rachat partiel ",content.get().toString(),true);
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (MessagingException | InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
         return "client/demande";
@@ -1209,11 +1197,7 @@ public class ClientDefauftController {
             Future<String> content = mailTemplateHandler.build("mailTemplates/avanceSurPolice",context);
             javaMailSenderHandler.send(Constant.mail_dev,"demande d'avance sur police ",content.get().toString(),true);
             javaMailSenderHandler.send(Constant.mail_prod,"demande d'avance sur police ",content.get().toString(),true);
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (MessagingException | InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
         return "client/demande";
@@ -1239,11 +1223,7 @@ public class ClientDefauftController {
             Future<String> content = mailTemplateHandler.build("mailTemplates/termeContrat",context);
             javaMailSenderHandler.send(Constant.mail_dev,"demande terme contrat ",content.get().toString(),true);
             javaMailSenderHandler.send(Constant.mail_prod,"demande terme contrat ",content.get().toString(),true);
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (MessagingException | InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
         return "client/demande";

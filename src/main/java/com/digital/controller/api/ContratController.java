@@ -1,15 +1,12 @@
 package com.digital.controller.api;
 
-import com.digital.controller.ClientDefauftController;
 import com.digital.facade.AuthenticationFacade;
 import com.digital.model.*;
 import com.digital.model.api.*;
-import com.digital.model.response.*;
 import com.digital.model.response.ResponseBody;
+import com.digital.model.response.*;
 import com.digital.repository.*;
-import com.digital.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,7 +15,6 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.stream.LongStream;
 
 @RestController
 @RequestMapping(value = "/api/v1/sahamvie")
@@ -228,6 +224,7 @@ public class ContratController {
     @GetMapping(value = "/contrat/of/demande")
     public ResponseBody<List<DemandeContrat>> getPersonneOfContratDemande(){
         List<DemandeContrat> contrats = new ArrayList<>();
+
         session.getContrats().forEach(c-> System.out.println("Les contrats sont ==> "+c.getPolice()));
         /**
         if(LongStream.of(Constant.refCorporate).anyMatch(x -> x == session.getIdentifiant())){

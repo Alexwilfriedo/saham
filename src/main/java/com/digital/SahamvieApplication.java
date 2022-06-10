@@ -101,15 +101,15 @@ public class SahamvieApplication extends SpringBootServletInitializer {
             //new QuittanceBootstrap().seed(ResourceUtils.getFile("classpath:data/Donnees_23_07_2020/quittanceall.csv").getPath(), "src/main/resources/Donnees_saham_29_05_2020/test.csv", contratRepository, objetsRepository, statutQuitanceRepository, quitanceRepository);
             //new QuitanceUpdateService().seed(ResourceUtils.getFile("classpath:data/Donnees_23_07_2020/quitance_all.csv").getPath(), quitanceRepository);
 
-            new PersonneBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/personne-xls.csv").getPath(), personneRepository);
-            new ContratBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/contrats-xls.csv").getPath(), contratRepository);
-            new SituationCompteGlobaleBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/situation-compte-global-xls.csv").getPath(), situationCompteGlobaleRepository);
-            new CompteResultatBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/compte-resultat-xls.csv").getPath(), compteResultatRepository);
-            new SituationCompteBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/situation-compte-xls.csv").getPath(), situationCompteRepository, contratRepository, statutContratRepository);
-            new QuittanceMatriceBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/quittance-matrice-xls.csv").getPath(), quittanceMatriceRepository);
-            new BeneficiaireBootstrap().seed(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/infos_Souscripteurs.csv").getPath(), beneficiaireRepository, personneRepository, contratRepository, statutContratRepository);
-            new QuittanceBootstrap().erase(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/quittance-xls.csv").getPath(), quitanceRepository);
-            new QuittanceBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/quittance-xls.csv").getPath(), quitanceRepository);
+            //new PersonneBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/personne-xls.csv").getPath(), personneRepository);
+            //new ContratBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/contrats-xls.csv").getPath(), contratRepository);
+            //new SituationCompteGlobaleBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/situation-compte-global-xls.csv").getPath(), situationCompteGlobaleRepository);
+            //new CompteResultatBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/compte-resultat-xls.csv").getPath(), compteResultatRepository);
+            //new SituationCompteBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/situation-compte-xls.csv").getPath(), situationCompteRepository, contratRepository, statutContratRepository);
+            //new QuittanceMatriceBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/quittance-matrice-xls.csv").getPath(), quittanceMatriceRepository);
+            //new BeneficiaireBootstrap().seed(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/infos_Souscripteurs.csv").getPath(), beneficiaireRepository, personneRepository, contratRepository, statutContratRepository);
+            //new QuittanceBootstrap().erase(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/quittance-xls.csv").getPath(), quitanceRepository);
+            //new QuittanceBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/quittance-xls.csv").getPath(), quitanceRepository);
             //new QuittanceBootstrap().updateMontatEmis(ResourceUtils.getFile("classpath:data/quittance.csv").getPath(), quitanceRepository);
 
             /** Pour chargement local **/

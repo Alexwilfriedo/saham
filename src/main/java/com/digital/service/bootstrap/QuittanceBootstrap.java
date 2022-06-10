@@ -151,17 +151,17 @@ public class QuittanceBootstrap {
                     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                     SimpleDateFormat formatter2 = new SimpleDateFormat("dd/MM/yy");
 
-                    String codeObjet   = s.split(",")[0];
-                    String statut      = s.split(",")[1];
-                    String numQuit     = s.split(",")[2];
-                    String codeContrat = s.split(",")[3];
-                    String echeance    = s.split(",")[4];
-                    String dateValeur  = s.split(",")[5];
-                    String dateCreat   = s.split(",")[6];
-                    String dateCompt   = s.split(",")[7];
-                    String dateEmis    = s.split(",")[8];
-                    String montantpaye = s.split(",")[9];
-                    String montantEmis = s.split(",")[10];
+                    String codeObjet    = s.split(",")[0];
+                    String statut       = s.split(",")[1];
+                    String numQuit      = s.split(",")[2];
+                    String code_Contrat = s.split(",")[3];
+                    String echeance     = s.split(",")[4];
+                    String dateValeur   = s.split(",")[5];
+                    String dateCreat    = s.split(",")[6];
+                    String dateCompt    = s.split(",")[7];
+                    String dateEmis     = s.split(",")[8];
+                    String montantpaye  = s.split(",")[9];
+                    String montantEmis  = s.split(",")[10];
 
                     if (numQuit != null && !numQuit.isEmpty() && !numQuit.equalsIgnoreCase("null")){
 
@@ -169,21 +169,17 @@ public class QuittanceBootstrap {
 
                         if (quitance == null) {
                             quitance = new Quitance();
-                            if (codeContrat != null && !codeContrat.isEmpty() && !codeContrat.equalsIgnoreCase("null") && !codeContrat.equalsIgnoreCase("NULL"))
-                                quitance.setPolice(codeContrat.replaceAll("\\s",""));
+                            quitance.setNumQuittance(numQuit);
                         }
-                        //quitance = new Quitance();
+
+                        if (code_Contrat != null && !code_Contrat.isEmpty() && !code_Contrat.equalsIgnoreCase("null") && !code_Contrat.equalsIgnoreCase("NULL"))
+                            quitance.setPolice(code_Contrat.replaceAll("\\s", ""));
 
                         if (codeObjet !=null && !codeObjet.isEmpty() && !codeObjet.equalsIgnoreCase("null") && !codeObjet.equalsIgnoreCase("NULL"))
                             quitance.setObj(Long.parseLong(codeObjet));
 
                         if (statut !=null && !statut.isEmpty() && !statut.equalsIgnoreCase("null") && !statut.equalsIgnoreCase("NULL"))
                             quitance.setStatut(Long.parseLong(statut));
-
-                        /*
-                        if (codeContrat != null && !codeContrat.isEmpty() && !codeContrat.equalsIgnoreCase("null") && !codeContrat.equalsIgnoreCase("NULL"))
-                            quitance.setPolice(codeContrat.replaceAll("\\s",""));
-                        */
 
                         if (echeance != null && !echeance.isEmpty() && !echeance.equalsIgnoreCase("null") && !echeance.equalsIgnoreCase("NULL")){
                             if ((echeance.split("/")[2]).length()==2) quitance.setEcheance(formatter2.parse(echeance));
@@ -216,7 +212,7 @@ public class QuittanceBootstrap {
                         if (montantEmis != null && !montantEmis.isEmpty() && !montantEmis.trim().equalsIgnoreCase("NULL") && !montantEmis.equalsIgnoreCase("null")) //quitance.setMontantEmis(Double.parseDouble(montantEmis.split(",")[0].replaceAll("\\s","")));
                             quitance.setMontantEmis(Double.parseDouble(montantEmis));
 
-                        quitance.setNumQuittance(numQuit);
+                        //quitance.setNumQuittance(numQuit);
 
                         System.out.println("Quittance en cours de traitement");
                         quitanceRepository.save(quitance);

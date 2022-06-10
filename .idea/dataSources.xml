@@ -7,5 +7,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/saham_test</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="saham_db@51.79.73.63" uuid="f0ada606-5149-4419-8206-4852c4a4e92c">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://51.79.73.63:5433/saham_db</jdbc-url>
+    </data-source>
   </component>
 </project>

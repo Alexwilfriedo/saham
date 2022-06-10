@@ -842,9 +842,19 @@
 
             break;
           case 3:
-            if (bool === 0) alert('Une entreprise');
-            else alert('Un particulier');
-            alert('Rachat partiel');
+            if (bool === 0) {
+              console.log(" case 1 ou 2 : c'est une entreprise");
+              console.log(contrats);
+              for (var i = 0; i <= contrats.data.length; i++) {
+                $('#contratD_rach_par').append('<option value="' + contrats.data[i].id + '">' + contrats.data[i].police +' - '+ contrats.data[i].assure + '</option>');
+              }
+            }
+            else {
+              console.log(" case 1 ou 2 : c'est pas une entreprise");
+              for (var i = 0; i <= contrats.data.length; i++) {
+                $('#police_rach_par').append('<option value="' + contrats.data[i].id + '">' + contrats.data[i].police + '</option>');
+              }
+            }
             break;
           case 4:
             if (bool === 0) alert('Une entreprise');
@@ -857,14 +867,34 @@
             alert('Avance sur police');
             break;
           case 6:
-            if (bool === 0) alert('Une entreprise');
-            else alert('Un particulier');
-            alert('Rachat total');
+            if (bool === 0) {
+              console.log(" case 1 ou 2 : c'est une entreprise");
+              console.log(contrats);
+              for (var i = 0; i <= contrats.data.length; i++) {
+                $('#contratD_rach_tot').append('<option value="' + contrats.data[i].id + '">' + contrats.data[i].police +' - '+ contrats.data[i].assure + '</option>');
+              }
+            }
+            else {
+              console.log(" case 1 ou 2 : c'est pas une entreprise");
+              for (var i = 0; i <= contrats.data.length; i++) {
+                $('#police_rach_tot').append('<option value="' + contrats.data[i].id + '">' + contrats.data[i].police + '</option>');
+              }
+            }
             break;
           case 7:
-            if (bool === 0) alert('Une entreprise');
-            else alert('Un particulier');
-            alert('Terme de contrat');
+            if (bool === 0) {
+              console.log(" case 1 ou 2 : c'est une entreprise");
+              console.log(contrats);
+              for (var i = 0; i <= contrats.data.length; i++) {
+                $('#contratD_terme_ctr').append('<option value="' + contrats.data[i].id + '">' + contrats.data[i].police +' - '+ contrats.data[i].assure + '</option>');
+              }
+            }
+            else {
+              console.log(" case 1 ou 2 : c'est pas une entreprise");
+              for (var i = 0; i <= contrats.data.length; i++) {
+                $('#police_terme_ctr').append('<option value="' + contrats.data[i].id + '">' + contrats.data[i].police + '</option>');
+              }
+            }
             /*
             if (bool === 0) {
               console.log(" vrai : 3, 6, 7")

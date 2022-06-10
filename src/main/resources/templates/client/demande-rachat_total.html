@@ -12,9 +12,9 @@
                 <div class="titreSimu4">
                     <div class="infoline">
                         <div style="width:50%; display:block;  float:left; margin-right:20px">
-                            <select id="police">
+                            <select id="police_rach_tot" name="police">
                                 <option disabled selected>Contrat</option>
-                                <option th:each="contrat : ${contrats}" th:value="${contrat?.police}" th:text="${contrat?.police}">Contrat</option>
+                                <!--<option th:each="contrat : ${contrats}" th:value="${contrat?.police}" th:text="${contrat?.police}">Contrat</option>-->
                             </select>
                         </div>
 
@@ -124,7 +124,7 @@
                                     </div>
                                     <div class="infoline">
                                         <div style="width:50%; display:block;  float:left; margin-right:20px">
-                                            <select id="contratD" name="contrat">
+                                            <select id="contratD_rach_tot" name="contrat">
                                                 <option disabled selected>Contrat</option>
                                                 <!--<option th:each="contrat : ${contrats}" th:value="${contrat?.id}" th:text="${contrat?.assure}">Contrat</option>-->
                                             </select>

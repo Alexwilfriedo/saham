@@ -283,7 +283,8 @@
             complete : function() { },
             error : function(jqXHR) {
                 content.html(jqXHR.responseText); }
-        }) }
+        });
+    }
 
     function getCotisation(id) {
         console.log($('#'+id).val())

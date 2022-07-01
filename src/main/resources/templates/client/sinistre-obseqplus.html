@@ -15,7 +15,7 @@
         </div>
         <div style="width:100%; display:block; float:left; margin-top:50px;" id="monPdf">
             <div style="width:90%; display:block; margin:0 auto">
-                <p class="logoPdf" style="display: none"><img src="../img/logo_saham-vie.png" /></p>
+                <p class="logoPdf" style="display: none"><img src="../img/logo_sanlam-vie.png" /></p>
                 <form class="FormSit3" th:action="@{/demande/sinistreObseqPlus}" th:method="POST" th:object="${sinistreObseqPlus}">
 
 
@@ -24,7 +24,7 @@
                             <tr>
                                 <td valign="top">
                                     <p>
-                                    <select name="police">
+                                    <select name="police" id="obseqplusPolice">
                                         <option disabled selected>N° Police&nbsp;: </option>
                                         <option th:each="contrat : ${contrats}" th:value="${contrat?.police}" th:text="${contrat?.assure?.lastname}">Contrat</option>
                                     </select>

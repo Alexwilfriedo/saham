@@ -614,6 +614,7 @@
                         </p>
 
                         </p>
+                        <!--
                         <p class="blockDivcl">
                         <table width="100%" border="0">
                           <tbody>
@@ -624,6 +625,7 @@
                           </tbody>
                         </table>
                         </p>
+                        -->
                         <p class="blockDivcl">
                         <table width="100%" border="0">
                           <tbody>
@@ -909,6 +911,34 @@
             }
             */
             break;
+          case 8:
+            if (bool === 0) {
+              console.log(" case 1 ou 2 : c'est une entreprise");
+              console.log(contrats);
+              for (var i = 0; i <= contrats.data.length; i++) {
+                $('#obseqplusPolice').append('<option value="' + contrats.data[i].id + '">' + contrats.data[i].police +' - '+ contrats.data[i].assure + '</option>');
+              }
+            }
+            else {
+              console.log(" case 1 ou 2 : c'est pas une entreprise");
+              for (var i = 0; i <= contrats.data.length; i++) {
+                $('#obseqplusPolice').append('<option value="' + contrats.data[i].id + '">' + contrats.data[i].police + '</option>');
+              }
+            }
+            /*
+            if (bool === 0) {
+              console.log(" vrai : 3, 6, 7")
+              for (var i = 0; i <= contrats.data.length; i++) {
+                $('#contratD').append('<option value="' + contrats.data[i].id + '">' + contrats.data[i].assure + '</option>');
+              }
+
+            }else {
+              for (var i = 0; i <= contrats.data.length; i++) {
+                $('#police').append('<option value="' + contrats.data[i].id + '">' + contrats.data[i].police + '</option>');
+              }
+            }
+            */
+            break;
             /*
             for (var i = 0; i <= contrats.data.length; i++) {
               $('#police').append('<option value="' + contrats.data[i].id + '">' + contrats.data[i].police + '</option>');
@@ -986,7 +1016,6 @@
   });
 
   function generatePdf() {
-    alert("logopdf");
     $('.logoPdf').css('display', 'block');
     doc.addHTML($('#monPdf')[0], 0, 0, {
       'background': '#fff',

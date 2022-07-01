@@ -109,7 +109,7 @@ public class SahamvieApplication extends SpringBootServletInitializer {
             //new QuittanceMatriceBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/quittance-matrice-xls.csv").getPath(), quittanceMatriceRepository);
             //new BeneficiaireBootstrap().seed(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/infos_Souscripteurs.csv").getPath(), beneficiaireRepository, personneRepository, contratRepository, statutContratRepository);
             //new QuittanceBootstrap().erase(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/quittance-xls.csv").getPath(), quitanceRepository);
-            //new QuittanceBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_traitees_02062022/quittance-xls.csv").getPath(), quitanceRepository);
+            //new QuittanceBootstrap().load(ResourceUtils.getFile("classpath:data/donnees_20_05_2022/quittance-xls.csv").getPath(), quitanceRepository);
             //new QuittanceBootstrap().updateMontatEmis(ResourceUtils.getFile("classpath:data/quittance.csv").getPath(), quitanceRepository);
 
             /** Pour chargement local **/

@@ -16,7 +16,7 @@
         </div>
         <div id="monPdf" class="FormSit2" id="monPdf">
             <div class="w95">
-                <p class="logoPdf" style="display: none"><img src="../img/logo_saham-vie.png" /></p>
+                <p class="logoPdf" style="display: none"><img src="../img/logo_sanlam-vie.png" /></p>
                 <div class="titreSimu">
                     <table border="0" cellspacing="0" cellpadding="0">
                         <tr>
@@ -143,8 +143,16 @@
                             746 </span></p></td>
                     </tr>
 
+                    <!--
                     <tr>
                         <td width="198" valign="top"><p>Cumul cotisations au <span th:text="${situationCompte?.dateSituation} ? ${#dates.format(situationCompte?.dateSituation, 'dd/MM/yyyy')}">2016</span></p></td>
+                        <td width="37" valign="top"><p align="center"><strong>:</strong></p></td>
+                        <td width="339" valign="top"><p><span th:text="${situationCompte?.cumulPrimeAu31122016} ? ${#numbers.formatInteger(situationCompte?.cumulPrimeAu31122016,3,'POINT')}+' FCFA':'0 FCFA'">-</span></p></td>
+                    </tr>
+                    -->
+
+                    <tr>
+                        <td width="198" valign="top"><p>Cumul primes au <span th:text="${situationCompte?.dateSituation} ? ${#dates.format(situationCompte?.dateSituation, 'dd/MM/yyyy')}">2016</span></p></td>
                         <td width="37" valign="top"><p align="center"><strong>:</strong></p></td>
                         <td width="339" valign="top"><p><span th:text="${situationCompte?.cumulPrimeAu31122016} ? ${#numbers.formatInteger(situationCompte?.cumulPrimeAu31122016,3,'POINT')}+' FCFA':'0 FCFA'">-</span></p></td>
                     </tr>

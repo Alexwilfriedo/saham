@@ -2,6 +2,8 @@ package com.digital.util;
 
 import com.digital.model.Personne;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Random;
 
 public class Utility {
@@ -100,5 +102,10 @@ public class Utility {
             }
         }
         return result;
+    }
+
+    public static String returnDateInString(Calendar calendar, Date date){
+        calendar.setTime(date);
+        return ((calendar.get(Calendar.DAY_OF_MONTH) < 10)? "0"+calendar.get(Calendar.DAY_OF_MONTH):calendar.get(Calendar.DAY_OF_MONTH)) + "/" + ((calendar.get(Calendar.MONTH) < 10)? "0"+calendar.get(Calendar.MONTH):calendar.get(Calendar.MONTH)) + "/" + (calendar.get(Calendar.YEAR));
     }
 }

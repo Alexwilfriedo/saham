@@ -73,6 +73,8 @@ public class ClientDefauftController {
 
     private User user = null;
     final AuthenticationFacade authenticationFacade;
+    private Calendar cal = Calendar.getInstance();
+    private final SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 
 
     public ClientDefauftController(AuthenticationFacade authenticationFacade) {
@@ -593,7 +595,7 @@ public class ClientDefauftController {
     }
 
     @RequestMapping(value = "/cotisation-employe", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
-    public String getCotisation(Long id,String lastname, Model model) {
+    public String getCotisation(Long id,String lastname, Model model) throws ParseException {
         long debut ;
         long debu = DateTime.now().getMillis();
         System.out.println("id " + id);
@@ -610,7 +612,12 @@ public class ClientDefauftController {
         List<Quitance> quitances = (List<Quitance>) quitanceRepository.getQuittancesOfEmploye(contrat.getId());
 
         if (quitances != null && quitances.size()>0){
-            model.addAttribute("dateOfLastQuittance",quitances.get(0).getEcheance());
+            //cal.setTime(quitances.get(0).getEcheance());
+            //int jourProv = cal.get(Calendar.DAY_OF_MONTH);
+            //int moisProv = cal.get(Calendar.MONTH);
+            //int anneeProv = cal.get(Calendar.YEAR);
+
+            model.addAttribute("dateOfLastQuittance", quitances.get(0).getEcheance());
 
             for (Quitance quitance : quitances) {
                 if (quitance != null && quitance.getStatutQuitance() != null && quitance.getStatutQuitance().getStatutQuit() != null && quitance.getStatutQuitance().getStatutQuit().equalsIgnoreCase(Constant.IMPAYE)) {
@@ -631,7 +638,7 @@ public class ClientDefauftController {
 
         if (situationCompte !=null && situationCompte.getTauxRevaloEpargne() != null){
             //Float taux = Float.parseFloat(situationCompte.getTauxRevaloEpargne().replace(",","."));
-            Float taux = Float.parseFloat(situationCompte.getTauxRevaloEpargne().split("%")[0].replace(",","."));
+            float taux = Float.parseFloat(situationCompte.getTauxRevaloEpargne().split("%")[0].replace(",","."));
             model.addAttribute("taux", String.format("%.2f", taux*100));
         }
         System.out.println( "total :"+(DateTime.now().getMillis()-debu));

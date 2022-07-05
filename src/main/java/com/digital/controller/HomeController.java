@@ -90,9 +90,10 @@ public class HomeController {
 
     @GetMapping("/produit/{id}")
     public String produit(@PathVariable Long id, Model model) {
+        String retour = "";
         Produit produit = produitRepository.findFirstByCode(id);
         model.addAttribute("product", produit);
-        // System.out.println("produit  :"+produit.getNomProduit());
+        System.out.println("produit  :"+produit.getNomProduit());
         return "produit";
     }
 

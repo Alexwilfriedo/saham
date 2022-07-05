@@ -18,7 +18,7 @@
                             <div class="BlockContainMenuDiv">
                                 <p class="BlockContainMenuTitre">Epargne-Capitalisation</p>
                                 <p class="BlockContainMenuLink">
-                                    <a th:each="ep: ${produitsParticulierEpargne}" th:href="@{/produit/} + ${ep.id}" th:text="${ep.nomProduit}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    <a th:each="ep: ${produitsParticulierEpargne}" th:href="@{/produit/} + ${ep.code}"><i class="fa fa-angle-right" aria-hidden="true"></i> <span th:text="${ep.nomProduit}"></span></a>
                                     <!--<a href="cari4.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Cari 4 </a>
                                     <a href="produit.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Cari 31 </a>
                                     <a href="produit.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Cap invset </a>-->
@@ -27,7 +27,7 @@
                             <div class="BlockContainMenuDiv">
                                 <p class="BlockContainMenuTitre">Prévoyance </p>
                                 <p class="BlockContainMenuLink">
-                                    <a th:each="ep: ${produitsParticulierPrevoyance}" th:href="@{/produit/} + ${ep.id}" th:text="${ep.nomProduit}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    <a th:each="ep: ${produitsParticulierPrevoyance}" th:href="@{/produit/} + ${ep.code}"><i class="fa fa-angle-right" aria-hidden="true"></i> <span th:text="${ep.nomProduit}"></span></a>
 
                                     <!--<a href="obseqplus.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Obseq'Plus </a>
                                     <a href="prevoyance.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Temporaire Décès</a>-->
@@ -36,7 +36,7 @@
                             <div class="BlockContainMenuDiv">
                                 <p class="BlockContainMenuTitre">Mixte</p>
                                 <p class="BlockContainMenuLink">
-                                    <a th:each="ep: ${produitsParticulierMixte}" th:href="@{/produit/} + ${ep.id}" th:text="${ep.nomProduit}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    <a th:each="ep: ${produitsParticulierMixte}" th:href="@{/produit/} + ${ep.code}"><i class="fa fa-angle-right" aria-hidden="true"></i> <span th:text="${ep.nomProduit}"></span></a>
 
                                     <!--                                    <a href="produit.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Educ'Plus</a>-->
                                 </p>
@@ -49,7 +49,7 @@
                         <div class="BlockContainMenuDiv">
                             <p class="BlockContainMenuTitre">Epargne-Capitalisation </p>
                             <p class="BlockContainMenuLink">
-                                <a th:each="ep: ${produitsProfessionnelsEpargne}" th:href="@{/produit/} + ${ep.id}" th:text="${ep.nomProduit}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <a th:each="ep: ${produitsProfessionnelsEpargne}" th:href="@{/produit/} + ${ep.code}"><i class="fa fa-angle-right" aria-hidden="true"></i> <span th:text="${ep.nomProduit}"></span></a>
                                <!-- <a href="produit.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Retraite collective</a>
                                 <a href="obseqplus.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Indemnités de fin de Carrière</a>-->
                             </p>
@@ -57,7 +57,7 @@
                         <div class="BlockContainMenuDiv">
                             <p class="BlockContainMenuTitre">Prévoyance </p>
                             <p class="BlockContainMenuLink">
-                                <a th:each="ep: ${produitsProfessionnelsPrevoyance}" th:href="@{/produit/} + ${ep.id}" th:text="${ep.nomProduit}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <a th:each="ep: ${produitsProfessionnelsPrevoyance}" th:href="@{/produit/} + ${ep.code}"><i class="fa fa-angle-right" aria-hidden="true"></i> <span th:text="${ep.nomProduit}"></span></a>
                                 <!--<a href="prevoyance.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Prévoyance collective</a>
                                 <a href="produit.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Frais funéraires</a>-->
                             </p>

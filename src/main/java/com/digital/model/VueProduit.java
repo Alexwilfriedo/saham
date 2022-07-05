@@ -1,13 +1,11 @@
 package com.digital.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class VueProduit {
     @Id
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Long code;
@@ -25,6 +23,22 @@ public class VueProduit {
     private Long ideType;
 
     private String type;
+
+    public VueProduit() {
+    }
+
+    public VueProduit(Long id) {
+        this.id = id;
+    }
+
+    public VueProduit(Long code, String nomProduit, Long ideBranche, String nomBranche, Long ideType, String type) {
+        this.code = code;
+        this.nomProduit = nomProduit;
+        this.ideBranche = ideBranche;
+        this.nomBranche = nomBranche;
+        this.ideType = ideType;
+        this.type = type;
+    }
 
     public Long getId() {
         return id;

@@ -71,6 +71,7 @@ public class SahamvieApplication extends SpringBootServletInitializer {
                                           UserRepository userRepository,
                                           QuittanceMatriceRepository quittanceMatriceRepository,
                                           ContratDesherenceRepository contratDesherenceRepository,
+                                          VueProduitRepository vueProduitRepository,
                                           SMSHelper smsHelper) {
         return args -> {
 
@@ -93,6 +94,7 @@ public class SahamvieApplication extends SpringBootServletInitializer {
             //new SituationCompteBootstrap().seed(ResourceUtils.getFile("classpath:data/Donnees_23_07_2020/situationcompteall.csv").getPath(),situationCompteRepository);
             //new QuittanceMatriceBootstrap().seed(ResourceUtils.getFile("classpath:data/Donnees_23_07_2020/quittancematriceall.csv").getPath(),quittanceMatriceRepository);
             //new CompteResultatBootstrap().seed(ResourceUtils.getFile("classpath:data/Donnees_23_07_2020/compte-resultatall.csv").getPath(),compteResultatRepository);
+            //new VueProduitBootstrap().seed(ResourceUtils.getFile("classpath:data/Donnees_23_07_2020/produit.csv").getPath() ,vueProduitRepository , brancheRepository, typesProduitRepository);
 
             //lourd
             //new ContratBootstrap().seed(ResourceUtils.getFile("classpath:data/Donnees_23_07_2020/contratall.csv").getPath(), contratRepository,personneRepository, produitRepository,statutContratRepository, periodiciteRepository);

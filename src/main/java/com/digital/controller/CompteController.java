@@ -458,6 +458,7 @@ public class CompteController {
         HttpSms httpSms = new HttpSms.Builder("Sanlam vie",String.format("225%s",telephone),message,"UTF-8").build();
         smsHelper.sendTo(httpSms);
     }
+
     public void sendSuccesMail(String phone, Date dateNais,DesherenceContrat desherenceContrat){
         try {
             Context context = new Context();
